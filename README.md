@@ -8,4 +8,4 @@ Desenvolvedores:
   - Allan Rafael C. V. Boas, allanrafael@gec.inatel.br;
   
 Colaboradores:
-  - Daniel Sader, danielpontello@gmail.com 
+  - Daniel Sader, danielpontello@gmail.com;
