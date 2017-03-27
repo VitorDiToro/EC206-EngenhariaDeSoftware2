@@ -2,15 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Acessorio.h"
-#include "Cliente.h"
-#include "Funcionario.h"
-#include "Gerente.h"
-#include "Pessoa.h"
-#include "Veiculo.h"
-#include "Venda.h"
-#include "Vendedor.h"
-
 #include "Manage/ManageAcessorio.h"
 #include "Manage/ManageCliente.h"
 #include "Manage/ManageGerente.h"
@@ -28,15 +19,6 @@ int main(void)
     int c;
     int crud;
 
-//    Acessorio *acessorio = new Acessorio();
-//    Cliente *cliente = new Cliente();
-//    Funcionario *funcionario = new Funcionario();
-//    Gerente *gerente = new Gerente();
-//    Pessoa *pessoa = new Pessoa();
-//    Veiculo *veiculo = new Veiculo();
-//    Venda *venda = new Venda();
-//    Vendedor *vendedor = new Vendedor();
-    
     for(;;)
     {
         mainMenu();

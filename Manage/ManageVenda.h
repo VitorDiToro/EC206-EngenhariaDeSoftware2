@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
-#include "./../Venda.h"
+#include "Model/Venda.h"
 
 using namespace std;
 

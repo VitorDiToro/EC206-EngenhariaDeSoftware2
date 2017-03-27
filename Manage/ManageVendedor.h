@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <iostream>
-#include "./../Vendedor.h"
+#include "Model/Vendedor.h"
 
 using namespace std;
 

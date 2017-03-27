@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <iostream>
-#include "./../Gerente.h"
+#include "Model/Gerente.h"
 
 using namespace std;
 

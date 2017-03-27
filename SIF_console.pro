@@ -23,7 +23,15 @@ SOURCES += main.cpp \
     Manage/ManageGerente.cpp \
     Manage/ManageVeiculo.cpp \
     Manage/ManageVenda.cpp \
-    Manage/ManageVendedor.cpp
+    Manage/ManageVendedor.cpp \
+    Model/Acessorio.cpp \
+    Model/Cliente.cpp \
+    Model/Funcionario.cpp \
+    Model/Gerente.cpp \
+    Model/Pessoa.cpp \
+    Model/Veiculo.cpp \
+    Model/Venda.cpp \
+    Model/Vendedor.cpp
 
 HEADERS += \
     Veiculo.h \
@@ -39,5 +47,13 @@ HEADERS += \
     Manage/ManageGerente.h \
     Manage/ManageVeiculo.h \
     Manage/ManageVenda.h \
-    Manage/ManageVendedor.h
+    Manage/ManageVendedor.h \
+    Model/Acessorio.h \
+    Model/Cliente.h \
+    Model/Funcionario.h \
+    Model/Gerente.h \
+    Model/Pessoa.h \
+    Model/Veiculo.h \
+    Model/Venda.h \
+    Model/Vendedor.h
 
