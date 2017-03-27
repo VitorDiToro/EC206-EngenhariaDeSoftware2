@@ -4,6 +4,10 @@ int Funcionario::total = 0;
 
 Funcionario::Funcionario()
 {
+    cout << "login: ";
+    cin >> login;
+    cout << "senha: ";
+    cin >>senha;
     cout << "salario: ";
     cin >> salario;
     setId(total++);
@@ -24,6 +28,26 @@ float Funcionario::getSalario() const
 void Funcionario::setSalario(float value)
 {
     salario = value;
+}
+
+string Funcionario::getLogin() const
+{
+    return login;
+}
+
+void Funcionario::setLogin(const string &value)
+{
+    login = value;
+}
+
+long Funcionario::getSenha() const
+{
+    return senha;
+}
+
+void Funcionario::setSenha(long value)
+{
+    senha = value;
 }
 
 int Funcionario::getTotal()

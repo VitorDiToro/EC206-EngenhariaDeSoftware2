@@ -6,11 +6,16 @@ vector<Acessorio*> acessorios;
 
 Acessorio::Acessorio()
 {
-    this->nome = "";
-    this->quantidade = 0;
-    this->descricao = "";
+    cout << "nome: ";
+    cin >> this->nome;
+    cout << "quantidade: ";
+    cin >> this->quantidade;
+    cout << "preco: ";
+    cin >> this->preco;
+    cout << "descricao: ";
+    cin >> this->descricao;
 
-    total++;
+    id = total++;
 }
 
 Acessorio::~Acessorio()
