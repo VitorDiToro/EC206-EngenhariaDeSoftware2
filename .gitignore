@@ -1,3 +1,10 @@
+# Dolphin files
+.directory
+*/.directory
+*/*/.directory
+*/*.directory
+/*.directory
+
 # C++ objects and libs
 
 *.slo
@@ -36,3 +43,5 @@ Makefile*
 # QtCtreator CMake
 CMakeLists.txt.user
 
+
+ 	
