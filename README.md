@@ -9,4 +9,4 @@ Projeto da disciplina de Engenharia de Software II, desenvolvido durante a gradu
 
 **Colaboradores:** 
 - Daniel Sader, danielpontello@gmail.com;
-    - Colaborador do  Sub-Módeulo do BD_SIF;
+    - Colaborador do  Sub-Módeulo "BD_SIF";
