@@ -10,13 +10,17 @@ using namespace std;
 
 class Gerente : public Funcionario
 {
-    public:
+    private:
+        static Gerente* INSTANCE;
         vector<string> unidades;
 
         static int total;
-    public:
+
         Gerente();
+    public:
         ~Gerente();
+
+        static Gerente* getInstance();
 
         vector<string> getUnidades() const;
         void setUnidades(const vector<string> &value);

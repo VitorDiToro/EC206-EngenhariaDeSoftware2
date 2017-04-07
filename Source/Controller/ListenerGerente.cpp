@@ -5,9 +5,17 @@
 void Gerente_cadastrar()
 {
     cout << endl << "Cadastrar Gerente" << endl;
-    Gerente* g = new Gerente();
+    //Gerente* g = new Gerente();
+    if(Gerente::getTotal() == 0)
+    {
+        Gerente* g = Gerente::getInstance();
 
-    gerentes.push_back(g);
+        gerentes.push_back(g);
+    }
+    else
+    {
+        cout << "Gerente ja cadastrado." << endl;
+    }
 }
 
 void Gerente_listar()
@@ -43,6 +51,9 @@ void Gerente_consultar()
 
 void Gerente_editar()
 {
+    cout << "Padrao Singleton implementado nessa classe. Opcao temporariamente inválida" << endl;
+    return;
+
     unsigned int id;
 
     cout << endl << "Editar Gerente" << endl;
@@ -52,7 +63,8 @@ void Gerente_editar()
 
     if(id < gerentes.size())
     {
-        Gerente* g = new Gerente();
+        //Gerente* g = new Gerente();
+        Gerente* g = Gerente::getInstance();
 
         delete gerentes[id];
 

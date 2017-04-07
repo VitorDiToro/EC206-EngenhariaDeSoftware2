@@ -13,7 +13,6 @@
 void mainMenu(void);
 void genericMenu(void);
 
-
 int main(void)
 {
     int c;
@@ -50,7 +49,7 @@ int main(void)
                     break;
 
                     case(5):
-                        Gerente_editar();
+                        Gerente_remover();
                     break;
 
                     case(6):
@@ -280,3 +279,4 @@ void genericMenu(void)
     printf("\n");
     return;
 }
+//////////
