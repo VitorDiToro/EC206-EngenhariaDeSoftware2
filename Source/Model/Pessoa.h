@@ -9,17 +9,15 @@ class Pessoa
 {
     private:
         string nome;
-        string dataDeNascimento;
         string cpf;
         string telefone;
         string endereco;
-        string email;
 
         static int total;
         int id;
     public:
         Pessoa();
-        Pessoa(string n, string d, string c, string t, string e, string em);
+        Pessoa(string n, string c, string t, string e);
         ~Pessoa();
 
         string getNome() const;
