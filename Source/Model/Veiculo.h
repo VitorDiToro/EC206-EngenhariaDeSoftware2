@@ -10,11 +10,10 @@ using namespace std;
 class Veiculo
 {
     private:
-        string nome;
+        string modelo;
         string cor;
-        int ano;
+        unsigned int ano;
         float preco;
-        vector<Acessorio*> acessorios;
 
         static int total;
         int id;
@@ -22,12 +21,12 @@ class Veiculo
         Veiculo();
         ~Veiculo();
 
-        string getNome() const;
-        void setNome(const string &value);
+        string getModelo() const;
+        void setModelo(const string &value);
         string getCor() const;
         void setCor(const string &value);
-        int getAno() const;
-        void setAno(int value);
+        unsigned int getAno() const;
+        void setAno(unsigned int value);
         float getPreco() const;
         void setPreco(float value);
 

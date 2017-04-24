@@ -11,8 +11,8 @@ Veiculo::Veiculo()
 {
     cout << "Cadastro de Veiculo" << endl;
 
-    cout << "nome: ";
-    cin >> this->nome;
+    cout << "modelo: ";
+    cin >> this->modelo;
     getchar();
     cout << "cor: ";
     cin >> this->cor;
@@ -22,8 +22,6 @@ Veiculo::Veiculo()
     cout << "preco: ";
     cin >> this->preco;
 
-    acessorios.clear();
-
     id = total++;
 }
 
@@ -31,13 +29,11 @@ Veiculo::~Veiculo()
 {
     cout << "destructor" << endl;
 
-    nome = "";
+    modelo = "";
     cor = "";
     ano = 0;
     preco = 0;
     id = 0;
-
-    acessorios.clear();
 
     total--;
 }
@@ -47,14 +43,14 @@ int Veiculo::getTotal()
     return total;
 }
 
-string Veiculo::getNome() const
+string Veiculo::getModelo() const
 {
-    return nome;
+    return modelo;
 }
 
-void Veiculo::setNome(const string &value)
+void Veiculo::setModelo(const string &value)
 {
-    nome = value;
+    modelo = value;
 }
 
 string Veiculo::getCor() const
@@ -67,12 +63,12 @@ void Veiculo::setCor(const string &value)
     cor = value;
 }
 
-int Veiculo::getAno() const
+unsigned int Veiculo::getAno() const
 {
     return ano;
 }
 
-void Veiculo::setAno(int value)
+void Veiculo::setAno(unsigned int value)
 {
     ano = value;
 }
@@ -101,13 +97,13 @@ void Veiculo::setId(int value)
 void Veiculo::print()
 {
     cout << "id: " << this->id << endl;
-    cout << "nome: " << this->nome << endl;
+    cout << "modelo: " << this->modelo << endl;
 }
 
 void Veiculo::print_details()
 {
     cout << "id: " << this->id << endl;
-    cout << "nome: " << this->nome << endl;
+    cout << "modelo: " << this->modelo << endl;
     cout << "cor: " << this->cor << endl;
     cout << "ano: " << this->ano << endl;
     cout << "preco: " << this->preco << endl;

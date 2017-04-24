@@ -7,7 +7,7 @@ void Acessorio_cadastrar()
     cout << endl << "Cadastrar Acessorio" << endl;
     Acessorio* g = new Acessorio();
 
-    acessorios.push_back(g);
+    stock_acessorios.push_back(g);
 }
 
 void Acessorio_listar()
@@ -15,10 +15,10 @@ void Acessorio_listar()
     unsigned int i;
 
     cout << endl << "Listar Acessorios" << endl;
-    for (i = 0; i < acessorios.size(); ++i)
+    for (i = 0; i < stock_acessorios.size(); ++i)
     {
         cout << endl << "Acessorio " << i+1 << endl;
-        acessorios[i]->print();
+        stock_acessorios[i]->print();
     }
 }
 
@@ -31,9 +31,9 @@ void Acessorio_consultar()
     cout << "id: ";
     cin >> id;
 
-    if(id < acessorios.size())
+    if(id < stock_acessorios.size())
     {
-        acessorios[id]->print_details();
+        stock_acessorios[id]->print_details();
     }
     else
     {
@@ -50,15 +50,15 @@ void Acessorio_editar()
     cout << "id: ";
     cin >> id;
 
-    if(id < acessorios.size())
+    if(id < stock_acessorios.size())
     {
         Acessorio* a = new Acessorio();
 
-        delete acessorios[id];
+        delete stock_acessorios[id];
 
-        acessorios[id] = a;
+        stock_acessorios[id] = a;
 
-        acessorios[id]->setId(id);
+        stock_acessorios[id]->setId(id);
     }
     else
     {
@@ -75,10 +75,10 @@ void Acessorio_remover()
     cout << "id: " << endl;
     cin >> id;
 
-    if(id < acessorios.size())
+    if(id < stock_acessorios.size())
     {
-       delete acessorios[id];
-       acessorios.erase(acessorios.begin()+id);
+       delete stock_acessorios[id];
+       stock_acessorios.erase(stock_acessorios.begin()+id);
        cout << "deleted" << endl;
     }
     else

@@ -13,6 +13,7 @@ class Cliente : public Pessoa
 {
     private:
         vector<Venda*> vendas;
+        unsigned int qtdVendas;
 
         static int total;
     public:
@@ -21,6 +22,9 @@ class Cliente : public Pessoa
 
         vector<Venda*> getVendas() const;
         void setVendas(const vector<Venda *> &value);
+        unsigned int getQtdVendas() const;
+        void incQtdVendas(void);
+        void decQtdVendas(void);
 
         static int getTotal();
 

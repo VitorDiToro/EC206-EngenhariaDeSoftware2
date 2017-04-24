@@ -2,14 +2,12 @@
 
 int Acessorio::total = 0;
 
-vector<Acessorio*> acessorios;
+vector<Acessorio*> stock_acessorios;
 
 Acessorio::Acessorio()
 {
     cout << "nome: ";
     cin >> this->nome;
-    cout << "quantidade: ";
-    cin >> this->quantidade;
     cout << "preco: ";
     cin >> this->preco;
     cout << "descricao: ";
@@ -21,7 +19,6 @@ Acessorio::Acessorio()
 Acessorio::~Acessorio()
 {
     this->nome = "";
-    this->quantidade = 0;
     this->descricao = "";
 
     total--;
@@ -35,16 +32,6 @@ string Acessorio::getNome() const
 void Acessorio::setNome(const string &value)
 {
     nome = value;
-}
-
-int Acessorio::getQuantidade() const
-{
-    return quantidade;
-}
-
-void Acessorio::setQuantidade(int value)
-{
-    quantidade = value;
 }
 
 float Acessorio::getPreco() const
@@ -92,6 +79,5 @@ void Acessorio::print_details()
 {
     print();
 
-    cout << "quantidade: " << quantidade << endl;
     cout << "descricao: " << descricao << endl;
 }

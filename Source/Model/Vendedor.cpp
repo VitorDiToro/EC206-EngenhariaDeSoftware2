@@ -11,7 +11,7 @@ Vendedor::Vendedor()
     cout << "unidade de trabalho: ";
     cin >> unidadeDeTrabalho;
     getchar();
-    bonificacao = 0;
+    comissao = 0;
 
     setId(total++);
 }
@@ -19,7 +19,7 @@ Vendedor::Vendedor()
 Vendedor::~Vendedor()
 {
     unidadeDeTrabalho = "";
-    bonificacao = 0;
+    comissao = 0;
 
     total--;
 }
@@ -34,14 +34,14 @@ void Vendedor::setUnidadeDeTrabalho(const string &value)
     unidadeDeTrabalho = value;
 }
 
-float Vendedor::getBonificacao() const
+float Vendedor::getComissao() const
 {
-    return bonificacao;
+    return comissao;
 }
 
-void Vendedor::setBonificacao(float value)
+void Vendedor::setComissao(float value)
 {
-    bonificacao = value;
+    comissao = value;
 }
 
 int Vendedor::getTotal()
@@ -59,5 +59,5 @@ void Vendedor::print_details()
     Funcionario::print_details();
 
     cout << "unidade de trabalho: " << unidadeDeTrabalho << endl;
-    cout << "bonificacao: " << bonificacao << endl;
+    cout << "comissao: " << comissao << endl;
 }

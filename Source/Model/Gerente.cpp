@@ -8,24 +8,14 @@ vector<Gerente*> gerentes;
 
 Gerente::Gerente()
 {
-    unsigned int numeroDeUnidades;
-    string unidade;
-    cout << "numero de unidades: ";
-    cin >> numeroDeUnidades;
-
-    for (unsigned int i = 0; i < numeroDeUnidades; i++) {
-        cout << "unidade " << i+1 << ": ";
-        cin >> unidade;
-        unidades.push_back(unidade);
-    }
+    cout << "unidade que gerencia: ";
+    cin >> unidadeQueGerencia;
 
     setId(total++);
 }
 
 Gerente::~Gerente()
 {
-    unidades.clear();
-
     total--;
 }
 
@@ -39,14 +29,14 @@ Gerente* Gerente::getInstance()
     return INSTANCE;
 }
 
-vector<string> Gerente::getUnidades() const
+string Gerente::getUnidadeQueGerencia() const
 {
-    return unidades;
+    return unidadeQueGerencia;
 }
 
-void Gerente::setUnidades(const vector<string> &value)
+void Gerente::setUnidadeQueGerencia(const string &value)
 {
-    unidades = value;
+    unidadeQueGerencia = value;
 }
 
 int Gerente::getTotal()
@@ -65,7 +55,5 @@ void Gerente::print_details()
 
     Funcionario::print_details();
 
-    for (i = 0; i < unidades.size(); i++) {
-        cout << "unidade " << i << ": " << unidades[i] << endl;
-    }
+    cout << "unidade que gerencia: " << unidadeQueGerencia << endl;
 }

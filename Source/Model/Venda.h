@@ -11,7 +11,9 @@ class Venda
         Veiculo* veiculo;
         Cliente* cliente;
         Vendedor* vendedor;
-        float preco;
+        vector<Acessorio*> acessorios;
+        float valor;
+        string data;
 
         static int total;
         int id;
@@ -25,8 +27,10 @@ class Venda
         void setCliente(Cliente *value);
         Vendedor *getVendedor() const;
         void setVendedor(Vendedor *value);
-        float getPreco() const;
-        void setPreco(float value);
+        float getValor() const;
+        void setValor(float value);
+        string getData() const;
+        void setData(const string &value);
 
         static int getTotal();
         int getId() const;

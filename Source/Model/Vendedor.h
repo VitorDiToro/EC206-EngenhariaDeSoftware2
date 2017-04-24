@@ -12,7 +12,7 @@ class Vendedor : public Funcionario
 {
     public:
         string unidadeDeTrabalho;
-        float bonificacao;
+        float comissao;
 
         static int total;
     public:
@@ -21,8 +21,8 @@ class Vendedor : public Funcionario
 
         string getUnidadeDeTrabalho() const;
         void setUnidadeDeTrabalho(const string &value);
-        float getBonificacao() const;
-        void setBonificacao(float value);
+        float getComissao() const;
+        void setComissao(float value);
 
         static int getTotal();
 

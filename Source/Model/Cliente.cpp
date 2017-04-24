@@ -8,7 +8,8 @@ Cliente::Cliente()
 {
     //cout << "cliente" << endl;
     vendas.clear();
-
+    qtdVendas = 0;
+    
     setId(total++);
 }
 
@@ -22,6 +23,7 @@ Cliente::~Cliente()
 //        }
 //    }
     vendas.clear();
+    qtdVendas = 0;
 
     total--;
 }
@@ -34,6 +36,21 @@ vector<Venda*> Cliente::getVendas() const
 void Cliente::setVendas(const vector<Venda *> &value)
 {
     vendas = value;
+}
+
+unsigned int Cliente::getQtdVendas() const
+{
+    return qtdVendas;
+}
+
+void Cliente::incQtdVendas()
+{
+    qtdVendas++;
+}
+
+void Cliente::decQtdVendas()
+{
+    qtdVendas--;
 }
 
 int Cliente::getTotal()

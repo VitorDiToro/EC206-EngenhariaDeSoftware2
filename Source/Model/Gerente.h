@@ -12,7 +12,7 @@ class Gerente : public Funcionario
 {
     private:
         static Gerente* INSTANCE;
-        vector<string> unidades;
+        string unidadeQueGerencia;
 
         static int total;
 
@@ -22,8 +22,8 @@ class Gerente : public Funcionario
 
         static Gerente* getInstance();
 
-        vector<string> getUnidades() const;
-        void setUnidades(const vector<string> &value);
+        string getUnidadeQueGerencia() const;
+        void setUnidadeQueGerencia(const string &value);
 
         static int getTotal();
 

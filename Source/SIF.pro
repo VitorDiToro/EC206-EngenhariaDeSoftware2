@@ -67,3 +67,5 @@ HEADERS += \
     View/TelaPrincipal.h \
     View/TelaRemocao.h
 
+FORMS +=
+

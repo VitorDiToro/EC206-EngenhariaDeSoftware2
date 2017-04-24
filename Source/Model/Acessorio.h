@@ -10,7 +10,6 @@ class Acessorio
 {
     private:
         string nome;
-        int quantidade;
         float preco;
         string descricao;
 
@@ -22,8 +21,6 @@ class Acessorio
 
         string getNome() const;
         void setNome(const string &value);
-        int getQuantidade() const;
-        void setQuantidade(int value);
         float getPreco() const;
         void setPreco(float value);
         string getDescricao() const;
@@ -37,6 +34,6 @@ class Acessorio
         void print_details();
 };
 
-extern vector<Acessorio*> acessorios;
+extern vector<Acessorio*> stock_acessorios;
 
 #endif // ACESSORIO_H

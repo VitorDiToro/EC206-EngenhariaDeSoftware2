@@ -8,52 +8,71 @@ vector<Venda*> vendas;
 
 Venda::Venda()
 {
-    unsigned int id;
-
+    int id;
+    
     cout << "id cliente: ";
     cin >> id;
+    
+//    if((unsigned int)id < clientes.size())
+//    {
+//        cliente = clientes[id];
+//        cliente->incQtdVendas();
 
-    if(id < clientes.size())
-    {
-        cliente = clientes[id];
-        cout << "ok cliente" << endl;
-    }
-    else
-    {
-        throw FAIL;
-    }
+//        cout << "ok cliente" << endl;
+//    }
+//    else
+//    {
+//        throw FAIL;
+//    }
 
-    cout << "id vendedor: ";
-    cin >> id;
+//    cout << "id vendedor: ";
+//    cin >> id;
 
-    if(id < vendedores.size())
-    {
-        vendedor = vendedores[id];
-        cout << "ok vendedor" << endl;
-    }
-    else
-    {
-        cliente = NULL;
-        throw FAIL;
-    }
+//    if((unsigned int)id < vendedores.size())
+//    {
+//        vendedor = vendedores[id];
+//        cout << "ok vendedor" << endl;
+//    }
+//    else
+//    {
+//        cliente = NULL;
+//        throw FAIL;
+//    }
 
-    cout << "id veiculo: ";
-    cin >> id;
+//    cout << "id veiculo: ";
+//    cin >> id;
 
-    if(id < veiculos.size())
+//    if((unsigned int)id < veiculos.size())
+//    {
+//        veiculo = veiculos[id];
+//        //veiculos.erase(veiculos.begin() + id);
+//        valor = veiculo->getPreco();
+//        cout << "ok veiculo" << endl;
+//    }
+//    else
+//    {
+//        cliente = NULL;
+//        vendedor = NULL;
+//        valor = 0;
+//        throw FAIL;
+//    }
+    cout << "data: ";
+
+    acessorios.clear();
+
+    do
     {
-        veiculo = veiculos[id];
-        veiculos.erase(veiculos.begin() + id);
-        preco = veiculo->getPreco();
-        cout << "ok veiculo" << endl;
-    }
-    else
-    {
-        cliente = NULL;
-        vendedor = NULL;
-        preco = 0;
-        throw FAIL;
-    }
+        cout << "id acessorio (-1 para sair): ";
+        cin >> id;
+
+        if(id < Acessorio::getTotal() && id >= 0)
+        {
+            cout << "eh menor que o total." << endl;
+            this->acessorios.push_back(stock_acessorios[id]);
+            valor += acessorios[id]->getPreco();
+            cout << "ok acessorio" << endl;
+        }
+    } while(id != -1);
 
     total++;
 }
@@ -62,6 +81,7 @@ Venda::~Venda()
 {
     if(cliente)
     {
+        cliente->decQtdVendas();
         cliente = NULL;
     }
 
@@ -76,7 +96,7 @@ Venda::~Venda()
         veiculo = NULL;
     }
 
-    preco = 0;
+    valor = 0;
 
     total--;
 }
@@ -111,14 +131,24 @@ void Venda::setVendedor(Vendedor *value)
     vendedor = value;
 }
 
-float Venda::getPreco() const
+float Venda::getValor() const
 {
-    return preco;
+    return valor;
 }
 
-void Venda::setPreco(float value)
+void Venda::setValor(float value)
 {
-    preco = value;
+    valor = value;
+}
+
+string Venda::getData() const
+{
+    return data;
+}
+
+void Venda::setData(const string &value)
+{
+    data = value;
 }
 
 int Venda::getTotal()
@@ -159,12 +189,15 @@ void Venda::print()
         vendedor->print();
     }
 
-    cout << endl << "valor: " << preco << endl;
+    cout << endl << "valor: " << valor << endl;
+    cout << endl << "data: " << data << endl;
     cout << "######################################" << endl;
 }
 
 void Venda::print_details()
 {
+    unsigned int i;
+
     cout << "######################################" << endl;
     cout << "id: " << id << endl;
 
@@ -186,7 +219,13 @@ void Venda::print_details()
         vendedor->print_details();
     }
 
-    cout << endl << "valor: " << preco << endl;
+    for(i = 0; i < this->acessorios.size(); i++)
+    {
+        cout << "acessorio 1:" << endl;
+        acessorios[i]->print_details();
+    }
+
+    cout << endl << "valor: " << valor << endl;
+    cout << endl << "data: " << data << endl;
     cout << "######################################" << endl;
 }
-
