@@ -10,7 +10,7 @@
 #include "Controller/ListenerVenda.h"
 #include "Controller/ListenerVeiculo.h"
 #include "Controller/ListenerVendedor.h"
-#include "View/LoginWindow.h"
+#include "View/TelaLogin.h"
 
 void mainMenu(void);
 void genericMenu(void);
@@ -18,8 +18,8 @@ void genericMenu(void);
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    LoginWindow rw;
-    rw.show();
+    LoginWindow* lw = new LoginWindow();
+    lw->show();
 
     return a.exec();
 

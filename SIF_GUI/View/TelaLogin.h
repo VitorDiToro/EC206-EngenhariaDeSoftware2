@@ -1,11 +1,31 @@
 #ifndef TELALOGIN_H
 #define TELALOGIN_H
 
+#include <QMainWindow>
 
-class TelaLogin
+namespace Ui {
+class LoginWindow;
+}
+
+class LoginWindow : public QMainWindow
 {
+    Q_OBJECT
+
 public:
-    TelaLogin();
+    explicit LoginWindow(QWidget *parent = 0);
+    ~LoginWindow();
+
+private slots:
+    void on_pushButton_clicked();
+
+    void on_editUser_selectionChanged();
+
+    void on_pushButton_2_clicked();
+
+    void on_editPassword_selectionChanged();
+
+private:
+    Ui::LoginWindow *ui;
 };
 
 #endif // TELALOGIN_H

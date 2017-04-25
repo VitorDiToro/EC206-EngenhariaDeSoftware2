@@ -37,10 +37,9 @@ SOURCES += main.cpp\
     View/TelaConsulta.cpp \
     View/TelaEdicao.cpp \
     View/TelaListagem.cpp \
-    View/TelaLogin.cpp \
     View/TelaPrincipal.cpp \
     View/TelaRemocao.cpp \
-    View/LoginWindow.cpp
+    View/TelaLogin.cpp
 
 HEADERS  += \
     Controller/ListenerAcessorio.h \
@@ -68,11 +67,10 @@ HEADERS  += \
     View/TelaConsulta.h \
     View/TelaEdicao.h \
     View/TelaListagem.h \
-    View/TelaLogin.h \
     View/TelaPrincipal.h \
     View/TelaRemocao.h \
-    View/LoginWindow.h
+    View/TelaLogin.h
 
 FORMS    += \
-    View/LoginWindow.ui \
-    View/TelaPrincipal.ui
+    View/TelaPrincipal.ui \
+    View/TelaLogin.ui

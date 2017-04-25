@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>505</width>
+    <width>504</width>
     <height>221</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>505</width>
+     <width>504</width>
      <height>25</height>
     </rect>
    </property>
@@ -27,31 +27,43 @@
     <property name="title">
      <string>Vendas</string>
     </property>
+    <addaction name="actionCadastrar"/>
+    <addaction name="actionListar"/>
    </widget>
    <widget class="QMenu" name="menuVeiculos">
     <property name="title">
      <string>Veiculos</string>
     </property>
+    <addaction name="actionCadastrar_2"/>
+    <addaction name="actionListar_2"/>
    </widget>
    <widget class="QMenu" name="menuAcess_rios">
     <property name="title">
      <string>Acessórios</string>
     </property>
+    <addaction name="actionCadastrar_3"/>
+    <addaction name="actionListar_3"/>
    </widget>
    <widget class="QMenu" name="menuClientes">
     <property name="title">
      <string>Clientes</string>
     </property>
+    <addaction name="actionCadastrar_4"/>
+    <addaction name="actionListar_4"/>
    </widget>
    <widget class="QMenu" name="menuVendedores">
     <property name="title">
      <string>Vendedores</string>
     </property>
+    <addaction name="actionCadastrar_5"/>
+    <addaction name="actionListar_5"/>
    </widget>
    <widget class="QMenu" name="menuGerentes">
     <property name="title">
      <string>Gerentes</string>
     </property>
+    <addaction name="actionCadastrar_6"/>
+    <addaction name="actionListar_6"/>
    </widget>
    <addaction name="menuVendas"/>
    <addaction name="menuVeiculos"/>
@@ -61,6 +73,66 @@
    <addaction name="menuGerentes"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCadastrar">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCadastrar_2">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar_2">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCadastrar_3">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar_3">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCadastrar_4">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar_4">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCadastrar_5">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar_5">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
+  <action name="actionCadastrar_6">
+   <property name="text">
+    <string>Cadastrar</string>
+   </property>
+  </action>
+  <action name="actionListar_6">
+   <property name="text">
+    <string>Listar</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

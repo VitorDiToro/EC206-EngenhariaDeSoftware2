@@ -51,8 +51,6 @@ void Gerente::print()
 
 void Gerente::print_details()
 {
-    unsigned int i;
-
     Funcionario::print_details();
 
     cout << "unidade que gerencia: " << unidadeQueGerencia << endl;
