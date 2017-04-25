@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TelaPrincipal</class>
+ <widget class="QMainWindow" name="TelaPrincipal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>505</width>
+    <height>221</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>505</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuVendas">
+    <property name="title">
+     <string>Vendas</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuVeiculos">
+    <property name="title">
+     <string>Veiculos</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuAcess_rios">
+    <property name="title">
+     <string>Acessórios</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuClientes">
+    <property name="title">
+     <string>Clientes</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuVendedores">
+    <property name="title">
+     <string>Vendedores</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuGerentes">
+    <property name="title">
+     <string>Gerentes</string>
+    </property>
+   </widget>
+   <addaction name="menuVendas"/>
+   <addaction name="menuVeiculos"/>
+   <addaction name="menuAcess_rios"/>
+   <addaction name="menuClientes"/>
+   <addaction name="menuVendedores"/>
+   <addaction name="menuGerentes"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

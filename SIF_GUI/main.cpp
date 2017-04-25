@@ -1,3 +1,5 @@
+#include <QApplication>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,12 +10,18 @@
 #include "Controller/ListenerVenda.h"
 #include "Controller/ListenerVeiculo.h"
 #include "Controller/ListenerVendedor.h"
+#include "View/LoginWindow.h"
 
 void mainMenu(void);
 void genericMenu(void);
 
-int main(void)
+int main(int argc, char *argv[])
 {
+    QApplication a(argc, argv);
+    LoginWindow rw;
+    rw.show();
+
+    return a.exec();
 
     int c;
     int crud;
@@ -279,4 +287,3 @@ void genericMenu(void)
     printf("\n");
     return;
 }
-//////////
