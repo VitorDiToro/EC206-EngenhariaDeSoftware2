@@ -92,4 +92,5 @@ FORMS    += \
     View/TelaCadastroCliente.ui \
     View/TelaCadastroVeiculo.ui \
     View/TelaCadastroAcessorio.ui \
-    View/TelaCadastroVenda.ui
+    View/TelaCadastroVenda.ui \
+    View/TelaListagem.ui

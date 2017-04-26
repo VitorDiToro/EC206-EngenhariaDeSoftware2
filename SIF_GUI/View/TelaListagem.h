@@ -1,11 +1,22 @@
 #ifndef TELALISTAGEM_H
 #define TELALISTAGEM_H
 
+#include <QFrame>
 
-class TelaListagem
+namespace Ui {
+class TelaListagem;
+}
+
+class TelaListagem : public QFrame
 {
+    Q_OBJECT
+
 public:
-    TelaListagem();
+    explicit TelaListagem(QWidget *parent = 0);
+    ~TelaListagem();
+
+private:
+    Ui::TelaListagem *ui;
 };
 
 #endif // TELALISTAGEM_H

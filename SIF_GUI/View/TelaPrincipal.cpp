@@ -6,6 +6,7 @@
 #include "View/TelaCadastroVeiculo.h"
 #include "View/TelaCadastroAcessorio.h"
 #include "View/TelaCadastroVenda.h"
+#include "View/TelaListagem.h"
 #include "Controller/ListenerVeiculo.h"
 #include "Controller/ListenerAcessorio.h"
 #include "Controller/ListenerGerente.h"
@@ -66,12 +67,14 @@ void TelaPrincipal::on_actionCadastrar_triggered()
 
 void TelaPrincipal::on_actionListar_triggered()
 {
-    // listar venda
     Venda_listar();
 }
 
 void TelaPrincipal::on_actionListar_2_triggered()
 {
+    TelaListagem* tl = new TelaListagem();
+    tl->show();
+
     Veiculo_listar();
 }
 
