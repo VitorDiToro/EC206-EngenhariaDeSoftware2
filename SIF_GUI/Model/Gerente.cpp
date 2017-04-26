@@ -8,8 +8,8 @@ vector<Gerente*> gerentes;
 
 Gerente::Gerente()
 {
-    cout << "unidade que gerencia: ";
-    cin >> unidadeQueGerencia;
+    //cout << "unidade que gerencia: ";
+    //cin >> unidadeQueGerencia;
 
     setId(total++);
 }

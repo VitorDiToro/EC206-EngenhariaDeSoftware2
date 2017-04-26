@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <typeinfo>
+#include <QDebug>
+#include <qdebug.h>
 
 #include "Controller/ListenerAcessorio.h"
 #include "Controller/ListenerCliente.h"
@@ -20,6 +23,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     LoginWindow* lw = new LoginWindow();
     lw->show();
+
+    qDebug() << "aarrumamalae";
+
 
     return a.exec();
 
@@ -41,7 +47,7 @@ int main(int argc, char *argv[])
                 switch(crud)
                 {
                     case(1):
-                        Gerente_cadastrar();
+                        //Gerente_cadastrar();
                     break;
 
                     case(2):
@@ -76,7 +82,7 @@ int main(int argc, char *argv[])
                 switch(crud)
                 {
                     case(1):
-                        Vendedor_cadastrar();
+                        //Vendedor_cadastrar();
                     break;
 
                     case(2):
@@ -111,7 +117,7 @@ int main(int argc, char *argv[])
                 switch(crud)
                 {
                     case(1):
-                        Cliente_cadastrar();
+                        //Cliente_cadastrar();
                     break;
 
                     case(2):

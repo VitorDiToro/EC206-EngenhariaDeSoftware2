@@ -8,10 +8,10 @@ vector<Vendedor*> vendedores;
 
 Vendedor::Vendedor()
 {
-    cout << "unidade de trabalho: ";
-    cin >> unidadeDeTrabalho;
-    getchar();
-    comissao = 0;
+//    cout << "unidade de trabalho: ";
+//    cin >> unidadeDeTrabalho;
+//    getchar();
+//    comissao = 0;
 
     setId(total++);
 }

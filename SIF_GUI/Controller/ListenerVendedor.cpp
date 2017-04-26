@@ -1,13 +1,26 @@
 #include "ListenerVendedor.h"
+#include <QDebug>
 
 // CRUD functions
 
-void Vendedor_cadastrar()
+void Vendedor_cadastrar(string nome, string cpf, string telefone, string endereco, float salario,
+                        string login, string senha, string unidadeDeTrabalho, float comissao)
 {
-    cout << endl << "Cadastrar Vendedor" << endl;
-    Vendedor* g = new Vendedor();
+    qDebug() << endl << "Cadastrar Vendedor" << endl;
+    Vendedor* v = new Vendedor();
+    v->setNome(nome);
+    v->setCpf(cpf);
+    v->setTelefone(telefone);
+    v->setEndereco(endereco);
+    v->setSalario(salario);
+    v->setLogin(login);
+    v->setSenha(senha);
+    v->setUnidadeDeTrabalho(unidadeDeTrabalho);
+    v->setComissao(comissao);
 
-    vendedores.push_back(g);
+    v->print_details();
+
+    vendedores.push_back(v);
 }
 
 void Vendedor_listar()

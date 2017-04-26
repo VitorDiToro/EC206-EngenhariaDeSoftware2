@@ -1,7 +1,9 @@
 #include "TelaLogin.h"
 #include "ui_TelaLogin.h"
 #include "TelaPrincipal.h"
+#include "TelaCadastroGerente.h"
 #include <iostream>
+#include <QDebug>
 
 using namespace std;
 
@@ -32,6 +34,10 @@ void LoginWindow::on_pushButton_2_clicked()
 {
     string password = "1019";
 
+    //qDebug() << "a" + ui->editPassword->toPlainText() << endl;
+
+
+
     if(ui->editPassword->toPlainText().toStdString() == password)
     {
         this->close();
@@ -40,6 +46,11 @@ void LoginWindow::on_pushButton_2_clicked()
 
         TelaPrincipal* tp = new TelaPrincipal();
         tp->show();
+    }
+    else
+    {
+        TelaCadastroGerente* tcg = new TelaCadastroGerente();
+        tcg->show();
     }
 }
 

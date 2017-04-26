@@ -7,7 +7,8 @@
 
 using namespace std;
 
-void Vendedor_cadastrar();
+void Vendedor_cadastrar(string nome, string cpf, string telefone, string endereco, float salario,
+                        string login, string senha, string unidadeDeTrabalho, float comissao);
 void Vendedor_listar();
 void Vendedor_consultar();
 void Vendedor_editar();

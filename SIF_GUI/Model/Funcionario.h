@@ -9,7 +9,7 @@ class Funcionario : public Pessoa
     private:
         float salario;
         string login;
-        long int senha;
+        string senha;
 
         static int total;
     public:
@@ -20,8 +20,8 @@ class Funcionario : public Pessoa
         void setSalario(float value);
         string getLogin() const;
         void setLogin(const string &value);
-        long getSenha() const;
-        void setSenha(long value);
+        string getSenha() const;
+        void setSenha(string value);
 
         static int getTotal();
 

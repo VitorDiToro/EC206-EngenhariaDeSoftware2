@@ -2,12 +2,18 @@
 
 // CRUD functions
 
-void Cliente_cadastrar()
+void Cliente_cadastrar(string nome, string cpf, string telefone, string endereco)
 {
     cout << endl << "Cadastrar Cliente" << endl;
-    Cliente* g = new Cliente();
+    Cliente* c = new Cliente();
+    c->setNome(nome);
+    c->setCpf(cpf);
+    c->setTelefone(telefone);
+    c->setEndereco(endereco);
 
-    clientes.push_back(g);
+    c->print_details();
+
+    clientes.push_back(c);
 }
 
 void Cliente_listar()

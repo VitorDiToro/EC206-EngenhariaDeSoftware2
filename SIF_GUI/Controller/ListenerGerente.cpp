@@ -2,7 +2,8 @@
 
 // CRUD functions
 
-void Gerente_cadastrar()
+void Gerente_cadastrar(string nome, string cpf, string telefone, string endereco, float salario,
+                       string login, string senha, string unidadeQueGerencia)
 {
     cout << endl << "Cadastrar Gerente" << endl;
     //Gerente* g = new Gerente();

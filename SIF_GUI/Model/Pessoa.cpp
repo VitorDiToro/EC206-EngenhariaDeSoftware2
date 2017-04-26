@@ -6,15 +6,15 @@ int Pessoa::total = 0;
 Pessoa::Pessoa()
 {
     //cout << "pessoa" << endl;
-    cout << "nome: ";
-    cin >> nome;
-    getchar();
-    cout << "cpf: ";
-    cin >> cpf;
-    cout << "telefone: ";
-    cin >> telefone;
-    cout << "endereco: ";
-    cin >> endereco;
+//    cout << "nome: ";
+//    cin >> nome;
+//    getchar();
+//    cout << "cpf: ";
+//    cin >> cpf;
+//    cout << "telefone: ";
+//    cin >> telefone;
+//    cout << "endereco: ";
+//    cin >> endereco;
     id = total++;
 };
 

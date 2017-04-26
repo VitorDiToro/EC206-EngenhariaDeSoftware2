@@ -15,6 +15,19 @@ public:
     explicit TelaPrincipal(QWidget *parent = 0);
     ~TelaPrincipal();
 
+private slots:
+    void on_actionCadastrar_triggered();
+
+    void on_actionCadastrar_6_triggered();
+
+    void on_actionCadastrar_5_triggered();
+
+    void on_actionCadastrar_4_triggered();
+
+    void on_actionCadastrar_3_triggered();
+
+    void on_actionCadastrar_2_triggered();
+
 private:
     Ui::TelaPrincipal *ui;
 };

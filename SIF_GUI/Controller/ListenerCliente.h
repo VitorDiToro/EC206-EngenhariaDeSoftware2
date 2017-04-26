@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void Cliente_cadastrar();
+void Cliente_cadastrar(string nome, string cpf, string telefone, string endereco);
 void Cliente_listar();
 void Cliente_consultar();
 void Cliente_editar();

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT += core gui
+QT += core
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -39,7 +40,12 @@ SOURCES += main.cpp\
     View/TelaListagem.cpp \
     View/TelaPrincipal.cpp \
     View/TelaRemocao.cpp \
-    View/TelaLogin.cpp
+    View/TelaLogin.cpp \
+    View/TelaCadastroGerente.cpp \
+    View/TelaCadastroVendedor.cpp \
+    View/TelaCadastroCliente.cpp \
+    View/TelaCadastroVeiculo.cpp \
+    View/TelaCadastroAcessorio.cpp
 
 HEADERS  += \
     Controller/ListenerAcessorio.h \
@@ -69,8 +75,18 @@ HEADERS  += \
     View/TelaListagem.h \
     View/TelaPrincipal.h \
     View/TelaRemocao.h \
-    View/TelaLogin.h
+    View/TelaLogin.h \
+    View/TelaCadastroGerente.h \
+    View/TelaCadastroVendedor.h \
+    View/TelaCadastroCliente.h \
+    View/TelaCadastroVeiculo.h \
+    View/TelaCadastroAcessorio.h
 
 FORMS    += \
     View/TelaPrincipal.ui \
-    View/TelaLogin.ui
+    View/TelaLogin.ui \
+    View/TelaCadastroGerente.ui \
+    View/TelaCadastroVendedor.ui \
+    View/TelaCadastroCliente.ui \
+    View/TelaCadastroVeiculo.ui \
+    View/TelaCadastroAcessorio.ui

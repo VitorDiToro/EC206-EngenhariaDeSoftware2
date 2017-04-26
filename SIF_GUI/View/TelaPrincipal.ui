@@ -32,7 +32,7 @@
    </widget>
    <widget class="QMenu" name="menuVeiculos">
     <property name="title">
-     <string>Veiculos</string>
+     <string>Veículos</string>
     </property>
     <addaction name="actionCadastrar_2"/>
     <addaction name="actionListar_2"/>
