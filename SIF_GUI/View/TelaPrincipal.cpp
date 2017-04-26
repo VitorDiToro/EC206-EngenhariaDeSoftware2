@@ -5,11 +5,13 @@
 #include "View/TelaCadastroCliente.h"
 #include "View/TelaCadastroVeiculo.h"
 #include "View/TelaCadastroAcessorio.h"
+#include "View/TelaCadastroVenda.h"
 #include "Controller/ListenerVeiculo.h"
 #include "Controller/ListenerAcessorio.h"
 #include "Controller/ListenerGerente.h"
 #include "Controller/ListenerVendedor.h"
 #include "Controller/ListenerCliente.h"
+#include "Controller/ListenerVenda.h"
 
 #include "Controller/ListenerGerente.h"
 #include "Controller/ListenerVendedor.h"
@@ -30,14 +32,12 @@ void TelaPrincipal::on_actionCadastrar_6_triggered()
 {
     TelaCadastroGerente* tcg = new TelaCadastroGerente();
     tcg->show();
-    //Gerente_cadastrar();
 }
 
 void TelaPrincipal::on_actionCadastrar_5_triggered()
 {
     TelaCadastroVendedor* tcv = new TelaCadastroVendedor();
     tcv->show();
-    //Vendedor_cadastrar();
 }
 
 void TelaPrincipal::on_actionCadastrar_4_triggered()
@@ -60,12 +60,14 @@ void TelaPrincipal::on_actionCadastrar_2_triggered()
 
 void TelaPrincipal::on_actionCadastrar_triggered()
 {
-
+    TelaCadastroVenda* tcv = new TelaCadastroVenda();
+    tcv->show();
 }
 
 void TelaPrincipal::on_actionListar_triggered()
 {
-
+    // listar venda
+    Venda_listar();
 }
 
 void TelaPrincipal::on_actionListar_2_triggered()

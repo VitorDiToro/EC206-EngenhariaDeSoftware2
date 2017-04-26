@@ -45,7 +45,8 @@ SOURCES += main.cpp\
     View/TelaCadastroVendedor.cpp \
     View/TelaCadastroCliente.cpp \
     View/TelaCadastroVeiculo.cpp \
-    View/TelaCadastroAcessorio.cpp
+    View/TelaCadastroAcessorio.cpp \
+    View/TelaCadastroVenda.cpp
 
 HEADERS  += \
     Controller/ListenerAcessorio.h \
@@ -80,7 +81,8 @@ HEADERS  += \
     View/TelaCadastroVendedor.h \
     View/TelaCadastroCliente.h \
     View/TelaCadastroVeiculo.h \
-    View/TelaCadastroAcessorio.h
+    View/TelaCadastroAcessorio.h \
+    View/TelaCadastroVenda.h
 
 FORMS    += \
     View/TelaPrincipal.ui \
@@ -89,4 +91,5 @@ FORMS    += \
     View/TelaCadastroVendedor.ui \
     View/TelaCadastroCliente.ui \
     View/TelaCadastroVeiculo.ui \
-    View/TelaCadastroAcessorio.ui
+    View/TelaCadastroAcessorio.ui \
+    View/TelaCadastroVenda.ui

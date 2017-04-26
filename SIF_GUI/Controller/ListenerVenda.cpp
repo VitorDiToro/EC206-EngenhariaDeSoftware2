@@ -21,6 +21,9 @@ void Venda_listar()
     unsigned int i;
 
     cout << endl << "Listar vendas" << endl;
+
+    cout << vendas.size() << " vendas cadastradas" << endl;
+
     for (i = 0; i < vendas.size(); ++i)
     {
         cout << endl << "Venda " << i+1 << endl;
