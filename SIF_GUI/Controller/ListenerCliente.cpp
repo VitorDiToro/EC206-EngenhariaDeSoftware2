@@ -21,6 +21,9 @@ void Cliente_listar()
     unsigned int i;
 
     cout << endl << "Listar Clientes" << endl;
+
+    cout << clientes.size() << " clientes cadastrados" << endl;
+
     for (i = 0; i < clientes.size(); ++i)
     {
         cout << endl << "Cliente " << i+1 << endl;

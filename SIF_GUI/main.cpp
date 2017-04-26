@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
                 switch(crud)
                 {
                     case(1):
-                        Veiculo_cadastrar();
+                        //Veiculo_cadastrar();
                     break;
 
                     case(2):

@@ -15,6 +15,9 @@ public:
     explicit TelaCadastroVeiculo(QWidget *parent = 0);
     ~TelaCadastroVeiculo();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::TelaCadastroVeiculo *ui;
 };

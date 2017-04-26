@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void Veiculo_cadastrar();
+void Veiculo_cadastrar(string modelo, string cor, unsigned int ano, float preco);
 void Veiculo_listar();
 void Veiculo_consultar();
 void Veiculo_editar();

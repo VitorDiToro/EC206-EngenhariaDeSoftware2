@@ -9,18 +9,18 @@ vector<Veiculo*> veiculos;
 
 Veiculo::Veiculo()
 {
-    cout << "Cadastro de Veiculo" << endl;
+    cout << "Construtor de Veiculo" << endl;
 
-    cout << "modelo: ";
-    cin >> this->modelo;
-    getchar();
-    cout << "cor: ";
-    cin >> this->cor;
-    getchar();
-    cout << "ano: ";
-    cin >> this->ano;
-    cout << "preco: ";
-    cin >> this->preco;
+//    cout << "modelo: ";
+//    cin >> this->modelo;
+//    getchar();
+//    cout << "cor: ";
+//    cin >> this->cor;
+//    getchar();
+//    cout << "ano: ";
+//    cin >> this->ano;
+//    cout << "preco: ";
+//    cin >> this->preco;
 
     id = total++;
 }

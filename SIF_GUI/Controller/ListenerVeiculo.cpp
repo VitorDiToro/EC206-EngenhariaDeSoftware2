@@ -1,11 +1,18 @@
 #include "ListenerVeiculo.h"
+#include <QDebug>
 
 // CRUD functions
 
-void Veiculo_cadastrar()
+void Veiculo_cadastrar(string modelo, string cor, unsigned int ano, float preco)
 {
     cout << endl << "Cadastrar veiculo" << endl;
     Veiculo* v = new Veiculo();
+    v->setModelo(modelo);
+    v->setCor(cor);
+    v->setAno(ano);
+    v->setPreco(preco);
+
+    v->print_details();
 
     veiculos.push_back(v);
 }
@@ -16,18 +23,13 @@ void Veiculo_listar()
 
     cout << endl << "Listar Veiculo" << endl;
 
-    if(veiculos.size() == 0)
-    {
-        cout << "0 veiculos cadastrados" << endl;
-        return;
-    }
+    cout << veiculos.size() << " veiculos cadastrados" << endl;
 
     for (i = 0; i < veiculos.size(); ++i)
     {
         cout << endl << "Veiculo " << i+1 << endl;
         veiculos[i]->print();
     }
-
 }
 
 void Veiculo_consultar()

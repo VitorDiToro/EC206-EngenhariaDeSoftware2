@@ -28,6 +28,9 @@ void Vendedor_listar()
     unsigned int i;
 
     cout << endl << "Listar Vendedor" << endl;
+
+    cout << vendedores.size() << " vendedores cadastrados" << endl;
+
     for (i = 0; i < vendedores.size(); ++i)
     {
         cout << endl << "Vendedor " << i+1 << endl;

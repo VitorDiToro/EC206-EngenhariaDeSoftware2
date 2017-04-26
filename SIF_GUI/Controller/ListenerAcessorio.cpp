@@ -15,6 +15,9 @@ void Acessorio_listar()
     unsigned int i;
 
     cout << endl << "Listar Acessorios" << endl;
+
+    cout << stock_acessorios.size() << " acessorios cadastrados" << endl;
+
     for (i = 0; i < stock_acessorios.size(); ++i)
     {
         cout << endl << "Acessorio " << i+1 << endl;

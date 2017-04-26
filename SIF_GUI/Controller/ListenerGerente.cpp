@@ -10,6 +10,16 @@ void Gerente_cadastrar(string nome, string cpf, string telefone, string endereco
     if(Gerente::getTotal() == 0)
     {
         Gerente* g = Gerente::getInstance();
+        g->setNome(nome);
+        g->setCpf(cpf);
+        g->setTelefone(telefone);
+        g->setEndereco(endereco);
+        g->setSalario(salario);
+        g->setLogin(login);
+        g->setSenha(senha);
+        g->setUnidadeQueGerencia(unidadeQueGerencia);
+
+        g->print_details();
 
         gerentes.push_back(g);
     }
@@ -24,6 +34,9 @@ void Gerente_listar()
     unsigned int i;
 
     cout << endl << "Listar Gerentes" << endl;
+
+    cout << gerentes.size() << " gerentes cadastrados" << endl;
+
     for (i = 0; i < gerentes.size(); ++i)
     {
         cout << endl << "Gerente " << i+1 << endl;
