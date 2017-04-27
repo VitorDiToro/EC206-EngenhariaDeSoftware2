@@ -1,10 +1,17 @@
 #include "TelaListagem.h"
 #include "ui_TelaListagem.h"
+#include "QDebug"
+#include <iostream>
+
+using namespace std;
 
 TelaListagem::TelaListagem(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::TelaListagem)
 {
+    cout << "birrrrrrl" << endl;
+    cout << parent << endl;
+
     QStringList titulos;
 
     titulos.append("id");

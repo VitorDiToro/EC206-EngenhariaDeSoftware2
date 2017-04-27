@@ -8,6 +8,7 @@ TelaCadastroGerente::TelaCadastroGerente(QWidget *parent) :
     ui(new Ui::TelaCadastroGerente)
 {
     ui->setupUi(this);
+    //ui->pushButton->hide();
 }
 
 TelaCadastroGerente::~TelaCadastroGerente()

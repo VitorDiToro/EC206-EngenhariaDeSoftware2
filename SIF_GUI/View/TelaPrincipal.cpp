@@ -74,6 +74,7 @@ void TelaPrincipal::on_actionListar_2_triggered()
 {
     TelaListagem* tl = new TelaListagem();
     tl->show();
+    tl->activateWindow();
 
     Veiculo_listar();
 }
