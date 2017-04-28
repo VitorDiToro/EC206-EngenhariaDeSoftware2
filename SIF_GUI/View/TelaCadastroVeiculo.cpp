@@ -41,3 +41,8 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
         qDebug() << "nop" << endl;
     }
 }
+
+void TelaCadastroVeiculo::on_pushButton_2_clicked()
+{
+    this->close();
+}

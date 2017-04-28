@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>504</width>
-    <height>221</height>
+    <width>1366</width>
+    <height>786</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1366</width>
+    <height>786</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -19,48 +25,48 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>504</width>
-     <height>25</height>
+     <width>1366</width>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuVendas">
     <property name="title">
-     <string>Vendas</string>
+     <string>&amp;Vendas</string>
     </property>
     <addaction name="actionCadastrar"/>
     <addaction name="actionListar"/>
    </widget>
    <widget class="QMenu" name="menuVeiculos">
     <property name="title">
-     <string>Veículos</string>
+     <string>Ve&amp;ículos</string>
     </property>
     <addaction name="actionCadastrar_2"/>
     <addaction name="actionListar_2"/>
    </widget>
    <widget class="QMenu" name="menuAcess_rios">
     <property name="title">
-     <string>Acessórios</string>
+     <string>Acess&amp;órios</string>
     </property>
     <addaction name="actionCadastrar_3"/>
     <addaction name="actionListar_3"/>
    </widget>
    <widget class="QMenu" name="menuClientes">
     <property name="title">
-     <string>Clientes</string>
+     <string>C&amp;lientes</string>
     </property>
     <addaction name="actionCadastrar_4"/>
     <addaction name="actionListar_4"/>
    </widget>
    <widget class="QMenu" name="menuVendedores">
     <property name="title">
-     <string>Vendedores</string>
+     <string>Ve&amp;ndedores</string>
     </property>
     <addaction name="actionCadastrar_5"/>
     <addaction name="actionListar_5"/>
    </widget>
    <widget class="QMenu" name="menuGerentes">
     <property name="title">
-     <string>Gerentes</string>
+     <string>&amp;Gerentes</string>
     </property>
     <addaction name="actionCadastrar_6"/>
     <addaction name="actionListar_6"/>
@@ -75,62 +81,62 @@
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionCadastrar">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
   <action name="actionCadastrar_2">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar_2">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
   <action name="actionCadastrar_3">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar_3">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
   <action name="actionCadastrar_4">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar_4">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
   <action name="actionCadastrar_5">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar_5">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
   <action name="actionCadastrar_6">
    <property name="text">
-    <string>Cadastrar</string>
+    <string>&amp;Cadastrar</string>
    </property>
   </action>
   <action name="actionListar_6">
    <property name="text">
-    <string>Listar</string>
+    <string>&amp;Listar</string>
    </property>
   </action>
  </widget>

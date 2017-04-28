@@ -12,3 +12,8 @@ TelaCadastroAcessorio::~TelaCadastroAcessorio()
 {
     delete ui;
 }
+
+void TelaCadastroAcessorio::on_pushButton_2_clicked()
+{
+    this->close();
+}

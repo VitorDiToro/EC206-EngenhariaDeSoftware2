@@ -39,3 +39,8 @@ void TelaCadastroCliente::on_pushButton_clicked()
         qDebug() << "nop" << endl;
     }
 }
+
+void TelaCadastroCliente::on_pushButton_2_clicked()
+{
+    this->close();
+}

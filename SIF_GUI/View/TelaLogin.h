@@ -18,11 +18,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_editUser_selectionChanged();
-
     void on_pushButton_2_clicked();
 
     void on_editPassword_selectionChanged();
+
+    void on_lineEdit_senha_returnPressed();
+
+    void on_lineEdit_senha_selectionChanged();
 
 private:
     Ui::LoginWindow *ui;

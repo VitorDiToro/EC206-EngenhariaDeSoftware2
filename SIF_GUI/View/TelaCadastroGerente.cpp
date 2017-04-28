@@ -43,3 +43,8 @@ void TelaCadastroGerente::on_pushButton_clicked()
         qDebug() << "nop" << endl;
     }
 }
+
+void TelaCadastroGerente::on_pushButton_2_clicked()
+{
+    this->close();
+}

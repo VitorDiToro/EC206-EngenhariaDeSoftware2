@@ -42,3 +42,8 @@ void TelaCadastroVendedor::on_pushButton_3_clicked()
         qDebug() << "nop" << endl;
     }
 }
+
+void TelaCadastroVendedor::on_pushButton_4_clicked()
+{
+    this->close();
+}

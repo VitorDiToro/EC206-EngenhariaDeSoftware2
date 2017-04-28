@@ -15,6 +15,9 @@ public:
     explicit TelaCadastroAcessorio(QWidget *parent = 0);
     ~TelaCadastroAcessorio();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::TelaCadastroAcessorio *ui;
 };
