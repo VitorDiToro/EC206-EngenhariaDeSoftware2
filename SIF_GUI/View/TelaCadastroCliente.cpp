@@ -3,6 +3,8 @@
 #include "TelaCadastroCliente.h"
 #include "ui_TelaCadastroCliente.h"
 #include "Controller/ListenerCliente.h"
+#include <QStyle>
+#include <QDesktopWidget>
 
 using namespace std;
 
@@ -11,6 +13,14 @@ TelaCadastroCliente::TelaCadastroCliente(QWidget *parent) :
     ui(new Ui::TelaCadastroCliente)
 {
     ui->setupUi(this);
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
 }
 
 TelaCadastroCliente::~TelaCadastroCliente()

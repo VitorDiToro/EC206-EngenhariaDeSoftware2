@@ -2,6 +2,8 @@
 #include "ui_TelaListagem.h"
 #include "QDebug"
 #include <iostream>
+#include <QStyle>
+#include <QDesktopWidget>
 
 using namespace std;
 
@@ -9,6 +11,15 @@ TelaListagem::TelaListagem(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::TelaListagem)
 {
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
+
     cout << "birrrrrrl" << endl;
     cout << parent << endl;
 

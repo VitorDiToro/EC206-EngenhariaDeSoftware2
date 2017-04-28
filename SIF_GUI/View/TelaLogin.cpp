@@ -4,6 +4,8 @@
 #include "TelaCadastroGerente.h"
 #include <iostream>
 #include <QDebug>
+#include <QStyle>
+#include <QDesktopWidget>
 
 using namespace std;
 
@@ -12,6 +14,14 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
 }
 
 LoginWindow::~LoginWindow()

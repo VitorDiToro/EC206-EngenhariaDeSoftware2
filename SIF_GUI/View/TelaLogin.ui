@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Login - SIF</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="FIAT">
+    <normaloff>../../../../Imagens/ico_Fiat_flatpng.png</normaloff>../../../../Imagens/ico_Fiat_flatpng.png</iconset>
+  </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
   </property>

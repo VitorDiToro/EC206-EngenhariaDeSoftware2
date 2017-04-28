@@ -16,11 +16,23 @@
 
 #include "Controller/ListenerGerente.h"
 #include "Controller/ListenerVendedor.h"
+#include <QStyle>
+#include <QDesktopWidget>
 
 TelaPrincipal::TelaPrincipal(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::TelaPrincipal)
 {
+
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            qApp->desktop()->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
+
     ui->setupUi(this);
 }
 

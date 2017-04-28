@@ -4,6 +4,8 @@
 #include "TelaCadastroVeiculo.h"
 #include "ui_TelaCadastroVeiculo.h"
 #include "Controller/ListenerVeiculo.h"
+#include <QStyle>
+#include <QDesktopWidget>
 
 using namespace std;
 
@@ -12,6 +14,14 @@ TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent) :
     ui(new Ui::TelaCadastroVeiculo)
 {
     ui->setupUi(this);
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
 }
 
 TelaCadastroVeiculo::~TelaCadastroVeiculo()

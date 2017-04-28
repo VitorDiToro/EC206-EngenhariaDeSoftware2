@@ -2,13 +2,22 @@
 #include "ui_TelaCadastroGerente.h"
 #include "Controller/ListenerGerente.h"
 #include <QDebug>
+#include <QStyle>
+#include <QDesktopWidget>
 
 TelaCadastroGerente::TelaCadastroGerente(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::TelaCadastroGerente)
 {
     ui->setupUi(this);
-    //ui->pushButton->hide();
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
 }
 
 TelaCadastroGerente::~TelaCadastroGerente()

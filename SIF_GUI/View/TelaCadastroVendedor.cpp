@@ -2,12 +2,22 @@
 #include "ui_TelaCadastroVendedor.h"
 #include "Controller/ListenerVendedor.h"
 #include <QDebug>
+#include <QStyle>
+#include <QDesktopWidget>
 
 TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVendedor)
 {
     ui->setupUi(this);
+    this->setGeometry(
+        QStyle::alignedRect(
+            Qt::LeftToRight,
+            Qt::AlignCenter,
+            this->size(),
+            qApp->desktop()->availableGeometry()
+        )
+    );
 }
 
 TelaCadastroVendedor::~TelaCadastroVendedor()
