@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -41,10 +42,6 @@ void LoginWindow::on_pushButton_2_clicked()
 {
     string password = "1019";
 
-    //qDebug() << "a" + ui->editPassword->toPlainText() << endl;
-
-
-
     if(ui->lineEdit_senha->text().toStdString() == password)
     {
         TelaPrincipal* tp = new TelaPrincipal();
@@ -55,8 +52,7 @@ void LoginWindow::on_pushButton_2_clicked()
     }
     else
     {
-        TelaCadastroGerente* tcg = new TelaCadastroGerente();
-        tcg->show();
+       QMessageBox::critical(this,tr("Login não autorizado!"),tr("Login não atorizado!\nPorfavor, verifique seu usuário e senha."));
     }
 }
 
@@ -69,10 +65,6 @@ void LoginWindow::on_lineEdit_senha_returnPressed()
 {
     string password = "1019";
 
-    //qDebug() << "a" + ui->editPassword->toPlainText() << endl;
-
-
-
     if(ui->lineEdit_senha->text().toStdString() == password)
     {
         TelaPrincipal* tp = new TelaPrincipal();
@@ -83,8 +75,7 @@ void LoginWindow::on_lineEdit_senha_returnPressed()
     }
     else
     {
-        TelaCadastroGerente* tcg = new TelaCadastroGerente();
-        tcg->show();
+       QMessageBox::critical(this,tr("Login não autorizado!"),tr("Login não atorizado!\nPorfavor, verifique seu usuário e senha."));
     }
 }
 
