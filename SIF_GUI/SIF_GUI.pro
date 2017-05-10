@@ -1,54 +1,15 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2017-04-24T22:56:13
-#
-#-------------------------------------------------
+FORMS += \
+    View/TelaCadastroAcessorio.ui \
+    View/TelaCadastroCliente.ui \
+    View/TelaCadastroGerente.ui \
+    View/TelaCadastroVeiculo.ui \
+    View/TelaCadastroVenda.ui \
+    View/TelaCadastroVendedor.ui \
+    View/TelaListagem.ui \
+    View/TelaLogin.ui \
+    View/TelaPrincipal.ui
 
-QT += core gui
-QT += core
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = SIF_GUI
-TEMPLATE = app
-
-SOURCES += main.cpp\
-    Controller/ListenerAcessorio.cpp \
-    Controller/ListenerCliente.cpp \
-    Controller/ListenerGerente.cpp \
-    Controller/ListenerLogin.cpp \
-    Controller/ListenerVeiculo.cpp \
-    Controller/ListenerVenda.cpp \
-    Controller/ListenerVendedor.cpp \
-    Model/Acessorio.cpp \
-    Model/Cliente.cpp \
-    Model/DAOAcessorio.cpp \
-    Model/DAOCliente.cpp \
-    Model/DAOGerente.cpp \
-    Model/DAOVeiculo.cpp \
-    Model/DAOVenda.cpp \
-    Model/DAOVendedor.cpp \
-    Model/Funcionario.cpp \
-    Model/Gerente.cpp \
-    Model/Pessoa.cpp \
-    Model/Veiculo.cpp \
-    Model/Venda.cpp \
-    Model/Vendedor.cpp \
-    View/TelaCadastro.cpp \
-    View/TelaConsulta.cpp \
-    View/TelaEdicao.cpp \
-    View/TelaListagem.cpp \
-    View/TelaPrincipal.cpp \
-    View/TelaRemocao.cpp \
-    View/TelaLogin.cpp \
-    View/TelaCadastroGerente.cpp \
-    View/TelaCadastroVendedor.cpp \
-    View/TelaCadastroCliente.cpp \
-    View/TelaCadastroVeiculo.cpp \
-    View/TelaCadastroAcessorio.cpp \
-    View/TelaCadastroVenda.cpp
-
-HEADERS  += \
+HEADERS += \
     Controller/ListenerAcessorio.h \
     Controller/ListenerCliente.h \
     Controller/ListenerGerente.h \
@@ -70,27 +31,53 @@ HEADERS  += \
     Model/Veiculo.h \
     Model/Venda.h \
     Model/Vendedor.h \
-    View/TelaCadastro.h \
-    View/TelaConsulta.h \
-    View/TelaEdicao.h \
-    View/TelaListagem.h \
-    View/TelaPrincipal.h \
-    View/TelaRemocao.h \
-    View/TelaLogin.h \
-    View/TelaCadastroGerente.h \
-    View/TelaCadastroVendedor.h \
-    View/TelaCadastroCliente.h \
-    View/TelaCadastroVeiculo.h \
-    View/TelaCadastroAcessorio.h \
-    View/TelaCadastroVenda.h
+    ViewModel/TelaCadastro.h \
+    ViewModel/TelaCadastroAcessorio.h \
+    ViewModel/TelaCadastroCliente.h \
+    ViewModel/TelaCadastroGerente.h \
+    ViewModel/TelaCadastroVeiculo.h \
+    ViewModel/TelaCadastroVenda.h \
+    ViewModel/TelaCadastroVendedor.h \
+    ViewModel/TelaConsulta.h \
+    ViewModel/TelaEdicao.h \
+    ViewModel/TelaListagem.h \
+    ViewModel/TelaLogin.h \
+    ViewModel/TelaPrincipal.h \
+    ViewModel/TelaRemocao.h
 
-FORMS    += \
-    View/TelaPrincipal.ui \
-    View/TelaLogin.ui \
-    View/TelaCadastroGerente.ui \
-    View/TelaCadastroVendedor.ui \
-    View/TelaCadastroCliente.ui \
-    View/TelaCadastroVeiculo.ui \
-    View/TelaCadastroAcessorio.ui \
-    View/TelaCadastroVenda.ui \
-    View/TelaListagem.ui
+SOURCES += \
+    Controller/ListenerAcessorio.cpp \
+    Controller/ListenerCliente.cpp \
+    Controller/ListenerGerente.cpp \
+    Controller/ListenerLogin.cpp \
+    Controller/ListenerVeiculo.cpp \
+    Controller/ListenerVenda.cpp \
+    Controller/ListenerVendedor.cpp \
+    Model/Acessorio.cpp \
+    Model/Cliente.cpp \
+    Model/DAOAcessorio.cpp \
+    Model/DAOCliente.cpp \
+    Model/DAOGerente.cpp \
+    Model/DAOVeiculo.cpp \
+    Model/DAOVenda.cpp \
+    Model/DAOVendedor.cpp \
+    Model/Funcionario.cpp \
+    Model/Gerente.cpp \
+    Model/Pessoa.cpp \
+    Model/Veiculo.cpp \
+    Model/Venda.cpp \
+    Model/Vendedor.cpp \
+    ViewModel/TelaCadastro.cpp \
+    ViewModel/TelaCadastroAcessorio.cpp \
+    ViewModel/TelaCadastroCliente.cpp \
+    ViewModel/TelaCadastroGerente.cpp \
+    ViewModel/TelaCadastroVeiculo.cpp \
+    ViewModel/TelaCadastroVenda.cpp \
+    ViewModel/TelaCadastroVendedor.cpp \
+    ViewModel/TelaConsulta.cpp \
+    ViewModel/TelaEdicao.cpp \
+    ViewModel/TelaListagem.cpp \
+    ViewModel/TelaLogin.cpp \
+    ViewModel/TelaPrincipal.cpp \
+    ViewModel/TelaRemocao.cpp \
+    main.cpp

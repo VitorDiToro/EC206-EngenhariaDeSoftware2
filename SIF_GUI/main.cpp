@@ -13,7 +13,7 @@
 #include "Controller/ListenerVenda.h"
 #include "Controller/ListenerVeiculo.h"
 #include "Controller/ListenerVendedor.h"
-#include "View/TelaLogin.h"
+#include "ViewModel/TelaLogin.h"
 
 void mainMenu(void);
 void genericMenu(void);
@@ -25,7 +25,6 @@ int main(int argc, char *argv[])
     lw->show();
 
     qDebug() << "aarrumamalae";
-
 
     return a.exec();
 
