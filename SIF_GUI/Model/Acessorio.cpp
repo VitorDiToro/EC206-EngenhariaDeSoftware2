@@ -6,13 +6,12 @@ vector<Acessorio*> stock_acessorios;
 
 Acessorio::Acessorio()
 {
-    cout << "nome: ";
-    cin >> this->nome;
-    cout << "preco: ";
-    cin >> this->preco;
-    cout << "descricao: ";
-    cin >> this->descricao;
-
+//    cout << "nome: ";
+//    cin >> this->nome;
+//    cout << "preco: ";
+//    cin >> this->preco;
+//    cout << "descricao: ";
+//    cin >> this->descricao;
     id = total++;
 }
 
@@ -79,5 +78,6 @@ void Acessorio::print_details()
 {
     print();
 
+    cout << "preco: " << preco << endl;
     cout << "descricao: " << descricao << endl;
 }

@@ -1,9 +1,12 @@
 #include "TelaCadastroGerente.h"
 #include "ui_TelaCadastroGerente.h"
-#include "Controller/ListenerGerente.h"
+#include "Model/Gerente.h"
 #include <QDebug>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <iostream>
+
+using namespace std;
 
 TelaCadastroGerente::TelaCadastroGerente(QWidget *parent) :
     QFrame(parent),
@@ -41,8 +44,28 @@ void TelaCadastroGerente::on_pushButton_clicked()
     {
         qDebug() << "vai" << endl;
 
-        Gerente_cadastrar(nome, cpf, telefone, endereco, salario, login, senha, unidadeQueGerencia);
+        cout << endl << "Cadastrar Gerente" << endl;
+        //Gerente* g = new Gerente();
+        if(Gerente::getTotal() == 0)
+        {
+            Gerente* g = Gerente::getInstance();
+            g->setNome(nome);
+            g->setCpf(cpf);
+            g->setTelefone(telefone);
+            g->setEndereco(endereco);
+            g->setSalario(salario);
+            g->setLogin(login);
+            g->setSenha(senha);
+            g->setUnidadeQueGerencia(unidadeQueGerencia);
 
+            g->print_details();
+
+            gerentes.push_back(g);
+        }
+        else
+        {
+            cout << "Gerente ja cadastrado." << endl;
+        }
 
         this->close();
         delete this;

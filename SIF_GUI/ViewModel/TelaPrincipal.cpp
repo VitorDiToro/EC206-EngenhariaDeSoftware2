@@ -7,17 +7,18 @@
 #include "ViewModel/TelaCadastroAcessorio.h"
 #include "ViewModel/TelaCadastroVenda.h"
 #include "ViewModel/TelaListagem.h"
-#include "Controller/ListenerVeiculo.h"
-#include "Controller/ListenerAcessorio.h"
-#include "Controller/ListenerGerente.h"
-#include "Controller/ListenerVendedor.h"
-#include "Controller/ListenerCliente.h"
-#include "Controller/ListenerVenda.h"
+#include "Model/Acessorio.h"
+#include "Model/Cliente.h"
+#include "Model/Gerente.h"
+#include "Model/Veiculo.h"
+#include "Model/Venda.h"
+#include "Model/Vendedor.h"
 
-#include "Controller/ListenerGerente.h"
-#include "Controller/ListenerVendedor.h"
 #include <QStyle>
 #include <QDesktopWidget>
+#include <iostream>
+
+using namespace std;
 
 TelaPrincipal::TelaPrincipal(QWidget *parent) :
     QMainWindow(parent),
@@ -79,7 +80,17 @@ void TelaPrincipal::on_actionCadastrar_triggered()
 
 void TelaPrincipal::on_actionListar_triggered()
 {
-    Venda_listar();
+    unsigned int i;
+
+    cout << endl << "Listar vendas" << endl;
+
+    cout << vendas.size() << " vendas cadastradas" << endl;
+
+    for (i = 0; i < vendas.size(); ++i)
+    {
+        cout << endl << "Venda " << i+1 << endl;
+        vendas[i]->print();
+    }
 }
 
 void TelaPrincipal::on_actionListar_2_triggered()
@@ -88,25 +99,75 @@ void TelaPrincipal::on_actionListar_2_triggered()
     tl->show();
     tl->activateWindow();
 
-    Veiculo_listar();
+    unsigned int i;
+
+    cout << endl << "Listar Veiculo" << endl;
+
+    cout << veiculos.size() << " veiculos cadastrados" << endl;
+
+    for (i = 0; i < veiculos.size(); ++i)
+    {
+        cout << endl << "Veiculo " << i+1 << endl;
+        veiculos[i]->print();
+    }
 }
 
 void TelaPrincipal::on_actionListar_3_triggered()
 {
-    Acessorio_listar();
+    unsigned int i;
+
+    cout << endl << "Listar Acessorios" << endl;
+
+    cout << stock_acessorios.size() << " acessorios cadastrados" << endl;
+
+    for (i = 0; i < stock_acessorios.size(); ++i)
+    {
+        cout << endl << "Acessorio " << i+1 << endl;
+        stock_acessorios[i]->print();
+    }
 }
 
 void TelaPrincipal::on_actionListar_4_triggered()
 {
-    Cliente_listar();
+    unsigned int i;
+
+    cout << endl << "Listar Clientes" << endl;
+
+    cout << clientes.size() << " clientes cadastrados" << endl;
+
+    for (i = 0; i < clientes.size(); ++i)
+    {
+        cout << endl << "Cliente " << i+1 << endl;
+        clientes[i]->print();
+    }
 }
 
 void TelaPrincipal::on_actionListar_5_triggered()
 {
-    Vendedor_listar();
+    unsigned int i;
+
+    cout << endl << "Listar Vendedor" << endl;
+
+    cout << vendedores.size() << " vendedores cadastrados" << endl;
+
+    for (i = 0; i < vendedores.size(); ++i)
+    {
+        cout << endl << "Vendedor " << i+1 << endl;
+        vendedores[i]->print();
+    }
 }
 
 void TelaPrincipal::on_actionListar_6_triggered()
 {
-    Gerente_listar();
+    unsigned int i;
+
+    cout << endl << "Listar Gerentes" << endl;
+
+    cout << gerentes.size() << " gerentes cadastrados" << endl;
+
+    for (i = 0; i < gerentes.size(); ++i)
+    {
+        cout << endl << "Gerente " << i+1 << endl;
+        gerentes[i]->print();
+    }
 }

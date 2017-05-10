@@ -10,13 +10,6 @@ FORMS += \
     View/TelaPrincipal.ui
 
 HEADERS += \
-    Controller/ListenerAcessorio.h \
-    Controller/ListenerCliente.h \
-    Controller/ListenerGerente.h \
-    Controller/ListenerLogin.h \
-    Controller/ListenerVeiculo.h \
-    Controller/ListenerVenda.h \
-    Controller/ListenerVendedor.h \
     Model/Acessorio.h \
     Model/Cliente.h \
     Model/DAOAcessorio.h \
@@ -46,13 +39,6 @@ HEADERS += \
     ViewModel/TelaRemocao.h
 
 SOURCES += \
-    Controller/ListenerAcessorio.cpp \
-    Controller/ListenerCliente.cpp \
-    Controller/ListenerGerente.cpp \
-    Controller/ListenerLogin.cpp \
-    Controller/ListenerVeiculo.cpp \
-    Controller/ListenerVenda.cpp \
-    Controller/ListenerVendedor.cpp \
     Model/Acessorio.cpp \
     Model/Cliente.cpp \
     Model/DAOAcessorio.cpp \

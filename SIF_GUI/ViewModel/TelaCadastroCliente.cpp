@@ -2,7 +2,7 @@
 #include <QDebug>
 #include "TelaCadastroCliente.h"
 #include "ui_TelaCadastroCliente.h"
-#include "Controller/ListenerCliente.h"
+#include "Model/Cliente.h"
 #include <QStyle>
 #include <QDesktopWidget>
 
@@ -39,7 +39,17 @@ void TelaCadastroCliente::on_pushButton_clicked()
     {
         qDebug() << "vai" << endl;
 
-        Cliente_cadastrar(nome, cpf, telefone, endereco);
+
+        cout << endl << "Cadastrar Cliente" << endl;
+        Cliente* c = new Cliente();
+        c->setNome(nome);
+        c->setCpf(cpf);
+        c->setTelefone(telefone);
+        c->setEndereco(endereco);
+
+        c->print_details();
+
+        clientes.push_back(c);
 
         this->close();
         delete this;

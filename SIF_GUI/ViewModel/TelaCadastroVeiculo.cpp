@@ -3,7 +3,7 @@
 
 #include "TelaCadastroVeiculo.h"
 #include "ui_TelaCadastroVeiculo.h"
-#include "Controller/ListenerVeiculo.h"
+#include "Model/Veiculo.h"
 #include <QStyle>
 #include <QDesktopWidget>
 
@@ -40,8 +40,16 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
     {
         qDebug() << "vai" << endl;
 
-        Veiculo_cadastrar(modelo, cor, ano, preco);
+        cout << endl << "Cadastrar veiculo" << endl;
+        Veiculo* v = new Veiculo();
+        v->setModelo(modelo);
+        v->setCor(cor);
+        v->setAno(ano);
+        v->setPreco(preco);
 
+        v->print_details();
+
+        veiculos.push_back(v);
 
         this->close();
         delete this;
