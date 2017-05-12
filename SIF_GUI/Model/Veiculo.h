@@ -17,6 +17,7 @@ class Veiculo
 
         static int total;
         int id;
+
     public:
         Veiculo();
         ~Veiculo();
@@ -30,10 +31,11 @@ class Veiculo
         float getPreco() const;
         void setPreco(float value);
 
-        static int getTotal();
+        //static int getTotal();
         int getId() const;
-        void setId(int value);
-
+        void setId(int value); // Utilizado apenas para testes.
+                               // O 'id' é definido automaticamente pleo bando.
+        //Métodos para debug
         void print();
         void print_details();
 };

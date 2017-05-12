@@ -9,7 +9,7 @@ vector<Veiculo*> veiculos;
 
 Veiculo::Veiculo()
 {
-    cout << "Construtor de Veiculo" << endl;
+//    cout << "Construtor de Veiculo" << endl;
 
 //    cout << "modelo: ";
 //    cin >> this->modelo;
@@ -27,7 +27,7 @@ Veiculo::Veiculo()
 
 Veiculo::~Veiculo()
 {
-    cout << "destructor" << endl;
+//  cout << "destructor" << endl;
 
     modelo = "";
     cor = "";
@@ -38,10 +38,14 @@ Veiculo::~Veiculo()
     total--;
 }
 
-int Veiculo::getTotal()
-{
-    return total;
-}
+/* ======== XXX ========
+ Samuel, por que existe este método?
+ A ideia era utiliza-lo p/ o que exatamente?
+========================*/
+//int Veiculo::getTotal()
+//{
+//    return total;
+//}
 
 string Veiculo::getModelo() const
 {
