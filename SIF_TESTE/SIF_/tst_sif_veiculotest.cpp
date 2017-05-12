@@ -25,9 +25,6 @@ private Q_SLOTS:
 
     void testCase_setId();
     void testCase_getId();
-
-    void testCase_print();
-    void testCase_printDetails();
 };
 
 SIF_VeiculoTest::SIF_VeiculoTest()
