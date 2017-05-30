@@ -1,3 +1,11 @@
+QT += core gui
+QT += core
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = SIF_GUI
+TEMPLATE = app
+
 FORMS += \
     View/TelaCadastroAcessorio.ui \
     View/TelaCadastroCliente.ui \
