@@ -2,6 +2,8 @@
 #define DAOVEICULO_H
 
 #include <vector>
+#include <QtSql/QSqlQuery>
+
 #include "Veiculo.h"
 
 

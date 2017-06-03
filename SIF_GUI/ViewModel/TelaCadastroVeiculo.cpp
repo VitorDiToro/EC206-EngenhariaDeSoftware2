@@ -1,12 +1,14 @@
 #include <iostream>
 #include <QDebug>
 
+
+#include <QStyle>
+#include <QDesktopWidget>
+
 #include "TelaCadastroVeiculo.h"
 #include "ui_TelaCadastroVeiculo.h"
 #include "Model/Veiculo.h"
-#include <QStyle>
-#include <QDesktopWidget>
-#include <QtSql/QSqlQuery>
+#include "Model/DAOVeiculo.h"
 
 using namespace std;
 
@@ -52,16 +54,7 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
 
         veiculos.push_back(v);
 
-        QSqlQuery query;
-        query.prepare("INSERT INTO `sifDB`.`veiculo` (`veiculo_modelo`, `veiculo_preco`, `veiculo_quantidade`, `veiculo_cor`, `veiculo_ano`, `veiculo_ativo`)"
-                      "VALUES (?, ?, ?, ?, ?, ?);");
-        query.addBindValue(modelo);
-        query.addBindValue(preco);
-        query.addBindValue(3);
-        query.addBindValue(cor);
-        query.addBindValue(ano);
-        query.addBindValue(true);
-        query.exec();
+        DAOVeiculo::getInstance()->addVeiculo(v);
 
         this->close();
         delete this;
