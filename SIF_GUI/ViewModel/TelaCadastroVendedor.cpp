@@ -1,9 +1,12 @@
 #include "TelaCadastroVendedor.h"
 #include "ui_TelaCadastroVendedor.h"
-#include "Controller/ListenerVendedor.h"
+#include "Model/Vendedor.h"
 #include <QDebug>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <iostream>
+
+using namespace std;
 
 TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent) :
     QFrame(parent),
@@ -42,7 +45,21 @@ void TelaCadastroVendedor::on_pushButton_3_clicked()
     {
         qDebug() << "vai" << endl;
 
-        Vendedor_cadastrar(nome, cpf, telefone, endereco, salario, login, senha, unidadeDeTrabalho, comissao);
+        qDebug() << endl << "Cadastrar Vendedor" << endl;
+        Vendedor* v = new Vendedor();
+        v->setNome(nome);
+        v->setCpf(cpf);
+        v->setTelefone(telefone);
+        v->setEndereco(endereco);
+        v->setSalario(salario);
+        v->setLogin(login);
+        v->setSenha(senha);
+        v->setUnidadeDeTrabalho(unidadeDeTrabalho);
+        v->setComissao(comissao);
+
+        v->print_details();
+
+        vendedores.push_back(v);
 
         this->close();
         delete this;
