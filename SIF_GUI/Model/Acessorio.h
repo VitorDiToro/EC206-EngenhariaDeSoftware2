@@ -3,15 +3,17 @@
 
 #include<iostream>
 #include <vector>
+#include <QString>
+#include <QDebug>
 
 using namespace std;
 
 class Acessorio
 {
     private:
-        string nome;
+        QString nome;
         float preco;
-        string descricao;
+        QString descricao;
 
         static int total;
         int id;
@@ -19,12 +21,12 @@ class Acessorio
         Acessorio();
         ~Acessorio();
 
-        string getNome() const;
-        void setNome(const string &value);
+        QString getNome() const;
+        void setNome(const QString &value);
         float getPreco() const;
         void setPreco(float value);
-        string getDescricao() const;
-        void setDescricao(const string &value);
+        QString getDescricao() const;
+        void setDescricao(const QString &value);
 
         static int getTotal();
         int getId() const;

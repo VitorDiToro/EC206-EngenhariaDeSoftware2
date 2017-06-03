@@ -6,11 +6,11 @@ vector<Acessorio*> stock_acessorios;
 
 Acessorio::Acessorio()
 {
-//    cout << "nome: ";
+//    qDebug() << "nome: ";
 //    cin >> this->nome;
-//    cout << "preco: ";
+//    qDebug() << "preco: ";
 //    cin >> this->preco;
-//    cout << "descricao: ";
+//    qDebug() << "descricao: ";
 //    cin >> this->descricao;
     id = total++;
 }
@@ -23,12 +23,12 @@ Acessorio::~Acessorio()
     total--;
 }
 
-string Acessorio::getNome() const
+QString Acessorio::getNome() const
 {
     return nome;
 }
 
-void Acessorio::setNome(const string &value)
+void Acessorio::setNome(const QString &value)
 {
     nome = value;
 }
@@ -43,12 +43,12 @@ void Acessorio::setPreco(float value)
     preco = value;
 }
 
-string Acessorio::getDescricao() const
+QString Acessorio::getDescricao() const
 {
     return descricao;
 }
 
-void Acessorio::setDescricao(const string &value)
+void Acessorio::setDescricao(const QString &value)
 {
     descricao = value;
 }
@@ -70,14 +70,14 @@ void Acessorio::setId(int value)
 
 void Acessorio::print()
 {
-    cout << "id: " << id << endl;
-    cout << "nome: " << nome << endl;
+    qDebug() << "id: " << id << endl;
+    qDebug() << "nome: " << nome << endl;
 }
 
 void Acessorio::print_details()
 {
     print();
 
-    cout << "preco: " << preco << endl;
-    cout << "descricao: " << descricao << endl;
+    qDebug() << "preco: " << preco << endl;
+    qDebug() << "descricao: " << descricao << endl;
 }

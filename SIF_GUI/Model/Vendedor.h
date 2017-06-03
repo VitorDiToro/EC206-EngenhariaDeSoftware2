@@ -11,7 +11,7 @@ using namespace std;
 class Vendedor : public Funcionario
 {
     public:
-        string unidadeDeTrabalho;
+        QString unidadeDeTrabalho;
         float comissao;
 
         static int total;
@@ -19,8 +19,8 @@ class Vendedor : public Funcionario
         Vendedor();
         ~Vendedor();
 
-        string getUnidadeDeTrabalho() const;
-        void setUnidadeDeTrabalho(const string &value);
+        QString getUnidadeDeTrabalho() const;
+        void setUnidadeDeTrabalho(const QString &value);
         float getComissao() const;
         void setComissao(float value);
 

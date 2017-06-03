@@ -12,7 +12,7 @@ class Gerente : public Funcionario
 {
     private:
         static Gerente* INSTANCE;
-        string unidadeQueGerencia;
+        QString unidadeQueGerencia;
 
         static int total;
 
@@ -22,8 +22,8 @@ class Gerente : public Funcionario
 
         static Gerente* getInstance();
 
-        string getUnidadeQueGerencia() const;
-        void setUnidadeQueGerencia(const string &value);
+        QString getUnidadeQueGerencia() const;
+        void setUnidadeQueGerencia(const QString &value);
 
         static int getTotal();
 

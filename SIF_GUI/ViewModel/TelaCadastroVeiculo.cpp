@@ -41,10 +41,10 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
     {
         qDebug() << "vai" << endl;
 
-        cout << endl << "Cadastrar veiculo" << endl;
+        qDebug() << endl << "Cadastrar veiculo" << endl;
         Veiculo* v = new Veiculo();
-        v->setModelo(modelo.toStdString());
-        v->setCor(cor.toStdString());
+        v->setModelo(modelo);
+        v->setCor(cor);
         v->setAno(ano);
         v->setPreco(preco);
 

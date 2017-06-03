@@ -48,12 +48,13 @@ void LoginWindow::on_pushButton_2_clicked()
         tp->show();
 
         this->close();
-        delete this;
     }
     else
     {
        QMessageBox::critical(this,tr("Login não autorizado!"),tr("Login não atorizado!\nPorfavor, verifique seu usuário e senha."));
     }
+
+    delete this;
 }
 
 void LoginWindow::on_editPassword_selectionChanged()
@@ -71,7 +72,7 @@ void LoginWindow::on_lineEdit_senha_returnPressed()
         tp->show();
 
         this->close();
-        delete this;
+
     }
     else
     {

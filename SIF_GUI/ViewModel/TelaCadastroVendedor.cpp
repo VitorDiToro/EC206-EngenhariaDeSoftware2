@@ -30,18 +30,18 @@ TelaCadastroVendedor::~TelaCadastroVendedor()
 
 void TelaCadastroVendedor::on_pushButton_3_clicked()
 {
-    string nome = ui->lineEdit->text().toStdString();
-    string cpf = ui->lineEdit_2->text().toStdString();
-    string telefone = ui->lineEdit_3->text().toStdString();
-    string endereco = ui->lineEdit_4->text().toStdString();
+    QString nome = ui->lineEdit->text();
+    QString cpf = ui->lineEdit_2->text();
+    QString telefone = ui->lineEdit_3->text();
+    QString endereco = ui->lineEdit_4->text();
     float salario = ui->lineEdit_5->text().toFloat();
-    string login = ui->lineEdit_6->text().toStdString();
-    string senha = ui->lineEdit_7->text().toStdString();
-    string unidadeDeTrabalho = ui->lineEdit_8->text().toStdString();
+    QString login = ui->lineEdit_6->text();
+    QString senha = ui->lineEdit_7->text();
+    QString unidadeDeTrabalho = ui->lineEdit_8->text();
     float comissao = ui->lineEdit_9->text().toFloat();
 
-    if(!nome.empty() && !cpf.empty() && !telefone.empty() && !endereco.empty() && salario>0 && !login.empty() &&
-            !senha.empty() && !unidadeDeTrabalho.empty() && comissao > 0)
+    if(!nome.isEmpty() && !cpf.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty() && salario>0 && !login.isEmpty() &&
+            !senha.isEmpty() && !unidadeDeTrabalho.isEmpty() && comissao > 0)
     {
         qDebug() << "vai" << endl;
 

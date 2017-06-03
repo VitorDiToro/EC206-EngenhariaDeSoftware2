@@ -30,17 +30,17 @@ TelaCadastroCliente::~TelaCadastroCliente()
 
 void TelaCadastroCliente::on_pushButton_clicked()
 {
-    string nome = ui->lineEdit->text().toStdString();
-    string cpf = ui->lineEdit_2->text().toStdString();
-    string telefone = ui->lineEdit_3->text().toStdString();
-    string endereco = ui->lineEdit_4->text().toStdString();
+    QString nome = ui->lineEdit->text();
+    QString cpf = ui->lineEdit_2->text();
+    QString telefone = ui->lineEdit_3->text();
+    QString endereco = ui->lineEdit_4->text();
 
-    if(!nome.empty() && !cpf.empty() && !telefone.empty() && !endereco.empty())
+    if(!nome.isEmpty() && !cpf.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty())
     {
         qDebug() << "vai" << endl;
 
 
-        cout << endl << "Cadastrar Cliente" << endl;
+        qDebug() << endl << "Cadastrar Cliente" << endl;
         Cliente* c = new Cliente();
         c->setNome(nome);
         c->setCpf(cpf);

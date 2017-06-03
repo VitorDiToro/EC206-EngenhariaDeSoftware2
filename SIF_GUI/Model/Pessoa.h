@@ -1,6 +1,8 @@
 #ifndef PESSOA_H
 #define PESSOA_H
 
+#include <QString>
+#include <QDebug>
 #include <iostream>
 
 using namespace std;
@@ -8,30 +10,30 @@ using namespace std;
 class Pessoa
 {
     private:
-        string nome;
-        string cpf;
-        string telefone;
-        string endereco;
+        QString nome;
+        QString cpf;
+        QString telefone;
+        QString endereco;
 
         static int total;
         int id;
     public:
         Pessoa();
-        Pessoa(string n, string c, string t, string e);
+        Pessoa(QString n, QString c, QString t, QString e);
         ~Pessoa();
 
-        string getNome() const;
-        void setNome(const string &value);
-        string getDataDeNascimento() const;
-        void setDataDeNascimento(const string &value);
-        string getCpf() const;
-        void setCpf(const string &value);
-        string getTelefone() const;
-        void setTelefone(const string &value);
-        string getEndereco() const;
-        void setEndereco(const string &value);
-        string getEmail() const;
-        void setEmail(const string &value);
+        QString getNome() const;
+        void setNome(const QString &value);
+        QString getDataDeNascimento() const;
+        void setDataDeNascimento(const QString &value);
+        QString getCpf() const;
+        void setCpf(const QString &value);
+        QString getTelefone() const;
+        void setTelefone(const QString &value);
+        QString getEndereco() const;
+        void setEndereco(const QString &value);
+        QString getEmail() const;
+        void setEmail(const QString &value);
 
         static int getTotal();
         int getId() const;

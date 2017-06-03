@@ -6,7 +6,7 @@ vector<Cliente*> clientes;
 
 Cliente::Cliente()
 {
-    //cout << "cliente" << endl;
+    //qDebug() << "cliente" << endl;
     vendas.clear();
     qtdVendas = 0;
     

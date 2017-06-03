@@ -8,7 +8,7 @@ vector<Gerente*> gerentes;
 
 Gerente::Gerente()
 {
-    //cout << "unidade que gerencia: ";
+    //qDebug() << "unidade que gerencia: ";
     //cin >> unidadeQueGerencia;
 
     setId(total++);
@@ -29,12 +29,12 @@ Gerente* Gerente::getInstance()
     return INSTANCE;
 }
 
-string Gerente::getUnidadeQueGerencia() const
+QString Gerente::getUnidadeQueGerencia() const
 {
     return unidadeQueGerencia;
 }
 
-void Gerente::setUnidadeQueGerencia(const string &value)
+void Gerente::setUnidadeQueGerencia(const QString &value)
 {
     unidadeQueGerencia = value;
 }
@@ -53,5 +53,5 @@ void Gerente::print_details()
 {
     Funcionario::print_details();
 
-    cout << "unidade que gerencia: " << unidadeQueGerencia << endl;
+    qDebug() << "unidade que gerencia: " << unidadeQueGerencia << endl;
 }

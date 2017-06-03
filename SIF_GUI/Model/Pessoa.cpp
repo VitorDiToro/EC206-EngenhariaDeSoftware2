@@ -5,29 +5,29 @@ int Pessoa::total = 0;
 
 Pessoa::Pessoa()
 {
-    //cout << "pessoa" << endl;
-//    cout << "nome: ";
+    //qDebug() << "pessoa" << endl;
+//    qDebug() << "nome: ";
 //    cin >> nome;
 //    getchar();
-//    cout << "cpf: ";
+//    qDebug() << "cpf: ";
 //    cin >> cpf;
-//    cout << "telefone: ";
+//    qDebug() << "telefone: ";
 //    cin >> telefone;
-//    cout << "endereco: ";
+//    qDebug() << "endereco: ";
 //    cin >> endereco;
     id = total++;
 };
 
 Pessoa::~Pessoa()
 {
-    //cout << "Pessoa destructor" << endl;
+    //qDebug() << "Pessoa destructor" << endl;
     nome = "";
     cpf = "";
     telefone = "";
     endereco = "";
 };
 
-Pessoa::Pessoa(string n, string c, string t, string e)
+Pessoa::Pessoa(QString n, QString c, QString t, QString e)
 {
     nome = n;
     cpf = c;
@@ -35,42 +35,42 @@ Pessoa::Pessoa(string n, string c, string t, string e)
     endereco = e;
 };
 
-string Pessoa::getNome() const
+QString Pessoa::getNome() const
 {
     return nome;
 }
 
-void Pessoa::setNome(const string &value)
+void Pessoa::setNome(const QString &value)
 {
     nome = value;
 }
 
-string Pessoa::getCpf() const
+QString Pessoa::getCpf() const
 {
     return cpf;
 }
 
-void Pessoa::setCpf(const string &value)
+void Pessoa::setCpf(const QString &value)
 {
     cpf = value;
 }
 
-string Pessoa::getTelefone() const
+QString Pessoa::getTelefone() const
 {
     return telefone;
 }
 
-void Pessoa::setTelefone(const string &value)
+void Pessoa::setTelefone(const QString &value)
 {
     telefone = value;
 }
 
-string Pessoa::getEndereco() const
+QString Pessoa::getEndereco() const
 {
     return endereco;
 }
 
-void Pessoa::setEndereco(const string &value)
+void Pessoa::setEndereco(const QString &value)
 {
     endereco = value;
 }
@@ -92,15 +92,15 @@ void Pessoa::setId(int value)
 
 void Pessoa::print()
 {
-    cout << "id: " << this->id << endl;
-    cout << "nome: " << this->nome << endl;
+    qDebug() << "id: " << this->id << endl;
+    qDebug() << "nome: " << this->nome << endl;
 }
 
 void Pessoa::print_details()
 {
-    cout << "id: " << this->id << endl;
-    cout << "nome: " << this->getNome() << endl;
-    cout << "cpf: " << this->getCpf() << endl;
-    cout << "telefone: " << this->getTelefone() << endl;
-    cout << "endereco: " << this->getEndereco() << endl;
+    qDebug() << "id: " << this->id << endl;
+    qDebug() << "nome: " << this->getNome() << endl;
+    qDebug() << "cpf: " << this->getCpf() << endl;
+    qDebug() << "telefone: " << this->getTelefone() << endl;
+    qDebug() << "endereco: " << this->getEndereco() << endl;
 }

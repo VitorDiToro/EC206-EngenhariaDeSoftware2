@@ -35,17 +35,17 @@ void TelaCadastroAcessorio::on_pushButton_2_clicked()
 
 void TelaCadastroAcessorio::on_pushButton_clicked()
 {
-    string nome = ui->lineEdit->text().toStdString();
+    QString nome = ui->lineEdit->text();
     float preco = ui->lineEdit_2->text().toFloat();
-    string descricao = ui->lineEdit_3->text().toStdString();
+    QString descricao = ui->lineEdit_3->text();
 
-    cout << preco << endl;
+    qDebug() << preco << endl;
 
-    if(!nome.empty() && preco >= 0 && !descricao.empty())
+    if(!nome.isEmpty() && preco >= 0 && !descricao.isEmpty())
     {
         qDebug() << "vai" << endl;
 
-        cout << endl << "Cadastrar Acessorio" << endl;
+        qDebug() << endl << "Cadastrar Acessorio" << endl;
         Acessorio* a = new Acessorio();
         a->setNome(nome);
         a->setPreco(preco);

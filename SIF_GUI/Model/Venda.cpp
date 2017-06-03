@@ -10,7 +10,7 @@ Venda::Venda()
 {
     int id;
     
-    cout << "id cliente: ";
+    qDebug() << "id cliente: ";
     cin >> id;
     
 //    if((unsigned int)id < clientes.size())
@@ -18,20 +18,20 @@ Venda::Venda()
 //        cliente = clientes[id];
 //        cliente->incQtdVendas();
 
-//        cout << "ok cliente" << endl;
+//        qDebug() << "ok cliente" << endl;
 //    }
 //    else
 //    {
 //        throw FAIL;
 //    }
 
-//    cout << "id vendedor: ";
+//    qDebug() << "id vendedor: ";
 //    cin >> id;
 
 //    if((unsigned int)id < vendedores.size())
 //    {
 //        vendedor = vendedores[id];
-//        cout << "ok vendedor" << endl;
+//        qDebug() << "ok vendedor" << endl;
 //    }
 //    else
 //    {
@@ -39,7 +39,7 @@ Venda::Venda()
 //        throw FAIL;
 //    }
 
-//    cout << "id veiculo: ";
+//    qDebug() << "id veiculo: ";
 //    cin >> id;
 
 //    if((unsigned int)id < veiculos.size())
@@ -47,7 +47,7 @@ Venda::Venda()
 //        veiculo = veiculos[id];
 //        //veiculos.erase(veiculos.begin() + id);
 //        valor = veiculo->getPreco();
-//        cout << "ok veiculo" << endl;
+//        qDebug() << "ok veiculo" << endl;
 //    }
 //    else
 //    {
@@ -56,21 +56,21 @@ Venda::Venda()
 //        valor = 0;
 //        throw FAIL;
 //    }
-    cout << "data: ";
+    qDebug() << "data: ";
 
     acessorios.clear();
 
     do
     {
-        cout << "id acessorio (-1 para sair): ";
+        qDebug() << "id acessorio (-1 para sair): ";
         cin >> id;
 
         if(id < Acessorio::getTotal() && id >= 0)
         {
-            cout << "eh menor que o total." << endl;
+            qDebug() << "eh menor que o total." << endl;
             this->acessorios.push_back(stock_acessorios[id]);
             valor += acessorios[id]->getPreco();
-            cout << "ok acessorio" << endl;
+            qDebug() << "ok acessorio" << endl;
         }
     } while(id != -1);
 
@@ -141,12 +141,12 @@ void Venda::setValor(float value)
     valor = value;
 }
 
-string Venda::getData() const
+QString Venda::getData() const
 {
     return data;
 }
 
-void Venda::setData(const string &value)
+void Venda::setData(const QString &value)
 {
     data = value;
 }
@@ -168,64 +168,64 @@ void Venda::setId(int value)
 
 void Venda::print()
 {
-    cout << "######################################" << endl;
-    cout << "id: " << id << endl;
+    qDebug() << "######################################" << endl;
+    qDebug() << "id: " << id << endl;
 
     if(veiculo)
     {
-        cout << endl << "veiculo:" << endl;
+        qDebug() << endl << "veiculo:" << endl;
         veiculo->print();
     }
 
     if(cliente)
     {
-        cout << endl << "cliente:" << endl;
+        qDebug() << endl << "cliente:" << endl;
         cliente->print();
     }
 
     if(vendedor)
     {
-        cout << endl << "vendedor:" << endl;
+        qDebug() << endl << "vendedor:" << endl;
         vendedor->print();
     }
 
-    cout << endl << "valor: " << valor << endl;
-    cout << endl << "data: " << data << endl;
-    cout << "######################################" << endl;
+    qDebug() << endl << "valor: " << valor << endl;
+    qDebug() << endl << "data: " << data << endl;
+    qDebug() << "######################################" << endl;
 }
 
 void Venda::print_details()
 {
     unsigned int i;
 
-    cout << "######################################" << endl;
-    cout << "id: " << id << endl;
+    qDebug() << "######################################" << endl;
+    qDebug() << "id: " << id << endl;
 
     if(veiculo)
     {
-        cout << endl << "veiculo:" << endl;
+        qDebug() << endl << "veiculo:" << endl;
         veiculo->print_details();
     }
 
     if(cliente)
     {
-        cout << endl << "cliente:" << endl;
+        qDebug() << endl << "cliente:" << endl;
         cliente->print_details();
     }
 
     if(vendedor)
     {
-        cout << endl << "vendedor:" << endl;
+        qDebug() << endl << "vendedor:" << endl;
         vendedor->print_details();
     }
 
     for(i = 0; i < this->acessorios.size(); i++)
     {
-        cout << "acessorio 1:" << endl;
+        qDebug() << "acessorio 1:" << endl;
         acessorios[i]->print_details();
     }
 
-    cout << endl << "valor: " << valor << endl;
-    cout << endl << "data: " << data << endl;
-    cout << "######################################" << endl;
+    qDebug() << endl << "valor: " << valor << endl;
+    qDebug() << endl << "data: " << data << endl;
+    qDebug() << "######################################" << endl;
 }

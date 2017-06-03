@@ -10,8 +10,8 @@ using namespace std;
 class Veiculo
 {
     private:
-        string modelo;
-        string cor;
+        QString modelo;
+        QString cor;
         unsigned int ano;
         float preco;
         unsigned int quantidade;
@@ -23,10 +23,10 @@ class Veiculo
         Veiculo();
         ~Veiculo();
 
-        string getModelo() const;
-        void setModelo(const string &value);
-        string getCor() const;
-        void setCor(const string &value);
+        QString getModelo() const;
+        void setModelo(const QString &value);
+        QString getCor() const;
+        void setCor(const QString &value);
         unsigned int getAno() const;
         void setAno(unsigned int value);
         float getPreco() const;

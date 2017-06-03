@@ -8,7 +8,7 @@ vector<Vendedor*> vendedores;
 
 Vendedor::Vendedor()
 {
-//    cout << "unidade de trabalho: ";
+//    qDebug() << "unidade de trabalho: ";
 //    cin >> unidadeDeTrabalho;
 //    getchar();
 //    comissao = 0;
@@ -24,12 +24,12 @@ Vendedor::~Vendedor()
     total--;
 }
 
-string Vendedor::getUnidadeDeTrabalho() const
+QString Vendedor::getUnidadeDeTrabalho() const
 {
     return unidadeDeTrabalho;
 }
 
-void Vendedor::setUnidadeDeTrabalho(const string &value)
+void Vendedor::setUnidadeDeTrabalho(const QString &value)
 {
     unidadeDeTrabalho = value;
 }
@@ -58,6 +58,6 @@ void Vendedor::print_details()
 {
     Funcionario::print_details();
 
-    cout << "unidade de trabalho: " << unidadeDeTrabalho << endl;
-    cout << "comissao: " << comissao << endl;
+    qDebug() << "unidade de trabalho: " << unidadeDeTrabalho << endl;
+    qDebug() << "comissao: " << comissao << endl;
 }

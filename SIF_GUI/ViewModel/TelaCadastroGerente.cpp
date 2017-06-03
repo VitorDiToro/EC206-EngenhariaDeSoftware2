@@ -30,21 +30,21 @@ TelaCadastroGerente::~TelaCadastroGerente()
 
 void TelaCadastroGerente::on_pushButton_clicked()
 {
-    string nome = ui->lineEdit->text().toStdString();
-    string cpf = ui->lineEdit_2->text().toStdString();
-    string telefone = ui->lineEdit_3->text().toStdString();
-    string endereco = ui->lineEdit_4->text().toStdString();
+    QString nome = ui->lineEdit->text();
+    QString cpf = ui->lineEdit_2->text();
+    QString telefone = ui->lineEdit_3->text();
+    QString endereco = ui->lineEdit_4->text();
     float salario = ui->lineEdit_5->text().toFloat();
-    string login = ui->lineEdit_6->text().toStdString();
-    string senha = ui->lineEdit_7->text().toStdString();
-    string unidadeQueGerencia = ui->lineEdit_8->text().toStdString();
+    QString login = ui->lineEdit_6->text();
+    QString senha = ui->lineEdit_7->text();
+    QString unidadeQueGerencia = ui->lineEdit_8->text();
 
-    if(!nome.empty() && !cpf.empty() && !telefone.empty() && !endereco.empty() && salario>0 && !login.empty() &&
-            !senha.empty() && !unidadeQueGerencia.empty())
+    if(!nome.isEmpty() && !cpf.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty() && salario>0 && !login.isEmpty() &&
+            !senha.isEmpty() && !unidadeQueGerencia.isEmpty())
     {
         qDebug() << "vai" << endl;
 
-        cout << endl << "Cadastrar Gerente" << endl;
+        qDebug() << endl << "Cadastrar Gerente" << endl;
         //Gerente* g = new Gerente();
         if(Gerente::getTotal() == 0)
         {
@@ -64,7 +64,7 @@ void TelaCadastroGerente::on_pushButton_clicked()
         }
         else
         {
-            cout << "Gerente ja cadastrado." << endl;
+            qDebug() << "Gerente ja cadastrado." << endl;
         }
 
         this->close();

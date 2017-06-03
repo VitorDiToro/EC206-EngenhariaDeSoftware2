@@ -1,7 +1,7 @@
 #include "Veiculo.h"
-#include <string.h>
 #include <stdio.h>
 #include <sstream>
+#include <QDebug>
 
 int Veiculo::total = 0;
 
@@ -47,22 +47,22 @@ Veiculo::~Veiculo()
 //    return total;
 //}
 
-string Veiculo::getModelo() const
+QString Veiculo::getModelo() const
 {
     return modelo;
 }
 
-void Veiculo::setModelo(const string &value)
+void Veiculo::setModelo(const QString &value)
 {
     modelo = value;
 }
 
-string Veiculo::getCor() const
+QString Veiculo::getCor() const
 {
     return cor;
 }
 
-void Veiculo::setCor(const string &value)
+void Veiculo::setCor(const QString &value)
 {
     cor = value;
 }
@@ -109,17 +109,17 @@ void Veiculo::setId(int value)
 
 void Veiculo::print()
 {
-    cout << "id: " << this->id << endl;
-    cout << "modelo: " << this->modelo << endl;
+    qDebug() << "id: " << this->id << endl;
+    qDebug() << "modelo: " << this->modelo << endl;
 }
 
 void Veiculo::print_details()
 {
-    cout << "id: " << this->id << endl;
-    cout << "modelo: " << this->modelo << endl;
-    cout << "cor: " << this->cor << endl;
-    cout << "ano: " << this->ano << endl;
-    cout << "preco: " << this->preco << endl;
+    qDebug() << "id: " << this->id << endl;
+    qDebug() << "modelo: " << this->modelo << endl;
+    qDebug() << "cor: " << this->cor << endl;
+    qDebug() << "ano: " << this->ano << endl;
+    qDebug() << "preco: " << this->preco << endl;
 }
 
 

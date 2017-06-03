@@ -1,6 +1,7 @@
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
 
+
 #include "Pessoa.h"
 
 
@@ -8,8 +9,8 @@ class Funcionario : public Pessoa
 {
     private:
         float salario;
-        string login;
-        string senha;
+        QString login;
+        QString senha;
 
         static int total;
     public:
@@ -18,10 +19,10 @@ class Funcionario : public Pessoa
 
         float getSalario() const;
         void setSalario(float value);
-        string getLogin() const;
-        void setLogin(const string &value);
-        string getSenha() const;
-        void setSenha(string value);
+        QString getLogin() const;
+        void setLogin(const QString &value);
+        QString getSenha() const;
+        void setSenha(QString value);
 
         static int getTotal();
 

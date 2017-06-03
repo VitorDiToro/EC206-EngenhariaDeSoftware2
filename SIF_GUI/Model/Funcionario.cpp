@@ -4,11 +4,11 @@ int Funcionario::total = 0;
 
 Funcionario::Funcionario()
 {
-//    cout << "login: ";
+//    qDebug() << "login: ";
 //    cin >> login;
-//    cout << "senha: ";
+//    qDebug() << "senha: ";
 //    cin >>senha;
-//    cout << "salario: ";
+//    qDebug() << "salario: ";
 //    cin >> salario;
     setId(total++);
 }
@@ -30,22 +30,22 @@ void Funcionario::setSalario(float value)
     salario = value;
 }
 
-string Funcionario::getLogin() const
+QString Funcionario::getLogin() const
 {
     return login;
 }
 
-void Funcionario::setLogin(const string &value)
+void Funcionario::setLogin(const QString &value)
 {
     login = value;
 }
 
-string Funcionario::getSenha() const
+QString Funcionario::getSenha() const
 {
     return senha;
 }
 
-void Funcionario::setSenha(string value)
+void Funcionario::setSenha(QString value)
 {
     senha = value;
 }
@@ -64,6 +64,6 @@ void Funcionario::print_details()
 {
     Pessoa::print_details();
 
-    cout << "salario: " << salario << endl;
+    qDebug() << "salario: " << salario << endl;
 }
 
