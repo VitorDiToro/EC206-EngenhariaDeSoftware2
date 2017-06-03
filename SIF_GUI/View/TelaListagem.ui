@@ -32,7 +32,7 @@
     <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -55,6 +55,19 @@
       </property>
      </widget>
     </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton">
+      <property name="minimumSize">
+       <size>
+        <width>80</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Exclui</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="2">
      <widget class="QPushButton" name="pushButton_2">
       <property name="minimumSize">
@@ -68,27 +81,11 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
-     <widget class="QPushButton" name="pushButton">
-      <property name="minimumSize">
-       <size>
-        <width>80</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Excluir</string>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
+  <zorder>layoutWidget</zorder>
   <zorder>tableWidget</zorder>
-  <zorder>horizontalSpacer_2</zorder>
-  <zorder>horizontalSpacer_3</zorder>
-  <zorder></zorder>
-  <zorder>horizontalSpacer_ZeBuceta</zorder>
-  <zorder></zorder>
+  <zorder>pushButton_2</zorder>
  </widget>
  <resources/>
  <connections/>

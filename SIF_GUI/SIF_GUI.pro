@@ -1,8 +1,10 @@
 QT += core gui
 QT += core
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QTPLUGIN += QMYSQL
 TARGET = SIF_GUI
 TEMPLATE = app
 
