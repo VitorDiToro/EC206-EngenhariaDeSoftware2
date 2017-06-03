@@ -11,6 +11,7 @@ TelaListagem::TelaListagem(QWidget *parent) :
     QFrame(parent),
     ui(new Ui::TelaListagem)
 {
+    ui->setupUi(this);
     this->setGeometry(
         QStyle::alignedRect(
             Qt::LeftToRight,
@@ -19,9 +20,6 @@ TelaListagem::TelaListagem(QWidget *parent) :
             qApp->desktop()->availableGeometry()
         )
     );
-
-    cout << "birrrrrrl" << endl;
-    cout << parent << endl;
 
     QStringList titulos;
 
