@@ -2,6 +2,25 @@
 
 Projeto da disciplina de Engenharia de Software II, desenvolvido durante a graduação em Engenharia de Computação no Instituto Nacional de Telecomunicações [(@INATEL)](https://www.inatel.br "Inatel's Homepage"). 
 
+**Dependências:**
+- **qtcreator:**
+    ```bash
+    $  sudo apt-get install qtcreator
+    ```
+- **mysql:**
+    ```bash
+    $  sudo apt-get install mysql-server
+    ```
+- **libqt5sql5:**
+    ```bash
+    $  sudo apt-get install libqt5sql5
+    ```
+- **libqt5sql5-mysql**
+    ```bash
+    $  sudo apt-get install libqt5sql5-mysql 
+    ```
+
+
 **Desenvolvedores:** 
 - Vitor R. Di Toro", vitorrditoro@gmail.com; 
 - Samuel Pereira, samuelp@inatel.br; 
@@ -10,3 +29,4 @@ Projeto da disciplina de Engenharia de Software II, desenvolvido durante a gradu
 **Colaboradores:** 
 - Daniel Sader, danielpontello@gmail.com;
     - Colaborador do  Sub-Módeulo "BD_SIF";
+
