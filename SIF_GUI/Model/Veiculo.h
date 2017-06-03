@@ -1,7 +1,6 @@
 #ifndef VEICULO_H
 #define VEICULO_H
 
-#include <iostream>
 #include <vector>
 #include "Acessorio.h"
 

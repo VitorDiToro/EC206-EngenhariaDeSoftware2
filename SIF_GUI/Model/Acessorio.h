@@ -1,7 +1,6 @@
 #ifndef ACESSORIO_H
 #define ACESSORIO_H
 
-#include<iostream>
 #include <vector>
 #include <QString>
 #include <QDebug>

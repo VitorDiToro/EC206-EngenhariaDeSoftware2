@@ -1,7 +1,6 @@
 #ifndef GERENTE_H
 #define GERENTE_H
 
-#include <iostream>
 #include <vector>
 
 #include "Funcionario.h"
