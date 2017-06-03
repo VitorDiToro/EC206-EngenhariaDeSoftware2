@@ -14,6 +14,7 @@ class Veiculo
         string cor;
         unsigned int ano;
         float preco;
+        unsigned int quantidade;
 
         static int total;
         int id;
@@ -30,11 +31,13 @@ class Veiculo
         void setAno(unsigned int value);
         float getPreco() const;
         void setPreco(float value);
+        unsigned int getQuantidade() const;
+        void setQuantidade(unsigned int value);
 
         //static int getTotal();
         int getId() const;
         void setId(int value); // Utilizado apenas para testes.
-                               // O 'id' é definido automaticamente pleo bando.
+                               // O 'id' é definido automaticamente pelo banco
         //Métodos para debug
         void print();
         void print_details();

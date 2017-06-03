@@ -7,8 +7,14 @@
 
 class DAOVeiculo
 {
-    public:
+    private:
+        static DAOVeiculo* INSTANCE;
+
         DAOVeiculo();
+    public:
+        ~DAOVeiculo();
+
+        static DAOVeiculo* getInstance();
 
         bool addVeiculo(Veiculo* v);
         vector<Veiculo*> getVeiculo(vector<unsigned int> ids);

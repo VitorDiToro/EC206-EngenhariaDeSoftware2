@@ -9,12 +9,12 @@ vector<Veiculo*> veiculos;
 
 Veiculo::Veiculo()
 {
-//    cout << "Construtor de Veiculo" << endl;
+    //    cout << "Construtor de Veiculo" << endl;
 
-//    cout << "modelo: ";
-//    cin >> this->modelo;
-//    getchar();
-//    cout << "cor: ";
+    //    cout << "modelo: ";
+    //    cin >> this->modelo;
+    //    getchar();
+    //    cout << "cor: ";
 //    cin >> this->cor;
 //    getchar();
 //    cout << "ano: ";
@@ -87,6 +87,15 @@ void Veiculo::setPreco(float value)
     preco = value;
 }
 
+unsigned int Veiculo::getQuantidade() const
+{
+    return quantidade;
+}
+
+void Veiculo::setQuantidade(unsigned int value)
+{
+    quantidade = value;
+}
 
 int Veiculo::getId() const
 {

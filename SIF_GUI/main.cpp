@@ -32,16 +32,16 @@ int main(int argc, char *argv[])
     {
         qDebug() << "Connected!";
 
-        QSqlQuery query;
-        query.exec("INSERT INTO `sys`.`newTable` (`name`) VALUES ('foo');");
+        //QSqlQuery query;
+        //query.exec("INSERT INTO `sys`.`newTable` (`name`) VALUES ('foo');");
 
-        while (query.next())
-        {
-            QString name = query.value(0).toString();
-            qDebug() << "name:" << name;
-        }
+        //while (query.next())
 
-        return 0;
+//        {
+//            QString name = query.value(0).toString();
+//            qDebug() << "name:" << name;
+//        }
+
     }
 
 
@@ -56,11 +56,9 @@ int main(int argc, char *argv[])
 }
 
 bool createConnection(){
-    //QString serverName = "localhost\\SIFBD
-
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
-    db.setDatabaseName("sys");
+    db.setDatabaseName("sifDB");
     db.setUserName("root");
     db.setPassword("root");
     if (!db.open()) {

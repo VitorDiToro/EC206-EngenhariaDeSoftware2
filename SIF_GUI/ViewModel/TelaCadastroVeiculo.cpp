@@ -6,6 +6,7 @@
 #include "Model/Veiculo.h"
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QtSql/QSqlQuery>
 
 using namespace std;
 
@@ -31,25 +32,36 @@ TelaCadastroVeiculo::~TelaCadastroVeiculo()
 
 void TelaCadastroVeiculo::on_pushButton_clicked()
 {
-    string modelo = ui->lineEdit->text().toStdString();
-    string cor = ui->lineEdit_2->text().toStdString();
+    QString modelo = ui->lineEdit->text();
+    QString cor = ui->lineEdit_2->text();
     unsigned int ano = ui->lineEdit_3->text().toUInt();
     float preco = ui->lineEdit_4->text().toFloat();
 
-    if(!modelo.empty() && !cor.empty() && ano > 1700 && ano < 2200 && preco >= 0)
+    if(!modelo.isEmpty() && !cor.isEmpty() && ano > 1700 && ano < 2200 && preco >= 0)
     {
         qDebug() << "vai" << endl;
 
         cout << endl << "Cadastrar veiculo" << endl;
         Veiculo* v = new Veiculo();
-        v->setModelo(modelo);
-        v->setCor(cor);
+        v->setModelo(modelo.toStdString());
+        v->setCor(cor.toStdString());
         v->setAno(ano);
         v->setPreco(preco);
 
         v->print_details();
 
         veiculos.push_back(v);
+
+        QSqlQuery query;
+        query.prepare("INSERT INTO `sifDB`.`veiculo` (`veiculo_modelo`, `veiculo_preco`, `veiculo_quantidade`, `veiculo_cor`, `veiculo_ano`, `veiculo_ativo`)"
+                      "VALUES (?, ?, ?, ?, ?, ?);");
+        query.addBindValue(modelo);
+        query.addBindValue(preco);
+        query.addBindValue(3);
+        query.addBindValue(cor);
+        query.addBindValue(ano);
+        query.addBindValue(true);
+        query.exec();
 
         this->close();
         delete this;
