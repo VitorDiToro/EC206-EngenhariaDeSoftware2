@@ -34,7 +34,6 @@ HEADERS += \
     Model/Veiculo.h \
     Model/Venda.h \
     Model/Vendedor.h \
-    ViewModel/TelaCadastro.h \
     ViewModel/TelaCadastroAcessorio.h \
     ViewModel/TelaCadastroCliente.h \
     ViewModel/TelaCadastroGerente.h \
@@ -63,7 +62,6 @@ SOURCES += \
     Model/Veiculo.cpp \
     Model/Venda.cpp \
     Model/Vendedor.cpp \
-    ViewModel/TelaCadastro.cpp \
     ViewModel/TelaCadastroAcessorio.cpp \
     ViewModel/TelaCadastroCliente.cpp \
     ViewModel/TelaCadastroGerente.cpp \

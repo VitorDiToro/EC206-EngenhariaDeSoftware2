@@ -46,3 +46,12 @@ bool DAOVeiculo::addVeiculo(Veiculo *v)
 
     return result;
 }
+
+QSqlQuery* DAOVeiculo::getBasicInfoVeiculos()
+{
+    QSqlQuery* query = new QSqlQuery();
+    query->prepare("SELECT veiculo_id, veiculo_modelo FROM sifDB.veiculo;");
+    query->exec();
+
+    return query;
+}

@@ -19,6 +19,7 @@ class DAOVeiculo
         static DAOVeiculo* getInstance();
 
         bool addVeiculo(Veiculo* v);
+        QSqlQuery* getBasicInfoVeiculos();
         vector<Veiculo*> getVeiculo(vector<unsigned int> ids);
         bool setVeiculo(unsigned int id);
         bool deleteVeiculo(unsigned int id);

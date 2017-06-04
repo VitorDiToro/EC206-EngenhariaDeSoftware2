@@ -1,5 +1,4 @@
 #include "DAOCliente.h"
-#include <QtSql/QSqlQuery>
 
 #define noop (void)0
 
@@ -46,4 +45,13 @@ bool DAOCliente::addCliente(Cliente *c)
     delete c;
 
     return result;
+}
+
+QSqlQuery* DAOCliente::getBasicInfoClientes()
+{
+    QSqlQuery* query = new QSqlQuery();
+    query->prepare("SELECT cliente_id, cliente_nome FROM sifDB.cliente;");
+    query->exec();
+
+    return query;
 }
