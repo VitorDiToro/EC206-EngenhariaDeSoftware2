@@ -1,5 +1,4 @@
 #include "DAOVendedor.h"
-#include <QtSql/QSqlQuery>
 
 #define noop (void)0
 
@@ -65,5 +64,11 @@ bool DAOVendedor::addVendedor(Vendedor *v)
     return result;
 }
 
+QSqlQuery* DAOVendedor::getBasicInfoVendedores()
+{
+    QSqlQuery* query = new QSqlQuery();
+    query->prepare("SELECT vendedor_id, vendedor_nome FROM sifDB.vendedor;");
+    query->exec();
 
-//INSERT INTO `sifDB`.`vendedor` (`vendedor_comissao`, `vendedor_unidade`, `vendedor_nome`, `vendedor_cpf`, `vendedor_telefone`, `vendedor_endereco`, `vendedor_ativo`) VALUES ('10', 'PA', 'Samuel', '11554510660', '998057393', 'SRS', '1');
+    return query;
+}

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "Gerente.h"
-
+#include <QtSql/QSqlQuery>
 
 class DAOGerente
 {
@@ -17,6 +17,7 @@ class DAOGerente
         static DAOGerente* getInstance();
 
         bool addGerente(Gerente* g);
+        QSqlQuery* getBasicInfoGerentes();
         vector<Gerente*> getGerente(vector<unsigned int> ids);
         bool setGerente(unsigned int id);
         bool deleteGerente(unsigned int id);

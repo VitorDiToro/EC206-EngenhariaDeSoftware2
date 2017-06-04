@@ -80,6 +80,10 @@ void TelaPrincipal::on_actionCadastrar_triggered()
 
 void TelaPrincipal::on_actionListar_triggered()
 {
+    TelaListagem* tl = new TelaListagem(0,VENDA);
+    tl->show();
+    tl->activateWindow();
+
     unsigned int i;
 
     cout << endl << "Listar vendas" << endl;
@@ -95,7 +99,7 @@ void TelaPrincipal::on_actionListar_triggered()
 
 void TelaPrincipal::on_actionListar_2_triggered()
 {
-    TelaListagem* tl = new TelaListagem();
+    TelaListagem* tl = new TelaListagem(0,VEICULO);
     tl->show();
     tl->activateWindow();
 
@@ -110,10 +114,16 @@ void TelaPrincipal::on_actionListar_2_triggered()
         cout << endl << "Veiculo " << i+1 << endl;
         veiculos[i]->print();
     }
+
+    //delete tl;
 }
 
 void TelaPrincipal::on_actionListar_3_triggered()
 {
+    TelaListagem* tl = new TelaListagem(0,ACESSORIO);
+    tl->show();
+    tl->activateWindow();
+
     unsigned int i;
 
     cout << endl << "Listar Acessorios" << endl;
@@ -129,6 +139,10 @@ void TelaPrincipal::on_actionListar_3_triggered()
 
 void TelaPrincipal::on_actionListar_4_triggered()
 {
+    TelaListagem* tl = new TelaListagem(0,CLIENTE);
+    tl->show();
+    tl->activateWindow();
+
     unsigned int i;
 
     cout << endl << "Listar Clientes" << endl;
@@ -144,6 +158,10 @@ void TelaPrincipal::on_actionListar_4_triggered()
 
 void TelaPrincipal::on_actionListar_5_triggered()
 {
+    TelaListagem* tl = new TelaListagem(0,VENDEDOR);
+    tl->show();
+    tl->activateWindow();
+
     unsigned int i;
 
     cout << endl << "Listar Vendedor" << endl;
@@ -159,6 +177,10 @@ void TelaPrincipal::on_actionListar_5_triggered()
 
 void TelaPrincipal::on_actionListar_6_triggered()
 {
+    TelaListagem* tl = new TelaListagem(0,GERENTE);
+    tl->show();
+    tl->activateWindow();
+
     unsigned int i;
 
     cout << endl << "Listar Gerentes" << endl;

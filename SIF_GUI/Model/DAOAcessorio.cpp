@@ -46,3 +46,13 @@ bool DAOAcessorio::addAcessorio(Acessorio *a)
 
     return result;
 }
+
+QSqlQuery* DAOAcessorio::getBasicInfoAcessorios()
+{
+    QSqlQuery* query = new QSqlQuery();
+    query->prepare("SELECT acessorio_id, acessorio_nome FROM sifDB.acessorio;");
+    query->exec();
+
+    return query;
+}
+

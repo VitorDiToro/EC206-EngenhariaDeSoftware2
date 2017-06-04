@@ -1,5 +1,4 @@
 #include "DAOGerente.h"
-#include <QtSql/QSqlQuery>
 
 #define noop (void)0
 
@@ -62,5 +61,14 @@ bool DAOGerente::addGerente(Gerente *g)
     delete g;
 
     return result;
+}
+
+QSqlQuery* DAOGerente::getBasicInfoGerentes()
+{
+    QSqlQuery* query = new QSqlQuery();
+    query->prepare("SELECT gerente_id, gerente_nome FROM sifDB.gerente;");
+    query->exec();
+
+    return query;
 }
 
