@@ -5,6 +5,8 @@
 #include <QStyle>
 #include <QDesktopWidget>
 #include <iostream>
+#include <Model/DAOVendedor.h>
+#include <QMessageBox>
 
 using namespace std;
 
@@ -61,12 +63,22 @@ void TelaCadastroVendedor::on_pushButton_3_clicked()
 
         vendedores.push_back(v);
 
+        if(DAOVendedor::getInstance()->addVendedor(v))
+        {
+            QMessageBox::information(this,tr("Cadastro"),tr("Cadastro realizado com sucesso!"));
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("Cadastro"),tr("Cadastro não realizado!"));
+        }
+
         this->close();
         delete this;
     }
     else
     {
         qDebug() << "nop" << endl;
+        QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
 }
 

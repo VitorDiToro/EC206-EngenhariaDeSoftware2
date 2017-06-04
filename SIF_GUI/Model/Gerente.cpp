@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int Gerente::total = 0;
-Gerente* Gerente::INSTANCE = NULL;
 
 vector<Gerente*> gerentes;
 
@@ -17,16 +16,6 @@ Gerente::Gerente()
 Gerente::~Gerente()
 {
     total--;
-}
-
-Gerente* Gerente::getInstance()
-{
-    if(INSTANCE == NULL)
-    {
-        INSTANCE = new Gerente();
-    }
-
-    return INSTANCE;
 }
 
 QString Gerente::getUnidadeQueGerencia() const

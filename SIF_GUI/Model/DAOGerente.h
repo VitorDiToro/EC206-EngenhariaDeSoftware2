@@ -7,8 +7,14 @@
 
 class DAOGerente
 {
-    public:
+    private:
+        static DAOGerente* INSTANCE;
+
         DAOGerente();
+    public: //methods
+        ~DAOGerente();
+
+        static DAOGerente* getInstance();
 
         bool addGerente(Gerente* g);
         vector<Gerente*> getGerente(vector<unsigned int> ids);
@@ -17,3 +23,32 @@ class DAOGerente
 };
 
 #endif // DAOGERENTE_H
+
+
+
+#ifndef DAOVENDEDOR_H
+#define DAOVENDEDOR_H
+
+#include <vector>
+#include "Vendedor.h"
+
+
+class DAOVendedor
+{
+    private:
+        static DAOVendedor* INSTANCE;
+
+        DAOVendedor();
+    public: //methods
+        ~DAOVendedor();
+
+        static DAOVendedor* getInstance();
+
+        bool addVendedor(Vendedor* v);
+        vector<Vendedor*> getVendedor(vector<unsigned int> ids);
+        bool setVendedor(unsigned int id);
+        bool deleteVendedor(unsigned int id);
+};
+
+#endif // DAOVENDEDOR_H
+

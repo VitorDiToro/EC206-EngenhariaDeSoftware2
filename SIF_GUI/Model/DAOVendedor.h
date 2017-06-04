@@ -7,8 +7,14 @@
 
 class DAOVendedor
 {
-    public: //methods
+    private:
+        static DAOVendedor* INSTANCE;
+
         DAOVendedor();
+    public: //methods
+        ~DAOVendedor();
+
+        static DAOVendedor* getInstance();
 
         bool addVendedor(Vendedor* v);
         vector<Vendedor*> getVendedor(vector<unsigned int> ids);

@@ -5,6 +5,8 @@
 #include <QStyle>
 #include <QDesktopWidget>
 #include <iostream>
+#include "Model/DAOGerente.h"
+#include <QMessageBox>
 
 using namespace std;
 
@@ -48,7 +50,7 @@ void TelaCadastroGerente::on_pushButton_clicked()
         //Gerente* g = new Gerente();
         if(Gerente::getTotal() == 0)
         {
-            Gerente* g = Gerente::getInstance();
+            Gerente* g = new Gerente();
             g->setNome(nome);
             g->setCpf(cpf);
             g->setTelefone(telefone);
@@ -61,6 +63,15 @@ void TelaCadastroGerente::on_pushButton_clicked()
             g->print_details();
 
             gerentes.push_back(g);
+
+            if(DAOGerente::getInstance()->addGerente(g))
+            {
+                QMessageBox::information(this,tr("Cadastro"),tr("Cadastro realizado com sucesso!"));
+            }
+            else
+            {
+                QMessageBox::critical(this,tr("Cadastro"),tr("Cadastro não realizado!"));
+            }
         }
         else
         {
@@ -73,6 +84,7 @@ void TelaCadastroGerente::on_pushButton_clicked()
     else
     {
         qDebug() << "nop" << endl;
+        QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
 }
 

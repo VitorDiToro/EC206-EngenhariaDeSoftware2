@@ -10,16 +10,13 @@ using namespace std;
 class Gerente : public Funcionario
 {
     private:
-        static Gerente* INSTANCE;
         QString unidadeQueGerencia;
 
         static int total;
 
-        Gerente();
     public:
+        Gerente();
         ~Gerente();
-
-        static Gerente* getInstance();
 
         QString getUnidadeQueGerencia() const;
         void setUnidadeQueGerencia(const QString &value);

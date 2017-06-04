@@ -5,7 +5,7 @@ int Pessoa::total = 0;
 
 Pessoa::Pessoa()
 {
-    //qDebug() << "pessoa" << endl;
+//    qDebug() << "pessoa" << endl;
 //    qDebug() << "nome: ";
 //    cin >> nome;
 //    getchar();
@@ -16,7 +16,7 @@ Pessoa::Pessoa()
 //    qDebug() << "endereco: ";
 //    cin >> endereco;
     id = total++;
-};
+}
 
 Pessoa::~Pessoa()
 {
@@ -25,7 +25,7 @@ Pessoa::~Pessoa()
     cpf = "";
     telefone = "";
     endereco = "";
-};
+}
 
 Pessoa::Pessoa(QString n, QString c, QString t, QString e)
 {
@@ -33,7 +33,7 @@ Pessoa::Pessoa(QString n, QString c, QString t, QString e)
     cpf = c;
     telefone = t;
     endereco = e;
-};
+}
 
 QString Pessoa::getNome() const
 {
@@ -98,9 +98,9 @@ void Pessoa::print()
 
 void Pessoa::print_details()
 {
-    qDebug() << "id: " << this->id << endl;
-    qDebug() << "nome: " << this->getNome() << endl;
-    qDebug() << "cpf: " << this->getCpf() << endl;
-    qDebug() << "telefone: " << this->getTelefone() << endl;
-    qDebug() << "endereco: " << this->getEndereco() << endl;
+    qDebug() << "id: " << this->id;
+    qDebug() << "nome: " << this->getNome();
+    qDebug() << "cpf: " << this->getCpf();
+    qDebug() << "telefone: " << this->getTelefone();
+    qDebug() << "endereco: " << this->getEndereco();
 }

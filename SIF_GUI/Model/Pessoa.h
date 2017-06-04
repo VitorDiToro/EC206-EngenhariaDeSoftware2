@@ -21,16 +21,12 @@ class Pessoa
 
         QString getNome() const;
         void setNome(const QString &value);
-        QString getDataDeNascimento() const;
-        void setDataDeNascimento(const QString &value);
         QString getCpf() const;
         void setCpf(const QString &value);
         QString getTelefone() const;
         void setTelefone(const QString &value);
         QString getEndereco() const;
         void setEndereco(const QString &value);
-        QString getEmail() const;
-        void setEmail(const QString &value);
 
         static int getTotal();
         int getId() const;
