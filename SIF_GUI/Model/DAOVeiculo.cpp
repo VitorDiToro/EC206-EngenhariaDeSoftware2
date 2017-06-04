@@ -29,7 +29,9 @@ DAOVeiculo* DAOVeiculo::getInstance()
 
 bool DAOVeiculo::addVeiculo(Veiculo *v)
 {
+    bool result;
     QSqlQuery query;
+
     query.prepare("INSERT INTO `sifDB`.`veiculo` (`veiculo_modelo`, `veiculo_preco`, `veiculo_quantidade`, `veiculo_cor`, `veiculo_ano`, `veiculo_ativo`)"
                   "VALUES (?, ?, ?, ?, ?, ?);");
     query.addBindValue(v->getModelo());
@@ -38,9 +40,9 @@ bool DAOVeiculo::addVeiculo(Veiculo *v)
     query.addBindValue(v->getCor());
     query.addBindValue(v->getAno());
     query.addBindValue(true);
-    query.exec();
+    result = query.exec();
 
     delete v;
 
-    return true;
+    return result;
 }

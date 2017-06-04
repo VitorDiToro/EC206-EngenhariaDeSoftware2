@@ -1,4 +1,5 @@
 #include "TelaCadastroAcessorio.h"
+#include <QMessageBox>
 
 TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent) :
     QFrame(parent),
@@ -33,7 +34,7 @@ void TelaCadastroAcessorio::on_pushButton_clicked()
 
     qDebug() << preco << endl;
 
-    if(!nome.isEmpty() && preco >= 0 && !descricao.isEmpty())
+    if(!nome.isEmpty() && preco > 0 && !descricao.isEmpty())
     {
         qDebug() << "vai" << endl;
 
@@ -47,7 +48,14 @@ void TelaCadastroAcessorio::on_pushButton_clicked()
 
         stock_acessorios.push_back(a);
 
-        DAOAcessorio::getInstance()->addAcessorio(a);
+        if(DAOAcessorio::getInstance()->addAcessorio(a))
+        {
+            QMessageBox::information(this,tr("Cadastro"),tr("Cadastro realizado com sucesso!"));
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("Cadastro"),tr("Cadastro não realizado!"));
+        }
 
         this->close();
         delete this;
@@ -55,5 +63,6 @@ void TelaCadastroAcessorio::on_pushButton_clicked()
     else
     {
         qDebug() << "nop" << endl;
+        QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
 }

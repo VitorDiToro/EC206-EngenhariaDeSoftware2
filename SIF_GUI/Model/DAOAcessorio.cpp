@@ -30,6 +30,7 @@ DAOAcessorio* DAOAcessorio::getInstance()
 
 bool DAOAcessorio::addAcessorio(Acessorio *a)
 {
+    bool result;
     QSqlQuery query;
 
     query.prepare("INSERT INTO `sifDB`.`acessorio` (`acessorio_nome`, `acessorio_preco`, `acessorio_quantidade`, `acessorio_descricao`)"
@@ -39,12 +40,9 @@ bool DAOAcessorio::addAcessorio(Acessorio *a)
     query.addBindValue(3);
     query.addBindValue(a->getDescricao());
 
-    query.exec();
+    result = query.exec();
 
     delete a;
 
-    return true;
+    return result;
 }
-
-
-

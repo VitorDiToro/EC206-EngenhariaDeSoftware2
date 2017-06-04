@@ -4,6 +4,7 @@
 
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QMessageBox>
 
 #include "TelaCadastroVeiculo.h"
 #include "ui_TelaCadastroVeiculo.h"
@@ -39,7 +40,7 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
     unsigned int ano = ui->lineEdit_3->text().toUInt();
     float preco = ui->lineEdit_4->text().toFloat();
 
-    if(!modelo.isEmpty() && !cor.isEmpty() && ano > 1700 && ano < 2200 && preco >= 0)
+    if(!modelo.isEmpty() && !cor.isEmpty() && ano > 1700 && ano < 2200 && preco > 0)
     {
         qDebug() << "vai" << endl;
 
@@ -54,7 +55,14 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
 
         veiculos.push_back(v);
 
-        DAOVeiculo::getInstance()->addVeiculo(v);
+        if(DAOVeiculo::getInstance()->addVeiculo(v))
+        {
+            QMessageBox::information(this,tr("Cadastro"),tr("Cadastro realizado com sucesso!"));
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("Cadastro"),tr("Cadastro não realizado!"));
+        }
 
         this->close();
         delete this;
@@ -62,6 +70,7 @@ void TelaCadastroVeiculo::on_pushButton_clicked()
     else
     {
         qDebug() << "nop" << endl;
+        QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
 }
 
