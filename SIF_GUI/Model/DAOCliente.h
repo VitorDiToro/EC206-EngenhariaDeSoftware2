@@ -7,8 +7,14 @@
 
 class DAOCliente
 {
-    public:
+    private:
+        static DAOCliente* INSTANCE;
+
         DAOCliente();
+    public: //methods
+        ~DAOCliente();
+
+        static DAOCliente* getInstance();
 
         bool addCliente(Cliente* c);
         vector<Cliente*> getCliente(vector<unsigned int> ids);

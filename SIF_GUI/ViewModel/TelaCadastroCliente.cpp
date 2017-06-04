@@ -5,6 +5,8 @@
 #include "Model/Cliente.h"
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QMessageBox>
+#include "Model/DAOCliente.h"
 
 using namespace std;
 
@@ -37,9 +39,6 @@ void TelaCadastroCliente::on_pushButton_clicked()
 
     if(!nome.isEmpty() && !cpf.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty())
     {
-        qDebug() << "vai" << endl;
-
-
         qDebug() << endl << "Cadastrar Cliente" << endl;
         Cliente* c = new Cliente();
         c->setNome(nome);
@@ -51,12 +50,22 @@ void TelaCadastroCliente::on_pushButton_clicked()
 
         clientes.push_back(c);
 
+        if(DAOCliente::getInstance()->addCliente(c))
+        {
+            QMessageBox::information(this,tr("Cadastro"),tr("Cadastro realizado com sucesso!"));
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("Cadastro"),tr("Cadastro não realizado!"));
+        }
+
         this->close();
         delete this;
     }
     else
     {
         qDebug() << "nop" << endl;
+        QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
 }
 
