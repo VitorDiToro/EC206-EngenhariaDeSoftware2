@@ -1,12 +1,4 @@
 #include "TelaCadastroAcessorio.h"
-#include "ui_TelaCadastroAcessorio.h"
-#include <QStyle>
-#include <QDesktopWidget>
-#include <iostream>
-#include <QDebug>
-#include "Model/Acessorio.h"
-
-using namespace std;
 
 TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent) :
     QFrame(parent),
@@ -54,6 +46,8 @@ void TelaCadastroAcessorio::on_pushButton_clicked()
         a->print_details();
 
         stock_acessorios.push_back(a);
+
+        DAOAcessorio::getInstance()->addAcessorio(a);
 
         this->close();
         delete this;

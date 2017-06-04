@@ -57,16 +57,11 @@ void LoginWindow::on_pushButton_2_clicked()
     delete this;
 }
 
-void LoginWindow::on_editPassword_selectionChanged()
-{
-    //ui->lineEdit_senha->clear();
-}
-
 void LoginWindow::on_lineEdit_senha_returnPressed()
 {
-    string password = "1019";
+    QString password = "1019";
 
-    if(ui->lineEdit_senha->text().toStdString() == password)
+    if(ui->lineEdit_senha->text() == password)
     {
         TelaPrincipal* tp = new TelaPrincipal();
         tp->show();
@@ -76,7 +71,7 @@ void LoginWindow::on_lineEdit_senha_returnPressed()
     }
     else
     {
-       QMessageBox::critical(this,tr("Login não autorizado!"),tr("Login não atorizado!\nPorfavor, verifique seu usuário e senha."));
+       QMessageBox::critical(this,tr("Login não autorizado!"),tr("Login não autorizado!\nPor favor, verifique seu usuário e senha."));
     }
 }
 

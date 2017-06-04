@@ -1,13 +1,21 @@
 #include "DAOVeiculo.h"
+#define noop (void)0
 
 DAOVeiculo* DAOVeiculo::INSTANCE = NULL;
 
+// private methods
+
 DAOVeiculo::DAOVeiculo()
 {
-    // pass
+    noop;
 }
 
 // public methods
+
+DAOVeiculo::~DAOVeiculo()
+{
+    noop;
+}
 
 DAOVeiculo* DAOVeiculo::getInstance()
 {

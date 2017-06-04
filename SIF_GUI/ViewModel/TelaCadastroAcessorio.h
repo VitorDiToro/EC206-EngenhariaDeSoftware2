@@ -2,6 +2,15 @@
 #define TELACADASTROACESSORIO_H
 
 #include <QFrame>
+#include "ui_TelaCadastroAcessorio.h"
+#include <QStyle>
+#include <QDesktopWidget>
+#include <iostream>
+#include <QDebug>
+#include "Model/Acessorio.h"
+#include "Model/DAOAcessorio.h"
+
+using namespace std;
 
 namespace Ui {
 class TelaCadastroAcessorio;

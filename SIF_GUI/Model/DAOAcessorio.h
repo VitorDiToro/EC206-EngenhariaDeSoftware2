@@ -2,13 +2,21 @@
 #define DAOACESSORIO_H
 
 #include <vector>
+#include <QtSql/QSqlQuery>
+
 #include "Acessorio.h"
 
 
 class DAOAcessorio
 {
-    public:
+    private:
+        static DAOAcessorio* INSTANCE;
+
         DAOAcessorio();
+    public:
+        ~DAOAcessorio();
+
+        static DAOAcessorio* getInstance();
 
         bool addAcessorio(Acessorio* a);
         vector<Acessorio*> getAcessorio(vector<unsigned int> ids);

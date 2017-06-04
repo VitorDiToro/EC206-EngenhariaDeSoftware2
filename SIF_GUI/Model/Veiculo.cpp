@@ -109,17 +109,17 @@ void Veiculo::setId(int value)
 
 void Veiculo::print()
 {
-    qDebug() << "id: " << this->id << endl;
-    qDebug() << "modelo: " << this->modelo << endl;
+    qDebug() << "id: " << this->id;
+    qDebug() << "modelo: " << this->modelo;
 }
 
 void Veiculo::print_details()
 {
-    qDebug() << "id: " << this->id << endl;
-    qDebug() << "modelo: " << this->modelo << endl;
-    qDebug() << "cor: " << this->cor << endl;
-    qDebug() << "ano: " << this->ano << endl;
-    qDebug() << "preco: " << this->preco << endl;
+    qDebug() << "id: " << this->id;
+    qDebug() << "modelo: " << this->modelo;
+    qDebug() << "cor: " << this->cor;
+    qDebug() << "ano: " << this->ano;
+    qDebug() << "preco: " << this->preco;
 }
 
 

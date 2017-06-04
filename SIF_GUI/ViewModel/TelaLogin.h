@@ -20,8 +20,6 @@ private slots:
 
     void on_pushButton_2_clicked();
 
-    void on_editPassword_selectionChanged();
-
     void on_lineEdit_senha_returnPressed();
 
     void on_lineEdit_senha_selectionChanged();
