@@ -13,7 +13,7 @@ class TelaCadastroVeiculo : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroVeiculo(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
+    explicit TelaCadastroVeiculo(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO);
     ~TelaCadastroVeiculo();
 
 private slots:

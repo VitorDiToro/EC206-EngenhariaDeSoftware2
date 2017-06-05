@@ -12,4 +12,14 @@ typedef enum enu_objType
     GERENTE
 }tenu_objType;
 
+typedef enum enu_windowType
+{
+    INVALIDO,
+    CADASTRO,
+    CONSULTA,
+    EDICAO,
+}tenu_windowType;
+
+
+
 #endif // HELPER_H

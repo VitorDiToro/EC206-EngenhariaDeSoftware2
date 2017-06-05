@@ -22,7 +22,7 @@ class TelaCadastroAcessorio : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroAcessorio(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
+    explicit TelaCadastroAcessorio(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO);
     ~TelaCadastroAcessorio();
 
 private slots:

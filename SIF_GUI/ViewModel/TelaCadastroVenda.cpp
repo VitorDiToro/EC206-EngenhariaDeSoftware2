@@ -3,7 +3,7 @@
 #include <QStyle>
 #include <QDesktopWidget>
 
-TelaCadastroVenda::TelaCadastroVenda(QWidget *parent, tenu_objType enuObjType) :
+TelaCadastroVenda::TelaCadastroVenda(QWidget *parent, tenu_windowType enuWindowType) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVenda)
 {
@@ -16,6 +16,8 @@ TelaCadastroVenda::TelaCadastroVenda(QWidget *parent, tenu_objType enuObjType) :
             qApp->desktop()->availableGeometry()
         )
     );
+
+
 }
 
 TelaCadastroVenda::~TelaCadastroVenda()
