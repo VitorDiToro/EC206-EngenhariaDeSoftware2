@@ -13,7 +13,7 @@
 
 using namespace std;
 
-TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent) :
+TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent, tenu_objType enuObjType) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVeiculo)
 {

@@ -2,17 +2,7 @@
 #define TELALISTAGEM_H
 
 #include <QFrame>
-
-typedef enum enu_objType
-{
-    INVALID,
-    VENDA,
-    VEICULO,
-    ACESSORIO,
-    CLIENTE,
-    VENDEDOR,
-    GERENTE
-}tenu_objType;
+#include "helper.h"
 
 namespace Ui {
 class TelaListagem;

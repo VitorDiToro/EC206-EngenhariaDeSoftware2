@@ -2,6 +2,7 @@
 #define TELACADASTROVENDEDOR_H
 
 #include <QFrame>
+#include "helper.h"
 
 namespace Ui {
 class TelaCadastroVendedor;
@@ -12,7 +13,7 @@ class TelaCadastroVendedor : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroVendedor(QWidget *parent = 0);
+    explicit TelaCadastroVendedor(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
     ~TelaCadastroVendedor();
 
 private slots:

@@ -2,6 +2,7 @@
 #define TELACADASTROVEICULO_H
 
 #include <QFrame>
+#include "helper.h"
 
 namespace Ui {
 class TelaCadastroVeiculo;
@@ -12,7 +13,7 @@ class TelaCadastroVeiculo : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroVeiculo(QWidget *parent = 0);
+    explicit TelaCadastroVeiculo(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
     ~TelaCadastroVeiculo();
 
 private slots:

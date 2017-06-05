@@ -1,7 +1,7 @@
 #include "TelaCadastroAcessorio.h"
 #include <QMessageBox>
 
-TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent) :
+TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_objType enuObjType) :
     QFrame(parent),
     ui(new Ui::TelaCadastroAcessorio)
 {

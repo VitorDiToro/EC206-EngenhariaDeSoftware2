@@ -3,7 +3,7 @@
 #include <QStyle>
 #include <QDesktopWidget>
 
-TelaCadastroVenda::TelaCadastroVenda(QWidget *parent) :
+TelaCadastroVenda::TelaCadastroVenda(QWidget *parent, tenu_objType enuObjType) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVenda)
 {

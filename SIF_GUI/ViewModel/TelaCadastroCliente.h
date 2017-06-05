@@ -2,6 +2,7 @@
 #define TELACADASTROCLIENTE_H
 
 #include <QFrame>
+#include "helper.h"
 
 namespace Ui {
 class TelaCadastroCliente;
@@ -12,7 +13,7 @@ class TelaCadastroCliente : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroCliente(QWidget *parent = 0);
+    explicit TelaCadastroCliente(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
     ~TelaCadastroCliente();
 
 private slots:

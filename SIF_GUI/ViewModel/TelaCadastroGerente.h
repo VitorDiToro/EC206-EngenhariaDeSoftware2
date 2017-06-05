@@ -2,6 +2,7 @@
 #define TELACADASTROGERENTE_H
 
 #include <QFrame>
+#include "helper.h"
 
 namespace Ui {
 class TelaCadastroGerente;
@@ -12,7 +13,7 @@ class TelaCadastroGerente : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroGerente(QWidget *parent = 0);
+    explicit TelaCadastroGerente(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
     ~TelaCadastroGerente();
 
 private slots:

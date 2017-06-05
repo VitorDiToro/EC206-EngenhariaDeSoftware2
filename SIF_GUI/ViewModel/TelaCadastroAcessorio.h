@@ -9,6 +9,7 @@
 #include <QDebug>
 #include "Model/Acessorio.h"
 #include "Model/DAOAcessorio.h"
+#include "helper.h"
 
 using namespace std;
 
@@ -21,7 +22,7 @@ class TelaCadastroAcessorio : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroAcessorio(QWidget *parent = 0);
+    explicit TelaCadastroAcessorio(QWidget *parent = 0, tenu_objType enuObjType = INVALID);
     ~TelaCadastroAcessorio();
 
 private slots:

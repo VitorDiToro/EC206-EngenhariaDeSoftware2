@@ -10,7 +10,7 @@
 
 using namespace std;
 
-TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent) :
+TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent, tenu_objType enuObjType) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVendedor)
 {
