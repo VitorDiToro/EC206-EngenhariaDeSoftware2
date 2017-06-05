@@ -32,28 +32,35 @@ TelaListagem::TelaListagem(QWidget *parent, tenu_objType enuObjType) :
 
     QSqlQuery* query = NULL;
     QString SecondColumn = "Nome";
+    QString windowTitle;
 
     switch(enuObjType)
     {
         case VENDA:
             //query = DAOVenda::getInstance()->getBasicInfoVendas();
             SecondColumn = "Valor";
+            windowTitle = "Venda";
             break;
         case VEICULO:
             query = DAOVeiculo::getInstance()->getBasicInfoVeiculos();
             SecondColumn = "Modelo";
+            windowTitle = "Veículos";
             break;
         case ACESSORIO:
             query = DAOAcessorio::getInstance()->getBasicInfoAcessorios();
+            windowTitle = "Acessórios";
             break;
         case CLIENTE:
             query = DAOCliente::getInstance()->getBasicInfoClientes();
+            windowTitle = "Clientes";
             break;
         case VENDEDOR:
             query = DAOVendedor::getInstance()->getBasicInfoVendedores();
+            windowTitle = "Vendedores";
             break;
         case GERENTE:
             query = DAOGerente::getInstance()->getBasicInfoGerentes();
+            windowTitle = "Gerentes";
             break;
         case INVALID:
             // error
@@ -67,6 +74,8 @@ TelaListagem::TelaListagem(QWidget *parent, tenu_objType enuObjType) :
     {
         return;
     }
+
+    this->setWindowTitle("Listagem de " + windowTitle);
 
     QSqlQueryModel* model = new QSqlQueryModel;
 
