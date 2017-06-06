@@ -7,10 +7,11 @@
 #include <QDesktopWidget>
 #include <QMessageBox>
 #include "Model/DAOCliente.h"
+#include "Model/DAOCliente.h"
 
 using namespace std;
 
-TelaCadastroCliente::TelaCadastroCliente(QWidget *parent, tenu_windowType enuWindowType) :
+TelaCadastroCliente::TelaCadastroCliente(QWidget *parent, tenu_windowType enuWindowType, int id) :
     QFrame(parent),
     ui(new Ui::TelaCadastroCliente)
 {
@@ -24,21 +25,42 @@ TelaCadastroCliente::TelaCadastroCliente(QWidget *parent, tenu_windowType enuWin
         )
     );
 
+    MANAGER_WINDOW_STATE = enuWindowType;
+    Cliente* c = NULL;
+
+    qDebug() << "rock n roll: " << MANAGER_WINDOW_STATE;
+
     switch(MANAGER_WINDOW_STATE)
     {
         case CADASTRO:
-
+            (void)0;
+            // nothing to be done
             break;
         case CONSULTA:
+            this->setWindowTitle("Consulta de Cliente");
 
+            c = DAOCliente::getInstance()->getCliente(id);
+
+            qDebug() << "rock n roll";
+            ui->lineEdit->setText(c->getNome());
+            ui->lineEdit->setDisabled(1);
+            ui->lineEdit_2->setText(c->getCpf());
+            ui->lineEdit_2->setDisabled(1);
+            ui->lineEdit_3->setText(c->getTelefone());
+            ui->lineEdit_3->setDisabled(1);
+            ui->lineEdit_4->setText(c->getEndereco());
+            ui->lineEdit_4->setDisabled(1);
+            ui->pushButton->hide();
             break;
         case EDICAO:
-
+            (void)0;
             break;
         case INVALIDO:
+            (void)0;
             //error
             break;
         default:
+            (void)0;
             // error
             break;
     }

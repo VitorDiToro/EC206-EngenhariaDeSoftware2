@@ -20,7 +20,7 @@ class DAOVendedor
 
         bool addVendedor(Vendedor* v);
         QSqlQuery* getBasicInfoVendedores();
-        vector<Vendedor*> getVendedor(vector<unsigned int> ids);
+        Vendedor* getVendedor(unsigned int id);
         bool setVendedor(unsigned int id);
         bool deleteVendedor(unsigned int id);
         bool login(QString username, QString password);

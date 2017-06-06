@@ -13,7 +13,7 @@ class TelaCadastroCliente : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroCliente(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO);
+    explicit TelaCadastroCliente(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO, int id = 0);
     ~TelaCadastroCliente();
 
 private slots:

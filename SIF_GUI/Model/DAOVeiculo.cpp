@@ -56,6 +56,35 @@ QSqlQuery* DAOVeiculo::getBasicInfoVeiculos()
     return query;
 }
 
+Veiculo* DAOVeiculo::getVeiculo(unsigned int id)
+{
+    QSqlQuery* query = new QSqlQuery();
+    Veiculo* v = NULL;
+
+    query->prepare("SELECT * FROM sifDB.veiculo WHERE veiculo_id = ?;");
+    query->addBindValue(id);
+    if(query->exec())
+    {
+        qDebug() << "Success";
+    }
+
+    while (query->next())
+    {
+        v = new Veiculo();
+
+        v->setId(query->value(0).toInt());
+        v->setModelo(query->value(1).toString());
+        v->setPreco(query->value(2).toFloat());
+        v->setQuantidade(query->value(3).toInt());
+        v->setCor(query->value(4).toString());
+        v->setAno(query->value(5).toInt());
+
+        v->print_details();
+    }
+
+    return v;
+}
+
 bool DAOVeiculo::deleteVeiculo(unsigned int id)
 {
     QSqlQuery query;

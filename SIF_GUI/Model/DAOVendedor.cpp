@@ -73,6 +73,36 @@ QSqlQuery* DAOVendedor::getBasicInfoVendedores()
     return query;
 }
 
+Vendedor* DAOVendedor::getVendedor(unsigned int id)
+{
+    QSqlQuery* query = new QSqlQuery();
+    Vendedor* v = NULL;
+
+    query->prepare("SELECT * FROM sifDB.vendedor WHERE vendedor_id = ?;");
+    query->addBindValue(id);
+    if(query->exec())
+    {
+        qDebug() << "Success";
+    }
+
+    while (query->next())
+    {
+        v = new Vendedor();
+
+        v->setId(query->value(0).toInt());
+        v->setComissao(query->value(1).toFloat());
+        v->setUnidadeDeTrabalho(query->value(2).toString());
+        v->setNome(query->value(3).toString());
+        v->setCpf(query->value(4).toString());
+        v->setTelefone(query->value(5).toString());
+        v->setEndereco(query->value(6).toString());
+
+        v->print_details();
+    }
+
+    return v;
+}
+
 bool DAOVendedor::deleteVendedor(unsigned int id)
 {
     QSqlQuery query;

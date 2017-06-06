@@ -20,7 +20,7 @@ class DAOVeiculo
 
         bool addVeiculo(Veiculo* v);
         QSqlQuery* getBasicInfoVeiculos();
-        vector<Veiculo*> getVeiculo(vector<unsigned int> ids);
+        Veiculo* getVeiculo(unsigned int id);
         bool setVeiculo(unsigned int id);
         bool deleteVeiculo(unsigned int id);
 };

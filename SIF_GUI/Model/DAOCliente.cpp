@@ -56,6 +56,34 @@ QSqlQuery* DAOCliente::getBasicInfoClientes()
     return query;
 }
 
+Cliente* DAOCliente::getCliente(unsigned int id)
+{
+    QSqlQuery* query = new QSqlQuery();
+    Cliente* c = NULL;
+
+    query->prepare("SELECT * FROM sifDB.cliente WHERE cliente_id = ?;");
+    query->addBindValue(id);
+    if(query->exec())
+    {
+        qDebug() << "Success";
+    }
+
+    while (query->next())
+    {
+        c = new Cliente();
+
+        c->setId(query->value(0).toInt());
+        c->setNome(query->value(1).toString());
+        c->setEndereco(query->value(2).toString());
+        c->setCpf(query->value(3).toString());
+        c->setTelefone(query->value(4).toString());
+
+        c->print_details();
+    }
+
+    return c;
+}
+
 bool DAOCliente::deleteCliente(unsigned int id)
 {
     QSqlQuery query;

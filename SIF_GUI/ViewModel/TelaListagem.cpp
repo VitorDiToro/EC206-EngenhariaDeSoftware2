@@ -13,6 +13,13 @@
 #include "Model/DAOAcessorio.h"
 #include "Model/DAOVendedor.h"
 #include "Model/DAOGerente.h"
+#include "TelaCadastroAcessorio.h"
+#include "TelaCadastroCliente.h"
+#include "TelaCadastroVeiculo.h"
+#include "TelaCadastroVendedor.h"
+#include "TelaCadastroVenda.h"
+#include "TelaCadastroGerente.h"
+#include "TelaCadastroVeiculo.h"
 #include <QMessageBox>
 #include "manager.h"
 
@@ -117,6 +124,56 @@ void TelaListagem::on_editarButton_clicked()
 void TelaListagem::on_consultarButton_clicked()
 {
     MANAGER_WINDOW_STATE = CONSULTA;
+    TelaCadastroAcessorio* tca = NULL;
+    TelaCadastroCliente* tcc = NULL;
+    TelaCadastroGerente* tcg = NULL;
+    TelaCadastroVendedor* tcv = NULL;
+    TelaCadastroVeiculo* tcvei = NULL;
+
+    int id = getIDinDB();
+
+    qDebug() << "tipo de obj " << MANAGER_OBJECT_TYPE;
+
+    switch(MANAGER_OBJECT_TYPE)
+    {
+        case VENDA:
+
+            break;
+        case VEICULO:
+
+
+            break;
+        case ACESSORIO:
+            tca = new TelaCadastroAcessorio(0,CONSULTA,id);
+            tca->show();
+            tca->activateWindow();
+            break;
+        case CLIENTE:
+            tcc = new TelaCadastroCliente(0,CONSULTA,id);
+            tcc->show();
+            tcc->activateWindow();
+            break;
+        case VENDEDOR:
+
+            break;
+        case GERENTE:
+            tcg = new TelaCadastroGerente(0,CONSULTA,id);
+            tcg->show();
+            tcg->activateWindow();
+
+            break;
+        case INVALID:
+            // error
+            return;
+            break;
+        default:
+            // error
+            return;
+            break;
+    }
+
+    MANAGER_OBJECT_TYPE = ACESSORIO;
+
 }
 
 void TelaListagem::on_excluirButton_clicked()

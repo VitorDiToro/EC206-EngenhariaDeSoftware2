@@ -70,14 +70,14 @@ void Acessorio::setId(int value)
 
 void Acessorio::print()
 {
-    qDebug() << "id: " << id << endl;
-    qDebug() << "nome: " << nome << endl;
+    qDebug() << "id: " << id;
+    qDebug() << "nome: " << nome;
 }
 
 void Acessorio::print_details()
 {
     print();
 
-    qDebug() << "preco: " << preco << endl;
-    qDebug() << "descricao: " << descricao << endl;
+    qDebug() << "preco: " << preco;
+    qDebug() << "descricao: " << descricao;
 }

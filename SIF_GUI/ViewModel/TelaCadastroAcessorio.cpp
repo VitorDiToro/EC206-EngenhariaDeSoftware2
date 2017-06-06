@@ -1,7 +1,7 @@
 #include "TelaCadastroAcessorio.h"
 #include <QMessageBox>
 
-TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType enuWindowType) :
+TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType enuWindowType, int id) :
     QFrame(parent),
     ui(new Ui::TelaCadastroAcessorio)
 {
@@ -15,21 +15,40 @@ TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType en
         )
     );
 
+    MANAGER_WINDOW_STATE = enuWindowType;
+    Acessorio* a = NULL;
+
+    qDebug() << "rock n roll: " << MANAGER_WINDOW_STATE;
+
     switch(MANAGER_WINDOW_STATE)
     {
         case CADASTRO:
-
+            (void)0;
+            // nothing to be done
             break;
         case CONSULTA:
+            this->setWindowTitle("Consulta de Acessório");
 
+            a = DAOAcessorio::getInstance()->getAcessorio(id);
+
+            qDebug() << "rock n roll";
+            ui->lineEdit->setText(a->getNome());
+            ui->lineEdit->setDisabled(1);
+            ui->lineEdit_2->setText(QString::number(a->getPreco()));
+            ui->lineEdit_2->setDisabled(1);
+            ui->lineEdit_3->setText(a->getDescricao());
+            ui->lineEdit_3->setDisabled(1);
+            ui->pushButton->hide();
             break;
         case EDICAO:
-
+            (void)0;
             break;
         case INVALIDO:
+            (void)0;
             //error
             break;
         default:
+            (void)0;
             // error
             break;
     }

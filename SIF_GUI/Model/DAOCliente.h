@@ -19,7 +19,7 @@ class DAOCliente
 
         bool addCliente(Cliente* c);
         QSqlQuery* getBasicInfoClientes(void);
-        vector<Cliente*> getCliente(vector<unsigned int> ids);
+        Cliente* getCliente(unsigned int id);
         bool setCliente(unsigned int id);
         bool deleteCliente(unsigned int id);
 };

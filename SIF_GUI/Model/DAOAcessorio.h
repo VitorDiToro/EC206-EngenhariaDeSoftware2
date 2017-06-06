@@ -20,7 +20,7 @@ class DAOAcessorio
 
         bool addAcessorio(Acessorio* a);
         QSqlQuery* getBasicInfoAcessorios();
-        vector<Acessorio*> getAcessorio(vector<unsigned int> ids);
+        Acessorio* getAcessorio(unsigned int id);
         bool setAcessorio(unsigned int id);
         bool deleteAcessorio(unsigned int id);
 };

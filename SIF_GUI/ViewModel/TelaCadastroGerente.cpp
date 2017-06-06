@@ -7,10 +7,11 @@
 #include <iostream>
 #include "Model/DAOGerente.h"
 #include <QMessageBox>
+#include "Model/DAOGerente.h"
 
 using namespace std;
 
-TelaCadastroGerente::TelaCadastroGerente(QWidget *parent, tenu_windowType enuWindowType) :
+TelaCadastroGerente::TelaCadastroGerente(QWidget *parent, tenu_windowType enuWindowType, int id) :
     QFrame(parent),
     ui(new Ui::TelaCadastroGerente)
 {
@@ -24,21 +25,50 @@ TelaCadastroGerente::TelaCadastroGerente(QWidget *parent, tenu_windowType enuWin
         )
     );
 
+    MANAGER_WINDOW_STATE = enuWindowType;
+    Gerente* g = NULL;
+
+    qDebug() << "rock n roll: " << MANAGER_WINDOW_STATE;
+
     switch(MANAGER_WINDOW_STATE)
     {
         case CADASTRO:
-
+            (void)0;
+            // nothing to be done
             break;
         case CONSULTA:
+            this->setWindowTitle("Consulta de Gerente");
 
+            g = DAOGerente::getInstance()->getGerente(id);
+
+            qDebug() << "rock n roll";
+            ui->lineEdit->setText(g->getNome());
+            ui->lineEdit->setDisabled(1);
+            ui->lineEdit_2->setText(g->getCpf());
+            ui->lineEdit_2->setDisabled(1);
+            ui->lineEdit_3->setText(g->getTelefone());
+            ui->lineEdit_3->setDisabled(1);
+            ui->lineEdit_4->setText(g->getEndereco());
+            ui->lineEdit_4->setDisabled(1);
+            ui->lineEdit_5->setText(QString::number(g->getSalario()));
+            ui->lineEdit_5->setDisabled(1);
+            ui->lineEdit_6->setText(g->getLogin());
+            ui->lineEdit_6->setDisabled(1);
+            ui->lineEdit_7->setText(g->getSenha());
+            ui->lineEdit_7->setDisabled(1);
+            ui->lineEdit_8->setText(g->getUnidadeQueGerencia());
+            ui->lineEdit_8->setDisabled(1);
+            ui->pushButton->hide();
             break;
         case EDICAO:
-
+            (void)0;
             break;
         case INVALIDO:
+            (void)0;
             //error
             break;
         default:
+            (void)0;
             // error
             break;
     }

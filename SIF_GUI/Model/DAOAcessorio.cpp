@@ -57,6 +57,33 @@ QSqlQuery* DAOAcessorio::getBasicInfoAcessorios()
     return query;
 }
 
+Acessorio* DAOAcessorio::getAcessorio(unsigned int id)
+{
+    QSqlQuery* query = new QSqlQuery();
+    Acessorio* a = NULL;
+
+    query->prepare("SELECT * FROM sifDB.acessorio WHERE acessorio_id = ?;");
+    query->addBindValue(id);
+    if(query->exec())
+    {
+        qDebug() << "Success";
+    }
+
+    while (query->next())
+    {
+        a = new Acessorio();
+        a->setId(query->value(0).toInt());
+        a->setNome(query->value(1).toString());
+        a->setPreco(query->value(2).toFloat());
+        // set qtd
+        a->setDescricao(query->value(4).toString());
+
+        a->print_details();
+    }
+
+    return a;
+}
+
 bool DAOAcessorio::deleteAcessorio(unsigned int id)
 {
     QSqlQuery query;

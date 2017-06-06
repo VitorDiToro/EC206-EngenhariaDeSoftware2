@@ -72,6 +72,35 @@ QSqlQuery* DAOGerente::getBasicInfoGerentes()
     return query;
 }
 
+Gerente* DAOGerente::getGerente(unsigned int id)
+{
+    QSqlQuery* query = new QSqlQuery();
+    Gerente* g = NULL;
+
+    query->prepare("SELECT * FROM sifDB.gerente WHERE gerente_id = ?;");
+    query->addBindValue(id);
+    if(query->exec())
+    {
+        qDebug() << "Success";
+    }
+
+    while (query->next())
+    {
+        g = new Gerente();
+
+        g->setId(query->value(0).toInt());
+        g->setNome(query->value(1).toString());
+        g->setCpf(query->value(2).toString());
+        g->setEndereco(query->value(3).toString());
+        g->setTelefone(query->value(4).toString());
+        g->setUnidadeQueGerencia(query->value(5).toString());
+
+        g->print_details();
+    }
+
+    return g;
+}
+
 bool DAOGerente::deleteGerente(unsigned int id)
 {
     QSqlQuery query;
