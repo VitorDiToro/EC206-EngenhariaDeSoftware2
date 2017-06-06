@@ -13,7 +13,7 @@ class TelaCadastroVendedor : public QFrame
     Q_OBJECT
 
 public:
-    explicit TelaCadastroVendedor(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO);
+    explicit TelaCadastroVendedor(QWidget *parent = 0, tenu_windowType enuWindowType = INVALIDO, int id = 0);
     ~TelaCadastroVendedor();
 
 private slots:

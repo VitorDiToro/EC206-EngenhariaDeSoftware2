@@ -11,7 +11,7 @@
 
 using namespace std;
 
-TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent, tenu_windowType enuWindowType) :
+TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent, tenu_windowType enuWindowType, int id) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVendedor)
 {
@@ -25,21 +25,54 @@ TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent, tenu_windowType enuW
         )
     );
 
+    MANAGER_WINDOW_STATE = enuWindowType;
+    Vendedor* v = NULL;
+
+    qDebug() << "rock n roll: " << MANAGER_WINDOW_STATE;
+
     switch(MANAGER_WINDOW_STATE)
     {
         case CADASTRO:
-
+            (void)0;
+            // nothing to be done
             break;
         case CONSULTA:
+            this->setWindowTitle("Consulta de Acessório");
 
+            v = DAOVendedor::getInstance()->getVendedor(id);
+
+            qDebug() << "rock n roll";
+            ui->lineEdit->setText(v->getNome());
+            ui->lineEdit->setDisabled(1);
+            ui->lineEdit_2->setText(v->getCpf());
+            ui->lineEdit_2->setDisabled(1);
+            ui->lineEdit_3->setText(v->getTelefone());
+            ui->lineEdit_3->setDisabled(1);
+            ui->lineEdit_4->setText(v->getEndereco());
+            ui->lineEdit_4->setDisabled(1);
+            ui->lineEdit_5->setText(QString::number(v->getSalario()));
+            ui->lineEdit_5->setDisabled(1);
+            ui->lineEdit_6->setText(v->getLogin());
+            ui->lineEdit_6->setDisabled(1);
+            ui->lineEdit_7->setText(v->getSenha());
+            ui->lineEdit_7->setDisabled(1);
+            ui->lineEdit_8->setText(v->getUnidadeDeTrabalho());
+            ui->lineEdit_8->setDisabled(1);
+            ui->lineEdit_9->setText(QString::number(v->getComissao()));
+            ui->lineEdit_9->setDisabled(1);
+
+
+            ui->pushButton_3->hide();
             break;
         case EDICAO:
-
+            (void)0;
             break;
         case INVALIDO:
+            (void)0;
             //error
             break;
         default:
+            (void)0;
             // error
             break;
     }

@@ -13,7 +13,7 @@
 
 using namespace std;
 
-TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent, tenu_windowType enuWindowType) :
+TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent, tenu_windowType enuWindowType, int id) :
     QFrame(parent),
     ui(new Ui::TelaCadastroVeiculo)
 {
@@ -27,21 +27,43 @@ TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent, tenu_windowType enuWin
         )
     );
 
+    MANAGER_WINDOW_STATE = enuWindowType;
+    Veiculo* v = NULL;
+
+    qDebug() << "rock n roll: " << MANAGER_WINDOW_STATE;
+
     switch(MANAGER_WINDOW_STATE)
     {
         case CADASTRO:
-
+            (void)0;
+            // nothing to be done
             break;
         case CONSULTA:
+            this->setWindowTitle("Consulta de Veículo");
 
+            v = DAOVeiculo::getInstance()->getVeiculo(id);
+
+            qDebug() << "rock n roll";
+            ui->lineEdit->setText(v->getModelo());
+            ui->lineEdit->setDisabled(1);
+            ui->lineEdit_2->setText(v->getCor());
+            ui->lineEdit_2->setDisabled(1);
+            ui->lineEdit_3->setText(QString::number(v->getAno()));
+            ui->lineEdit_3->setDisabled(1);
+            ui->lineEdit_4->setText(QString::number(v->getPreco()));
+            ui->lineEdit_4->setDisabled(1);
+
+            ui->pushButton->hide();
             break;
         case EDICAO:
-
+            (void)0;
             break;
         case INVALIDO:
+            (void)0;
             //error
             break;
         default:
+            (void)0;
             // error
             break;
     }

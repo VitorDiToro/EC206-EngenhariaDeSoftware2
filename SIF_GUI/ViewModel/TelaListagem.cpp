@@ -137,11 +137,12 @@ void TelaListagem::on_consultarButton_clicked()
     switch(MANAGER_OBJECT_TYPE)
     {
         case VENDA:
-
+            //
             break;
         case VEICULO:
-
-
+            tcvei = new TelaCadastroVeiculo(0,CONSULTA,id);
+            tcvei->show();
+            tcvei->activateWindow();
             break;
         case ACESSORIO:
             tca = new TelaCadastroAcessorio(0,CONSULTA,id);
@@ -154,7 +155,9 @@ void TelaListagem::on_consultarButton_clicked()
             tcc->activateWindow();
             break;
         case VENDEDOR:
-
+            tcv = new TelaCadastroVendedor(0,CONSULTA,id);
+            tcv->show();
+            tcv->activateWindow();
             break;
         case GERENTE:
             tcg = new TelaCadastroGerente(0,CONSULTA,id);
