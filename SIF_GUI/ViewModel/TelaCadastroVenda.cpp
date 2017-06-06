@@ -17,6 +17,25 @@ TelaCadastroVenda::TelaCadastroVenda(QWidget *parent, tenu_windowType enuWindowT
         )
     );
 
+    switch(MANAGER_WINDOW_STATE)
+    {
+        case CADASTRO:
+
+            break;
+        case CONSULTA:
+
+            break;
+        case EDICAO:
+
+            break;
+        case INVALIDO:
+            //error
+            break;
+        default:
+            // error
+            break;
+    }
+
 
 }
 

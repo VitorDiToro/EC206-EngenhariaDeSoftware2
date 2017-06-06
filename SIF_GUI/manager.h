@@ -1,5 +1,5 @@
-#ifndef HELPER_H
-#define HELPER_H
+#ifndef MANAGER_H
+#define MANAGER_H
 
 typedef enum enu_objType
 {
@@ -12,7 +12,7 @@ typedef enum enu_objType
     GERENTE
 }tenu_objType;
 
-typedef enum enu_windowType
+typedef enum enu_windowState
 {
     INVALIDO,
     CADASTRO,
@@ -20,6 +20,7 @@ typedef enum enu_windowType
     EDICAO,
 }tenu_windowType;
 
+static tenu_objType MANAGER_OBJECT_TYPE;
+static tenu_windowType MANAGER_WINDOW_STATE = INVALIDO;
 
-
-#endif // HELPER_H
+#endif // MANAGER_H

@@ -2,7 +2,7 @@
 #define TELACADASTROVEICULO_H
 
 #include <QFrame>
-#include "helper.h"
+#include "manager.h"
 
 namespace Ui {
 class TelaCadastroVeiculo;

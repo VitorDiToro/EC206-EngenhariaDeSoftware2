@@ -55,3 +55,13 @@ QSqlQuery* DAOVeiculo::getBasicInfoVeiculos()
 
     return query;
 }
+
+bool DAOVeiculo::deleteVeiculo(unsigned int id)
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM `sifDB`.`veiculo` WHERE `veiculo_id`=?;");
+    query.addBindValue(id);
+
+    return query.exec();
+}

@@ -55,3 +55,13 @@ QSqlQuery* DAOCliente::getBasicInfoClientes()
 
     return query;
 }
+
+bool DAOCliente::deleteCliente(unsigned int id)
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM `sifDB`.`cliente` WHERE `cliente_id`=?;");
+    query.addBindValue(id);
+
+    return query.exec();
+}

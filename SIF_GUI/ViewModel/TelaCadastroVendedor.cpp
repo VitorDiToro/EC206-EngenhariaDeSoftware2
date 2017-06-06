@@ -24,6 +24,25 @@ TelaCadastroVendedor::TelaCadastroVendedor(QWidget *parent, tenu_windowType enuW
             qApp->desktop()->availableGeometry()
         )
     );
+
+    switch(MANAGER_WINDOW_STATE)
+    {
+        case CADASTRO:
+
+            break;
+        case CONSULTA:
+
+            break;
+        case EDICAO:
+
+            break;
+        case INVALIDO:
+            //error
+            break;
+        default:
+            // error
+            break;
+    }
 }
 
 TelaCadastroVendedor::~TelaCadastroVendedor()
@@ -81,9 +100,12 @@ void TelaCadastroVendedor::on_pushButton_3_clicked()
         qDebug() << "nop" << endl;
         QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
+
+    MANAGER_WINDOW_STATE = INVALIDO;
 }
 
 void TelaCadastroVendedor::on_pushButton_4_clicked()
 {
+    MANAGER_WINDOW_STATE = INVALIDO;
     this->close();
 }

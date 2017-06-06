@@ -13,6 +13,7 @@
 #include "Model/Veiculo.h"
 #include "Model/Venda.h"
 #include "Model/Vendedor.h"
+#include "manager.h"
 
 #include <QStyle>
 #include <QDesktopWidget>
@@ -44,36 +45,48 @@ TelaPrincipal::~TelaPrincipal()
 
 void TelaPrincipal::on_actionCadastrar_6_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = GERENTE;
     TelaCadastroGerente* tcg = new TelaCadastroGerente();
     tcg->show();
 }
 
 void TelaPrincipal::on_actionCadastrar_5_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = VENDEDOR;
     TelaCadastroVendedor* tcv = new TelaCadastroVendedor();
     tcv->show();
 }
 
 void TelaPrincipal::on_actionCadastrar_4_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = CLIENTE;
     TelaCadastroCliente* tcc = new TelaCadastroCliente();
     tcc->show();
 }
 
 void TelaPrincipal::on_actionCadastrar_3_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = ACESSORIO;
     TelaCadastroAcessorio* tca = new TelaCadastroAcessorio();
     tca->show();
 }
 
 void TelaPrincipal::on_actionCadastrar_2_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = VEICULO;
     TelaCadastroVeiculo* tcv = new TelaCadastroVeiculo();
     tcv->show();
 }
 
 void TelaPrincipal::on_actionCadastrar_triggered()
 {
+    MANAGER_WINDOW_STATE = CADASTRO;
+    MANAGER_OBJECT_TYPE = VENDA;
     TelaCadastroVenda* tcv = new TelaCadastroVenda();
     tcv->show();
 }
@@ -81,6 +94,7 @@ void TelaPrincipal::on_actionCadastrar_triggered()
 void TelaPrincipal::on_actionListar_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,VENDA);
+    MANAGER_OBJECT_TYPE = VENDA;
     tl->show();
     tl->activateWindow();
 
@@ -100,6 +114,7 @@ void TelaPrincipal::on_actionListar_triggered()
 void TelaPrincipal::on_actionListar_2_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,VEICULO);
+    MANAGER_OBJECT_TYPE = VEICULO;
     tl->show();
     tl->activateWindow();
 
@@ -121,25 +136,29 @@ void TelaPrincipal::on_actionListar_2_triggered()
 void TelaPrincipal::on_actionListar_3_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,ACESSORIO);
+    MANAGER_OBJECT_TYPE = ACESSORIO;
     tl->show();
     tl->activateWindow();
 
-    unsigned int i;
+    qDebug() << MANAGER_OBJECT_TYPE;
 
-    cout << endl << "Listar Acessorios" << endl;
+//    unsigned int i;
 
-    cout << stock_acessorios.size() << " acessorios cadastrados" << endl;
+//    cout << endl << "Listar Acessorios" << endl;
 
-    for (i = 0; i < stock_acessorios.size(); ++i)
-    {
-        cout << endl << "Acessorio " << i+1 << endl;
-        stock_acessorios[i]->print();
-    }
+//    cout << stock_acessorios.size() << " acessorios cadastrados" << endl;
+
+//    for (i = 0; i < stock_acessorios.size(); ++i)
+//    {
+//        cout << endl << "Acessorio " << i+1 << endl;
+//        stock_acessorios[i]->print();
+//    }
 }
 
 void TelaPrincipal::on_actionListar_4_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,CLIENTE);
+    MANAGER_OBJECT_TYPE = CLIENTE;
     tl->show();
     tl->activateWindow();
 
@@ -159,6 +178,7 @@ void TelaPrincipal::on_actionListar_4_triggered()
 void TelaPrincipal::on_actionListar_5_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,VENDEDOR);
+    MANAGER_OBJECT_TYPE = VENDEDOR;
     tl->show();
     tl->activateWindow();
 
@@ -178,6 +198,7 @@ void TelaPrincipal::on_actionListar_5_triggered()
 void TelaPrincipal::on_actionListar_6_triggered()
 {
     TelaListagem* tl = new TelaListagem(0,GERENTE);
+    MANAGER_OBJECT_TYPE = GERENTE;
     tl->show();
     tl->activateWindow();
 

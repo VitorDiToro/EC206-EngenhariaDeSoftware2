@@ -72,3 +72,13 @@ QSqlQuery* DAOGerente::getBasicInfoGerentes()
     return query;
 }
 
+bool DAOGerente::deleteGerente(unsigned int id)
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM `sifDB`.`gerente` WHERE `gerente_id`=?;");
+    query.addBindValue(id);
+
+    return query.exec();
+}
+

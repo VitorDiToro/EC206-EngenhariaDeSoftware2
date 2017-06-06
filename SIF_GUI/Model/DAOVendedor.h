@@ -23,6 +23,7 @@ class DAOVendedor
         vector<Vendedor*> getVendedor(vector<unsigned int> ids);
         bool setVendedor(unsigned int id);
         bool deleteVendedor(unsigned int id);
+        bool login(QString username, QString password);
 };
 
 #endif // DAOVENDEDOR_H

@@ -2,7 +2,7 @@
 #define TELACADASTROVENDEDOR_H
 
 #include <QFrame>
-#include "helper.h"
+#include "manager.h"
 
 namespace Ui {
 class TelaCadastroVendedor;

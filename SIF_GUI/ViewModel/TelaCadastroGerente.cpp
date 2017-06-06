@@ -23,6 +23,25 @@ TelaCadastroGerente::TelaCadastroGerente(QWidget *parent, tenu_windowType enuWin
             qApp->desktop()->availableGeometry()
         )
     );
+
+    switch(MANAGER_WINDOW_STATE)
+    {
+        case CADASTRO:
+
+            break;
+        case CONSULTA:
+
+            break;
+        case EDICAO:
+
+            break;
+        case INVALIDO:
+            //error
+            break;
+        default:
+            // error
+            break;
+    }
 }
 
 TelaCadastroGerente::~TelaCadastroGerente()
@@ -86,9 +105,12 @@ void TelaCadastroGerente::on_pushButton_clicked()
         qDebug() << "nop" << endl;
         QMessageBox::critical(this,tr("Cadastro"),tr("Dados inconsistentes."));
     }
+
+    MANAGER_WINDOW_STATE = INVALIDO;
 }
 
 void TelaCadastroGerente::on_pushButton_2_clicked()
 {
+    MANAGER_WINDOW_STATE = INVALIDO;
     this->close();
 }

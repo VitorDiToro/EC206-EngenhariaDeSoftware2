@@ -72,3 +72,20 @@ QSqlQuery* DAOVendedor::getBasicInfoVendedores()
 
     return query;
 }
+
+bool DAOVendedor::deleteVendedor(unsigned int id)
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM sifDB.vendedor WHERE vendedor_id = ?;");
+    query.addBindValue(id);
+
+    return query.exec();
+}
+
+bool DAOVendedor::login(QString username, QString password)
+{
+    bool result = false;
+
+    return result;
+}

@@ -13,6 +13,8 @@
 #include "Model/DAOAcessorio.h"
 #include "Model/DAOVendedor.h"
 #include "Model/DAOGerente.h"
+#include <QMessageBox>
+#include "manager.h"
 
 using namespace std;
 
@@ -30,6 +32,13 @@ TelaListagem::TelaListagem(QWidget *parent, tenu_objType enuObjType) :
         )
     );
 
+    MANAGER_OBJECT_TYPE = enuObjType;
+
+    updateTableView(enuObjType);
+}
+
+bool TelaListagem::updateTableView(tenu_objType enuObjType)
+{
     QSqlQuery* query = NULL;
     QString SecondColumn = "Nome";
     QString windowTitle;
@@ -64,15 +73,17 @@ TelaListagem::TelaListagem(QWidget *parent, tenu_objType enuObjType) :
             break;
         case INVALID:
             // error
+            return false;
             break;
         default:
             // error
+            return false;
             break;
     }
 
     if(query == NULL)
     {
-        return;
+        return false;
     }
 
     this->setWindowTitle("Listagem de " + windowTitle);
@@ -88,10 +99,91 @@ TelaListagem::TelaListagem(QWidget *parent, tenu_objType enuObjType) :
 
     delete query;
     //delete model;
+
+    return true;
 }
 
 TelaListagem::~TelaListagem()
 {
     qDebug() << "God will let me be executed";
     delete ui;
+}
+
+void TelaListagem::on_editarButton_clicked()
+{
+    MANAGER_WINDOW_STATE = EDICAO;
+}
+
+void TelaListagem::on_consultarButton_clicked()
+{
+    MANAGER_WINDOW_STATE = CONSULTA;
+}
+
+void TelaListagem::on_excluirButton_clicked()
+{
+    int id = getIDinDB();
+    bool result;
+
+    if(id > 0)
+    {
+        qDebug() << MANAGER_OBJECT_TYPE;
+        switch(MANAGER_OBJECT_TYPE)
+        {
+            case VENDA:
+                //result = DAOAcessorio::getInstance()->deleteAcessorio(id);
+                break;
+            case VEICULO:
+                result = DAOVeiculo::getInstance()->deleteVeiculo(id);
+                break;
+            case ACESSORIO:
+                qDebug() << "AcessorioExcluir";
+                result = DAOAcessorio::getInstance()->deleteAcessorio(id);
+                break;
+            case CLIENTE:
+                result = DAOCliente::getInstance()->deleteCliente(id);
+                break;
+            case VENDEDOR:
+                result = DAOVendedor::getInstance()->deleteVendedor(id);
+                break;
+            case GERENTE:
+                result = DAOGerente::getInstance()->deleteGerente(id);
+                break;
+            case INVALID:
+                // error
+                return;
+                break;
+            default:
+                // error
+                return;
+                break;
+        }
+
+        if(result)
+        {
+            QMessageBox::information(this,tr("Remoção"),tr("Remoção  realizada com sucesso!"));
+        }
+        else
+        {
+            QMessageBox::critical(this,tr("Remoção"),tr("Remoção  não realizada!"));
+        }
+    }
+    else
+    {
+        QMessageBox::critical(this,tr("Remoção"),tr("Linha não selecionada!"));
+    }
+
+    updateTableView(MANAGER_OBJECT_TYPE);
+}
+
+int TelaListagem::getIDinDB()
+{
+    int i = ui->tableView->currentIndex().row();
+    qDebug() << "Selected " << i;
+
+    QAbstractItemModel *model = ui->tableView->model();
+    QModelIndex index = model->index(i, 0);
+    i = index.data().toInt();
+
+    qDebug() << "solved " << i;
+    return i;
 }

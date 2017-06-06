@@ -46,7 +46,7 @@ HEADERS += \
     ViewModel/TelaLogin.h \
     ViewModel/TelaPrincipal.h \
     ViewModel/TelaRemocao.h \
-    helper.h
+    manager.h
 
 SOURCES += \
     Model/Acessorio.cpp \
@@ -76,4 +76,4 @@ SOURCES += \
     ViewModel/TelaPrincipal.cpp \
     ViewModel/TelaRemocao.cpp \
     main.cpp \
-    helper.cpp
+    manager.cpp

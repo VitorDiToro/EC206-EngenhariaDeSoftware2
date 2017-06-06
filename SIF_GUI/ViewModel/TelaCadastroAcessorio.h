@@ -9,7 +9,7 @@
 #include <QDebug>
 #include "Model/Acessorio.h"
 #include "Model/DAOAcessorio.h"
-#include "helper.h"
+#include "manager.h"
 
 using namespace std;
 

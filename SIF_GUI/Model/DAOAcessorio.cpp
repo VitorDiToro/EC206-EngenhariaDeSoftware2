@@ -50,9 +50,20 @@ bool DAOAcessorio::addAcessorio(Acessorio *a)
 QSqlQuery* DAOAcessorio::getBasicInfoAcessorios()
 {
     QSqlQuery* query = new QSqlQuery();
+
     query->prepare("SELECT acessorio_id, acessorio_nome FROM sifDB.acessorio;");
     query->exec();
 
     return query;
+}
+
+bool DAOAcessorio::deleteAcessorio(unsigned int id)
+{
+    QSqlQuery query;
+
+    query.prepare("DELETE FROM `sifDB`.`acessorio` WHERE `acessorio_id`=?;");
+    query.addBindValue(id);
+
+    return query.exec();
 }
 
