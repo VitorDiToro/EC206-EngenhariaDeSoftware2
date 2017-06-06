@@ -1,5 +1,7 @@
 # EC206 - Engenharia De Software II 
 
+![](https://img.shields.io/github/license/mashape/apistatus.svg "License")
+
 Projeto da disciplina de Engenharia de Software II, desenvolvido durante a graduação em Engenharia de Computação no Instituto Nacional de Telecomunicações [(@INATEL)](https://www.inatel.br "Inatel's Homepage"). 
 
 **Dependências:**
