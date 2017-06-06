@@ -27,5 +27,7 @@ Projeto da disciplina de Engenharia de Software II, desenvolvido durante a gradu
 - Samuel Pereira, samuelp@inatel.br; 
 - Vitor R. Di Toro", vitorrditoro@gmail.com; 
 
+<br>
+
 **Mochila:**
 - Allan Rafael C. V. Boas, allanrafael@gec.inatel.br; 
