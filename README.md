@@ -24,13 +24,8 @@ Projeto da disciplina de Engenharia de Software II, desenvolvido durante a gradu
 
 
 **Desenvolvedores:** 
-- Vitor R. Di Toro", vitorrditoro@gmail.com; 
 - Samuel Pereira, samuelp@inatel.br; 
+- Vitor R. Di Toro", vitorrditoro@gmail.com; 
 
 **Mochila:**
 - Allan Rafael C. V. Boas, allanrafael@gec.inatel.br; 
-
-**Colaboradores:** 
-- Daniel Sader, danielpontello@gmail.com;
-    - Colaborador do  Sub-Módeulo "BD_SIF";
-
