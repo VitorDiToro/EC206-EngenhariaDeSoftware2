@@ -99,6 +99,9 @@ Vendedor* DAOVendedor::getVendedor(unsigned int id)
         v->setCpf(query->value(4).toString());
         v->setTelefone(query->value(5).toString());
         v->setEndereco(query->value(6).toString());
+        v->setSalario(query->value(8).toFloat());
+        v->setSenha(query->value(9).toString());
+        v->setLogin(query->value(10).toString());
 
         v->print_details();
     }
