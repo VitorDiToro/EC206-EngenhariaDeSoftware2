@@ -33,8 +33,8 @@ bool DAOVendedor::addVendedor(Vendedor *v)
     bool result;
     QSqlQuery query;
 
-    query.prepare("INSERT INTO `sifDB`.`vendedor` (`vendedor_comissao`, `vendedor_unidade`, `vendedor_nome`, `vendedor_cpf`, `vendedor_telefone`, `vendedor_endereco`, `vendedor_ativo`)"
-                  "VALUES (?, ?, ?, ?, ?, ?, ?);");
+    query.prepare("INSERT INTO `sifDB`.`vendedor` (`vendedor_comissao`, `vendedor_unidade`, `vendedor_nome`, `vendedor_cpf`, `vendedor_telefone`, `vendedor_endereco`, `vendedor_ativo`, `vendedor_salario`, `vendedor_senha`, `vendedor_login`)"
+                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
     query.addBindValue(v->getComissao());
     query.addBindValue(v->getUnidadeDeTrabalho());
     query.addBindValue(v->getNome());
@@ -42,6 +42,9 @@ bool DAOVendedor::addVendedor(Vendedor *v)
     query.addBindValue(v->getTelefone());
     query.addBindValue(v->getEndereco());
     query.addBindValue(true);
+    query.addBindValue(v->getSalario());
+    query.addBindValue(v->getSenha());
+    query.addBindValue(v->getLogin());
     result = query.exec();
 
     if(result)

@@ -33,13 +33,16 @@ bool DAOGerente::addGerente(Gerente *g)
     bool result;
     QSqlQuery query;
 
-    query.prepare("INSERT INTO `sifDB`.`gerente` (`gerente_nome`, `gerente_cpf`, `gerente_endereco`, `gerente_telefone`, `gerente_unidade`, `gerente_ativo`)"
-                  "VALUES (?, ?, ?, ?, ?, ?);");
+    query.prepare("INSERT INTO `sifDB`.`gerente` (`gerente_nome`, `gerente_cpf`, `gerente_endereco`, `gerente_telefone`, `gerente_unidade`, `gerente_ativo`, `gerente_salario`, `gerente_senha`, `gerente_login`)"
+                  "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
     query.addBindValue(g->getNome());
     query.addBindValue(g->getCpf());
     query.addBindValue(g->getEndereco());
     query.addBindValue(g->getTelefone());
     query.addBindValue(g->getUnidadeQueGerencia());
+    query.addBindValue(g->getSalario());
+    query.addBindValue(g->getSenha());
+    query.addBindValue(g->getLogin());
     query.addBindValue(true);
     result = query.exec();
 

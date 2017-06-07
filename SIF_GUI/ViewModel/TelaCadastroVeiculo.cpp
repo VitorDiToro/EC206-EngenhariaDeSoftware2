@@ -56,7 +56,20 @@ TelaCadastroVeiculo::TelaCadastroVeiculo(QWidget *parent, tenu_windowType enuWin
             ui->pushButton->hide();
             break;
         case EDICAO:
-            (void)0;
+//            this->setWindowTitle("Edição de Veículo");
+
+//            v = DAOVeiculo::getInstance()->getVeiculo(id);
+
+//            qDebug() << "rock n roll";
+//            ui->lineEdit->setText(v->getModelo());
+//            ui->lineEdit->setDisabled(1);
+//            ui->lineEdit_2->setText(v->getCor());
+//            ui->lineEdit_2->setDisabled(1);
+//            ui->lineEdit_3->setText(QString::number(v->getAno()));
+//            ui->lineEdit_3->setDisabled(1);
+//            ui->lineEdit_4->setText(QString::number(v->getPreco()));
+//            ui->lineEdit_4->setDisabled(1);
+
             break;
         case INVALIDO:
             (void)0;
