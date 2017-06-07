@@ -40,10 +40,10 @@ bool DAOGerente::addGerente(Gerente *g)
     query.addBindValue(g->getEndereco());
     query.addBindValue(g->getTelefone());
     query.addBindValue(g->getUnidadeQueGerencia());
+    query.addBindValue(true);
     query.addBindValue(g->getSalario());
     query.addBindValue(g->getSenha());
     query.addBindValue(g->getLogin());
-    query.addBindValue(true);
     result = query.exec();
 
     if(result)
@@ -97,6 +97,9 @@ Gerente* DAOGerente::getGerente(unsigned int id)
         g->setEndereco(query->value(3).toString());
         g->setTelefone(query->value(4).toString());
         g->setUnidadeQueGerencia(query->value(5).toString());
+        g->setSalario(query->value(7).toFloat());
+        g->setSenha(query->value(8).toString());
+        g->setLogin(query->value(9).toString());
 
         g->print_details();
     }

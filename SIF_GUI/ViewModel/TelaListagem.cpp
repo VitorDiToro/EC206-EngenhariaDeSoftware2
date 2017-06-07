@@ -119,6 +119,59 @@ TelaListagem::~TelaListagem()
 void TelaListagem::on_editarButton_clicked()
 {
     MANAGER_WINDOW_STATE = EDICAO;
+
+    TelaCadastroAcessorio* tca = NULL;
+    TelaCadastroCliente* tcc = NULL;
+    TelaCadastroGerente* tcg = NULL;
+    TelaCadastroVendedor* tcv = NULL;
+    TelaCadastroVeiculo* tcvei = NULL;
+
+    int id = getIDinDB();
+
+    qDebug() << "tipo de obj " << MANAGER_OBJECT_TYPE;
+
+    ID = id;
+
+    switch(MANAGER_OBJECT_TYPE)
+    {
+        case VENDA:
+            //
+            break;
+        case VEICULO:
+            tcvei = new TelaCadastroVeiculo(0,EDICAO,id);
+            tcvei->show();
+            tcvei->activateWindow();
+            break;
+        case ACESSORIO:
+            tca = new TelaCadastroAcessorio(0,EDICAO,id);
+            tca->show();
+            tca->activateWindow();
+            break;
+        case CLIENTE:
+            tcc = new TelaCadastroCliente(0,EDICAO,id);
+            tcc->show();
+            tcc->activateWindow();
+            break;
+        case VENDEDOR:
+            tcv = new TelaCadastroVendedor(0,EDICAO,id);
+            tcv->show();
+            tcv->activateWindow();
+            break;
+        case GERENTE:
+            tcg = new TelaCadastroGerente(0,EDICAO,id);
+            tcg->show();
+            tcg->activateWindow();
+
+            break;
+        case INVALID:
+            // error
+            return;
+            break;
+        default:
+            // error
+            return;
+            break;
+    }
 }
 
 void TelaListagem::on_consultarButton_clicked()
@@ -174,9 +227,6 @@ void TelaListagem::on_consultarButton_clicked()
             return;
             break;
     }
-
-    MANAGER_OBJECT_TYPE = ACESSORIO;
-
 }
 
 void TelaListagem::on_excluirButton_clicked()

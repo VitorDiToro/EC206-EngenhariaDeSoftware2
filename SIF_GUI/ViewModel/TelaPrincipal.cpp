@@ -47,7 +47,7 @@ void TelaPrincipal::on_actionCadastrar_6_triggered()
 {
     MANAGER_WINDOW_STATE = CADASTRO;
     MANAGER_OBJECT_TYPE = GERENTE;
-    TelaCadastroGerente* tcg = new TelaCadastroGerente();
+    TelaCadastroGerente* tcg = new TelaCadastroGerente(0, CADASTRO, 0);
     tcg->show();
 }
 
@@ -55,7 +55,7 @@ void TelaPrincipal::on_actionCadastrar_5_triggered()
 {
     MANAGER_WINDOW_STATE = CADASTRO;
     MANAGER_OBJECT_TYPE = VENDEDOR;
-    TelaCadastroVendedor* tcv = new TelaCadastroVendedor();
+    TelaCadastroVendedor* tcv = new TelaCadastroVendedor(0, CADASTRO, 0);
     tcv->show();
 }
 
@@ -63,7 +63,7 @@ void TelaPrincipal::on_actionCadastrar_4_triggered()
 {
     MANAGER_WINDOW_STATE = CADASTRO;
     MANAGER_OBJECT_TYPE = CLIENTE;
-    TelaCadastroCliente* tcc = new TelaCadastroCliente();
+    TelaCadastroCliente* tcc = new TelaCadastroCliente(0, CADASTRO, 0);
     tcc->show();
 }
 
@@ -71,7 +71,7 @@ void TelaPrincipal::on_actionCadastrar_3_triggered()
 {
     MANAGER_WINDOW_STATE = CADASTRO;
     MANAGER_OBJECT_TYPE = ACESSORIO;
-    TelaCadastroAcessorio* tca = new TelaCadastroAcessorio();
+    TelaCadastroAcessorio* tca = new TelaCadastroAcessorio(0, CADASTRO, 0);
     tca->show();
 }
 
@@ -79,7 +79,7 @@ void TelaPrincipal::on_actionCadastrar_2_triggered()
 {
     MANAGER_WINDOW_STATE = CADASTRO;
     MANAGER_OBJECT_TYPE = VEICULO;
-    TelaCadastroVeiculo* tcv = new TelaCadastroVeiculo();
+    TelaCadastroVeiculo* tcv = new TelaCadastroVeiculo(0, CADASTRO, 0);
     tcv->show();
 }
 

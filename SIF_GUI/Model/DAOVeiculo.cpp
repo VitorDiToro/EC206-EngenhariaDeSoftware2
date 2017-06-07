@@ -34,6 +34,7 @@ bool DAOVeiculo::addVeiculo(Veiculo *v)
 
     query.prepare("INSERT INTO `sifDB`.`veiculo` (`veiculo_modelo`, `veiculo_preco`, `veiculo_quantidade`, `veiculo_cor`, `veiculo_ano`, `veiculo_ativo`)"
                   "VALUES (?, ?, ?, ?, ?, ?);");
+
     query.addBindValue(v->getModelo());
     query.addBindValue(v->getPreco());
     query.addBindValue(3);
@@ -83,6 +84,21 @@ Veiculo* DAOVeiculo::getVeiculo(unsigned int id)
     }
 
     return v;
+}
+
+bool DAOVeiculo::updateVeiculo(Veiculo* v)
+{
+    QSqlQuery query;
+
+    query.prepare("UPDATE sifDB.veiculo SET veiculo_modelo = ?, veiculo_preco = ?, veiculo_quantidade = ?, veiculo_cor = ?, veiculo_ano = ? WHERE veiculo_id = ?;");
+    query.addBindValue(v->getModelo());
+    query.addBindValue(v->getPreco());
+    query.addBindValue(3);
+    query.addBindValue(v->getCor());
+    query.addBindValue(v->getAno());
+    query.addBindValue(v->getId());
+
+    return query.exec();
 }
 
 bool DAOVeiculo::deleteVeiculo(unsigned int id)

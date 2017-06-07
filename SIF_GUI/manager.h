@@ -22,5 +22,6 @@ typedef enum enu_windowState
 
 static tenu_objType MANAGER_OBJECT_TYPE;
 static tenu_windowType MANAGER_WINDOW_STATE = INVALIDO;
+static int ID = 0;
 
 #endif // MANAGER_H

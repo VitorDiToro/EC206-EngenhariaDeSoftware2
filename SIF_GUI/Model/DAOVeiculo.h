@@ -21,7 +21,7 @@ class DAOVeiculo
         bool addVeiculo(Veiculo* v);
         QSqlQuery* getBasicInfoVeiculos();
         Veiculo* getVeiculo(unsigned int id);
-        bool setVeiculo(unsigned int id);
+        bool updateVeiculo(Veiculo* v);
         bool deleteVeiculo(unsigned int id);
 };
 

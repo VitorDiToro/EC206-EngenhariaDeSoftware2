@@ -31,7 +31,6 @@ TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType en
 
             a = DAOAcessorio::getInstance()->getAcessorio(id);
 
-            qDebug() << "rock n roll";
             ui->lineEdit->setText(a->getNome());
             ui->lineEdit->setDisabled(1);
             ui->lineEdit_2->setText(QString::number(a->getPreco()));
@@ -41,7 +40,13 @@ TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType en
             ui->pushButton->hide();
             break;
         case EDICAO:
-            (void)0;
+            this->setWindowTitle("Edição de Acessório");
+
+            a = DAOAcessorio::getInstance()->getAcessorio(id);
+
+            ui->lineEdit->setText(a->getNome());
+            ui->lineEdit_2->setText(QString::number(a->getPreco()));
+            ui->lineEdit_3->setText(a->getDescricao());
             break;
         case INVALIDO:
             (void)0;
@@ -51,6 +56,11 @@ TelaCadastroAcessorio::TelaCadastroAcessorio(QWidget *parent, tenu_windowType en
             (void)0;
             // error
             break;
+    }
+
+    if(a)
+    {
+        delete a;
     }
 }
 
@@ -70,6 +80,9 @@ void TelaCadastroAcessorio::on_pushButton_clicked()
     QString nome = ui->lineEdit->text();
     float preco = ui->lineEdit_2->text().toFloat();
     QString descricao = ui->lineEdit_3->text();
+    QString title;
+    QString title2;
+    bool op;
 
     qDebug() << preco << endl;
 
