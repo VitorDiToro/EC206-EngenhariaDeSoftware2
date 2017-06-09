@@ -6,11 +6,11 @@ vector<Acessorio*> stock_acessorios;
 
 Acessorio::Acessorio()
 {
-//    qDebug() << "nome: ";
-//    cin >> this->nome;
-//    qDebug() << "preco: ";
-//    cin >> this->preco;
-//    qDebug() << "descricao: ";
+    //    qDebug() << "nome: ";
+    //    cin >> this->nome;
+    //    qDebug() << "preco: ";
+    //    cin >> this->preco;
+    //    qDebug() << "descricao: ";
 //    cin >> this->descricao;
     id = total++;
 }
@@ -51,6 +51,16 @@ QString Acessorio::getDescricao() const
 void Acessorio::setDescricao(const QString &value)
 {
     descricao = value;
+}
+
+unsigned int Acessorio::getQuantidade() const
+{
+    return quantidade;
+}
+
+void Acessorio::setQuantidade(unsigned int value)
+{
+    quantidade = value;
 }
 
 int Acessorio::getTotal()

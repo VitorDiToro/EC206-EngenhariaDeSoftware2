@@ -19,7 +19,6 @@ class DAOGerente
         bool addGerente(Gerente* g);
         QSqlQuery* getBasicInfoGerentes();
         Gerente* getGerente(unsigned int id);
-        bool setGerente(unsigned int id);
         bool deleteGerente(unsigned int id);
 };
 

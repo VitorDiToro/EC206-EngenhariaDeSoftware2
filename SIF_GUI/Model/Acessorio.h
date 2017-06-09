@@ -13,6 +13,7 @@ class Acessorio
         QString nome;
         float preco;
         QString descricao;
+        unsigned int quantidade;
 
         static int total;
         int id;
@@ -26,6 +27,8 @@ class Acessorio
         void setPreco(float value);
         QString getDescricao() const;
         void setDescricao(const QString &value);
+        unsigned int getQuantidade() const;
+        void setQuantidade(unsigned int value);
 
         static int getTotal();
         int getId() const;

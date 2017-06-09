@@ -12,7 +12,6 @@ class DAOVenda
 
         bool addVenda(Venda* v);
         vector<Venda*> getVenda(vector<unsigned int> ids);
-        bool setVenda(unsigned int id);
         bool deleteVenda(unsigned int id);
 };
 
